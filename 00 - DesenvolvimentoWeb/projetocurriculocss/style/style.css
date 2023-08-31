@@ -1,5 +1,70 @@
 @charset "UTF-8";
 
+header {
+    background-color: #A7ABF2;
+    text-align: center;
+    margin: 0% 0% 0% 45%;
+    border: solid black 2px;
+    font-weight: bold;
+    width: 12%;
+    height: 0%;
+}
+#image {
+    padding: 0%;
+    margin: 0%;
+    display: inline;
+    border-bottom: solid #593F36 1px;
+    font-size: large;
+    font-weight: 900;
+}
+.section {
+    background-color: #f2e9e4c4;
+    text-align: left;
+    border: solid black 0px;
+    display: inline-flex;
+    margin: 1% 1% 1% 10%;
+    padding: 0% 0% 0% 0%;
+    width: 40%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    box-shadow: 0px 0px 8px black;
+    justify-content: center;
+    align-items: baseline;
+    align-content: center;  
+
+}
+.section2 {
+    background-color: #f2e9e4c4;
+    text-align: center;
+    border: solid black 0px;
+    display: inline-flex;
+    margin: 1% 6% 1% 0%;
+    padding: 0% 1% 0% 1%;
+    width: 40%;
+    height: fit-content;
+    flex-wrap: wrap;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: space-around;
+    box-sizing: content-box;
+    box-shadow: 0px 0px 8px black;
+}
+
+.tabela {
+    background-color: #f2e9e4c4;
+    text-align: center;
+    border: solid black 0px ;
+    display:flex;
+    margin: 3% 20% 3% 23%;
+    padding: 1%;
+    width: 60%;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    flex-direction: column;
+    align-content: stretch;
+    box-shadow: 0px 0px 8px black ; 
+}
 a {
     color: black;
     text-decoration: none;
@@ -19,16 +84,21 @@ td {
 }
 td.top {
     text-align: center;
-    background-color: rgba(63, 63, 63, 0.188);
+    background-color: #593f36bf;
+    color: #F2E9E4;
+    padding: 1%;
 }
 h3 {
-    color: rgb(0, 0, 108);
-    background-color: rgba(177, 236, 255, 0.737);
-    border: solid black;
-    padding: 1%;
-    margin-right: 60%;
+    color: #593F36; 
+    background-color: #A7ABF2;
+    border: solid #593F36 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: 900;
+    text-align: center;
+    padding: 1% 20% 1% 20%;
 }
 h3:hover {
-    color: rgb(86, 0, 0);
+    color: rgb(175, 0, 0);
     
 }
