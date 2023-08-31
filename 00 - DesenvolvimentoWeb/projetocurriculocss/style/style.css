@@ -21,6 +21,14 @@ td.top {
     text-align: center;
     background-color: rgba(63, 63, 63, 0.188);
 }
+h3 {
+    color: rgb(0, 0, 108);
+    background-color: rgba(177, 236, 255, 0.737);
+    border: solid black;
+    padding: 1%;
+    margin-right: 60%;
+}
 h3:hover {
-    color: darkred;
+    color: rgb(86, 0, 0);
+    
 }
