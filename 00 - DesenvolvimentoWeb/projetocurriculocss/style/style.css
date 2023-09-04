@@ -26,11 +26,8 @@ header {
     border: solid black 0px;
     display: inline-flex;
     margin: 1% 1% 1% 10%;
-<<<<<<< HEAD
     padding: 0% 0% 3% 0%;
-=======
     padding: 0% 0% 0.5% 0%;
->>>>>>> 5e971592621a2f815eaf72ace10d3b9f7c02328a
     width: 40%;
     flex-wrap: wrap;
     flex-direction: column;
@@ -53,14 +50,10 @@ header {
     flex-direction: column;
     box-sizing: content-box;
     box-shadow: 0px 0px 8px black;
-<<<<<<< HEAD
-    
-=======
     align-content: stretch;
 }
 ul {
     text-align: left;
->>>>>>> 5e971592621a2f815eaf72ace10d3b9f7c02328a
 }
 
 .tabela {
