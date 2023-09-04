@@ -23,7 +23,7 @@ header {
     border: solid black 0px;
     display: inline-flex;
     margin: 1% 1% 1% 10%;
-    padding: 0% 0% 0% 0%;
+    padding: 0% 0% 3% 0%;
     width: 40%;
     flex-wrap: wrap;
     flex-direction: column;
@@ -49,6 +49,7 @@ header {
     align-content: space-around;
     box-sizing: content-box;
     box-shadow: 0px 0px 8px black;
+    
 }
 
 .tabela {
@@ -89,7 +90,7 @@ td.top {
     padding: 1%;
 }
 h3 {
-    color: #593F36; 
+    color: black; 
     background-color: #A7ABF2;
     border: solid #593F36 3px;
     font-family: Arial, Helvetica, sans-serif;
