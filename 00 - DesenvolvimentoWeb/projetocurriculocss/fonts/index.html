@@ -8,7 +8,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../style/style.css">
-        
+        <style>
+            td {
+                border: solid black 2px;
+            }
+            th {
+                border: solid black 2px;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -17,7 +24,6 @@
                 <figcaption>Alinne Martins Cardoso</figcaption>
             </figure>
         </header>
-            <br>
             <br>
             <section class="section1">
                 <h3> Dados de Contato: </h3>
@@ -33,12 +39,11 @@
             
             <section class="section2">
                 <h3> Formação Acadêmica </h3>
-                <ul type="none">
-                    <li> Curso DSM</li><br>
-                    <li> <a href="https://fatecvotorantim.cps.sp.gov.br/" target="_blank">Fatec Votorantim</a> - Ingresso 2°sem. 2023 </li><br><br>
+                <p class="espaco"> Curso DSM</p>
+                <p class="espaco"> <a href="https://fatecvotorantim.cps.sp.gov.br/" target="_blank">Fatec Votorantim</a> - Ingresso 2°sem. 2023 </p>
                 <ul type="none">
                     <li> | <img src="../img/instagram.png" width="12" height="12" alt="instagram"><strong> | Fatec Votorantim &rarr;</strong> <a href="https://www.instagram.com/fatec.votorantim/" target="_blank">link</a></li><br>
-                    <li> | <img src="../img/instagram.png" width="12" height="12" alt="instagram"><strong> |  (DSM) Desenvolvimento de Software e <br>Multiplataforma &rarr;</strong>  <a href="https://www.instagram.com/fatec.votorantim.dsm/" target="_blank">link</a></li>
+                    <li> | <img src="../img/instagram.png" width="12" height="12" alt="instagram"><strong> |  (DSM) Desenvolvimento de Software e Multiplataforma &rarr;</strong>  <a href="https://www.instagram.com/fatec.votorantim.dsm/" target="_blank">link</a></li>
                 </ul>
             
                 <h3> Formação Complementar </h3>
@@ -51,26 +56,44 @@
             <section class="tabela">
                 <h3>Experiência profissional</h3> <!--Ainda não tenho nenhuma experência porfissional-->
                 <table>
-                    <tr><td class="top"><strong>Empresa que trabalhei</strong></td><td class="top"><strong>Período</strong></td></tr>
-                    <tr><td>Empresa X </td><td>2/2/2023 a 2/3/2023</td></tr>
-                    <tr><td>Empresa Y </td><td>2/2/2023 a 2/3/2023</td></tr>
-                    <tr><td>Empresa Z </td><td>2/2/2023 a 2/3/2023</td></tr>
+                    <!--<tr><td class="top"><strong>Empresa que trabalhei</strong></td><td class="top"><strong>Período</strong></td></tr>-->
+                    <thead>
+                        <tr>
+                            <th>Empresa que trabalhei</th>
+                            <th>Período</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Empresa X </td><td>2/2/2023 a 2/3/2023</td></tr>
+                        <tr><td>Empresa Y </td><td>2/2/2023 a 2/3/2023</td></tr>
+                        <tr><td>Empresa Z </td><td>2/2/2023 a 2/3/2023</td></tr>
+                    </tbody>
                 </table>
             </section>
             
                 <section class="tabela">
                     <h3>Cursos</h3>
                     <table>
-                            <tr><td class="top"><strong>Nome</strong></td><td class="top"><strong>Local</strong></td><td class="top"><strong>Data</strong></td><td class="top"><strong>Certificados</strong></td></tr>
-                            <tr><td>PYTHON 3 - MUNDO 1 <br> [40 HORAS]</td><td>Online - Curso em Vídeo</td><td>3 de Maio de 2023</td><td><a href="https://www.cursoemvideo.com/validacao-de-certificado/?codigo=A10A3-66E2-4" target="_blank">A10A3-66E2-4</a></td></tr>
-                            <tr><td>AWS - Descubra a Nuvem <br> [2 HORAS]</td><td>Online - DIO </td><td>20 de Junho de 2023</td><td><a href="https://www.dio.me/certificate/B533D855" target="_blank">B533D855</a></td></tr>
-                            <tr><td>AWS - Conhecendo os Serviços da AWS <br> [1 HORA]</td><td>Online - DIO</td><td>21 de Junho de 2023</td><td><a href="https://www.dio.me/certificate/31DCA896" target="_blank">31DCA896</a></td></tr>
-                            <tr><td>Flutter - Introdução ao Flutter <br> [1 HORA]</td><td>Online - DIO</td><td>23 de Agosto de 2023</td><td><a href="https://www.dio.me/certificate/D67EE04C" target="_blank">D67EE04C</a></td></tr>
-                            <tr><td>Flutter - Ambiente de Desenvolvimento
-                            Flutter <br> [1 HORA]</td><td>Online - DIO</td><td>24 de Agosto de 2023</td><td><a href="https://www.dio.me/certificate/B1B12192" target="_blank">B1B12192</a></td></tr>
-                            <tr><td>Flutter - Criando Meu Primeiro Projeto em
-                            Flutter <br> [1 HORA]</td><td>Online - DIO</td><td> 29 de Agosto de 2023</td><td><a href="https://www.dio.me/certificate/37687004" target="_blank">37687004</a></td></tr>
-                            <tr><td>FUNDAMENTOS DE TI: HARDWARE E SOFTWARE <br> [7 HORAS] </td><td>Fundação Bradesco - Escola Virtual</td><td>23 de Agosto de 2023</td><td id="texto">EAA54652-0AEE-4A33-A8B2-CCFFF2B7530A <a href="https://www.ev.org.br/validar-certificado#" target="_blank"> <br> (Escreva o Código Neste Site) </a></td></tr>
+                            <!--<tr><td class="top"><strong>Nome</strong></td><td class="top"><strong>Local</strong></td><td class="top"><strong>Data</strong></td><td class="top"><strong>Certificados</strong></td></tr>-->
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Local</th>
+                                    <th>Data</th>
+                                    <th>Certificados</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>PYTHON 3 - MUNDO 1 <br> [40 HORAS]</td><td>Online - Curso em Vídeo</td><td>3 de Maio de 2023</td><td><a href="https://www.cursoemvideo.com/validacao-de-certificado/?codigo=A10A3-66E2-4" target="_blank">A10A3-66E2-4</a></td></tr>
+                                <tr><td>AWS - Descubra a Nuvem <br> [2 HORAS]</td><td>Online - DIO </td><td>20 de Junho de 2023</td><td><a href="https://www.dio.me/certificate/B533D855" target="_blank">B533D855</a></td></tr>
+                                <tr><td>AWS - Conhecendo os Serviços da AWS <br> [1 HORA]</td><td>Online - DIO</td><td>21 de Junho de 2023</td><td><a href="https://www.dio.me/certificate/31DCA896" target="_blank">31DCA896</a></td></tr>
+                                <tr><td>Flutter - Introdução ao Flutter <br> [1 HORA]</td><td>Online - DIO</td><td>23 de Agosto de 2023</td><td><a href="https://www.dio.me/certificate/D67EE04C" target="_blank">D67EE04C</a></td></tr>
+                                <tr><td>Flutter - Ambiente de Desenvolvimento
+                                Flutter <br> [1 HORA]</td><td>Online - DIO</td><td>24 de Agosto de 2023</td><td><a href="https://www.dio.me/certificate/B1B12192" target="_blank">B1B12192</a></td></tr>
+                                <tr><td>Flutter - Criando Meu Primeiro Projeto em
+                                Flutter <br> [1 HORA]</td><td>Online - DIO</td><td> 29 de Agosto de 2023</td><td><a href="https://www.dio.me/certificate/37687004" target="_blank">37687004</a></td></tr>
+                                <tr><td>FUNDAMENTOS DE TI: HARDWARE E SOFTWARE <br> [7 HORAS] </td><td>Fundação Bradesco - Escola Virtual</td><td>23 de Agosto de 2023</td><td id="texto">EAA54652-0AEE-4A33-A8B2-CCFFF2B7530A <a href="https://www.ev.org.br/validar-certificado#" target="_blank"> <br> (Escreva o Código Neste Site) </a></td></tr>
+                            </tbody>
                     </table>
                 </section>
     </body>
