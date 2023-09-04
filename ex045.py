@@ -7,6 +7,8 @@ escolha = choice(elementos)
 
 janela = tk.Tk()
 janela.configure(bg='#E0FFFF')
+
+
 def escolher_elemento1():
     escolha_computador1 = '\nVocê escolheu: PEDRA\n\nComputador escolheu: {}'.format(escolha)
     label_computador1['text'] = escolha_computador1
@@ -35,6 +37,7 @@ def escolher_elemento2():
         mensagem6 = ' \nComputador venceu!'.format(time.sleep(1))
         label_mensagem6['text'] = mensagem6
 
+
 def escolher_elemento3():
     escolha_computador3 = '\nVocê escolheu: TESOURA\n\nO computador escolheu: {}'.format(escolha)
     label_computador3['text'] = escolha_computador3
@@ -47,28 +50,25 @@ def escolher_elemento3():
         label_mensagem8['text'] = mensagem8
     if escolha == 'PEDRA' and escolha != 'PAPEL' and escolha != 'TESOURA':
         mensagem9 = ' \nComputador venceu!'.format(time.sleep(1))
-        label_mensagem9['text']= mensagem9
-
+        label_mensagem9['text'] = mensagem9
 
 
 def fechar_janela():
     janela.destroy()
+
 
 # Criar quadro
 '''quadro = tk.Frame(janela, width=599, height=360, bg='#B0E0E6')
 quadro.place(x=1, y=240)'''
 
 # Criar um rótulo
-rotulo = tk.Label(janela, text="|"*600, fg='blue', bg='#E0FFFF', font=25)
+rotulo = tk.Label(janela, text="|" * 600, fg='blue', bg='#E0FFFF', font=25)
 rotulo.place(y=0)
 rotulo = tk.Label(janela, text="Escolha uma das opções abaixo:\n".upper(), fg='blue', bg='#E0FFFF', font=25)
 rotulo.place(x=140, y=90)
 
-rotulo = tk.Label(janela, text="|"*600, fg='blue', bg='#E0FFFF', font=25)
+rotulo = tk.Label(janela, text="|" * 600, fg='blue', bg='#E0FFFF', font=25)
 rotulo.place(y=174)
-
-
-
 
 # Criar um botão
 
@@ -89,7 +89,7 @@ botao.pack()
 botao.place(x=260, y=200)
 label_computador2 = tk.Label(janela, text='', font=15, fg='red', bg='#E0FFFF')
 label_computador2.place(x=150, y=280)
-label_mensagem4= tk.Label(janela, text='', font=15, bg='#E0FFFF', fg='#00BFFF')
+label_mensagem4 = tk.Label(janela, text='', font=15, bg='#E0FFFF', fg='#00BFFF')
 label_mensagem4.place(x=200, y=400)
 label_mensagem5 = tk.Label(janela, text='', font=15, bg='#E0FFFF', fg='#00BFFF')
 label_mensagem5.place(x=200, y=400)
@@ -103,7 +103,7 @@ label_computador3 = tk.Label(janela, text='', font=15, fg='red', bg='#E0FFFF')
 label_computador3.place(x=150, y=280)
 label_mensagem7 = tk.Label(janela, text='', font=15, bg='#E0FFFF', fg='#00BFFF')
 label_mensagem7.place(x=200, y=400)
-label_mensagem8= tk.Label(janela, text='', font=15, bg='#E0FFFF', fg='#00BFFF')
+label_mensagem8 = tk.Label(janela, text='', font=15, bg='#E0FFFF', fg='#00BFFF')
 label_mensagem8.place(x=200, y=400)
 label_mensagem9 = tk.Label(janela, text='', font=15, bg='#E0FFFF', fg='#00BFFF')
 label_mensagem9.place(x=200, y=400)
@@ -114,8 +114,6 @@ caixa_texto.pack()'''
 
 # Define a largura como 800 pixels e a altura como 600 pixels
 janela.geometry("600x600")
-
-
 
 # Escolha do computador
 janela.after(8000, fechar_janela)
