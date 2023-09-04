@@ -90,8 +90,8 @@ td {
     padding: 0.5%;
     text-align: center;
 }
-td.top {
-    text-align: center;
+th {
+    border: solid black 1px;
     background-color: #593f36bf;
     color: #F2E9E4;
     padding: 1%;
