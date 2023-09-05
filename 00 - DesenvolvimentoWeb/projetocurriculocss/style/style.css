@@ -3,7 +3,7 @@
 body {
     /*background-color: #6b98f239;  */
     background: rgb(167,171,242);
-    background: linear-gradient(0deg, rgba(206, 208, 245, 0.736) 0%, rgba(140, 144, 199, 0.725) 51%, rgba(87, 70, 169, 0.566) 100%);
+    background: linear-gradient(0deg, rgba(113, 160, 255, 0.56) 0%, rgba(107, 152, 242, 0.566) 51%, rgb(107, 152, 242) 100%);
 }
 p.espaco {
     text-indent: 8%;
