@@ -21,3 +21,34 @@ th{
   width: 20%;  
   border: solid black 1px;
 }
+div.vazio{
+    border: solid black 1px; 
+    padding: 5%; width: 89.9%; 
+    margin: 0.5% 0% 0.5% 0%; 
+    background-color: #f0f0f0;
+}
+h2#ingredientes{
+    border: solid black 1px; 
+    color: #fd6c23; 
+    width: 25%; 
+    display: inline-block;
+}
+figure#avental{
+    border: solid black 1px; 
+    width: 5%; 
+    display: inline-block;
+}
+ul,li{
+    text-align: justify;
+}
+#button{
+    border: solid black 1px; 
+    background-color: #fd6c23; 
+    color: white;
+    width: 25%;
+    border-radius: 10%;
+    padding: 0% 0% 0% 0%;
+    border-spacing: 50%;
+    text-align: center;
+    margin-left: 20%;
+}
