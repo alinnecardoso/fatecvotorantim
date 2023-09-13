@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Formulário </title>
+    <style>
+        table,tr,th,td{
+            border: solid black 1px;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h3>Tabela e Formulário</h3>
+    <form>
+    <table>
+            <tr>
+                <th colspan="2"> Cadastro </th>
+            </tr>
+            <tr>
+                <td rowspan="2"> 
+                    <img src="https://images.pexels.com/photos/16943740/pexels-photo-16943740/free-photo-of-antigo-antepassados-anciao-antiguidade.jpeg?auto=compress&cs=tinysrgb&w=200&h=120&dpr=1" alt="lamparina">
+                </td>
+                <td> 
+                    <p> Dados pessoais </p>
+                    
+                        <label for="login">Login</label>
+                        <input type="text" name="login" id="login">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="senha">
+                        <button>Cadastrar</button>
+                        <input type="submit" value="Cadastrar">
+                        <input type="reset" value="Limpar">
+                        <input type="button" value="Cadastrar">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td> Endereços de Entrega <br>
+                <label for="data">Data de entrega</label>
+                <input type="date" name="data" id="data">
+                <label for="endereco">Endereço</label>
+                <input type="text" name="endereco" id="endereco">
+                </td>
+            </tr>
+    </table>
+</body>
+</html>

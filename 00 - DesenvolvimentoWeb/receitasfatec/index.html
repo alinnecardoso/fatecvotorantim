@@ -6,32 +6,27 @@
     <title>Receita de Bolinha de churros</title>
     <link rel="stylesheet" href="../receitasfatec/style/style.css">
     <style>
-        button:hover{
-            background-color: lightblue;
-        }
-        td{
-            border: solid black 1px;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Poppins&family=Titillium+Web&display=swap');
     </style>
 </head>
-<body style="text-align: center; border: solid black 1px; margin: 2% 25% 2% 25%;">
-    <header style= "border: solid   black 1px;"> <!--Título ao icone TudoGostoso-->
+<body>
+    <header> <!--Título ao icone TudoGostoso-->
         <h1>BOLINHA DE CHURROS</h1>
 
-        <figure id="star"style="border: solid black 1px;">
+        <figure id="star">
             <img src="img/star.png" alt="estrela">
             <img src="img/star.png" alt="estrela">
             <img src="img/star.png" alt="estrela">
             <img src="img/star.png" alt="estreala">
             <img src="img/rating.png" alt="meia estrela">
-            <figcaption>Avalie essa receita</figcaption>
+            <figcaption style="font-size: small;">Avalie essa receita</figcaption>
         </figure>
     </header>
     <main>
 
         <section>
             <picture>
-                <img style="border: solid black 1px;" src="https://static.itdg.com.br/images/640-400/26d099dd5887204f191fc38c0c564f4e/366034-original.jpg" alt="" width="99.9%">
+                <img src="https://static.itdg.com.br/images/640-400/26d099dd5887204f191fc38c0c564f4e/366034-original.jpg" alt="" width="99.9%">
             </picture>
         </section>
         <section>
@@ -40,9 +35,11 @@
                     <th><img src="img/food-tray.png" alt="" width= 25%></th>
                     <th><img src="img/heart.png" alt="" width="25%"></th>
                     <th><img src="img/chat-bubbles.png" alt="" width="25%"></th>
-                    <th rowspan="3"><img src="img/image-removebg-80.png" alt="" width="70%"></th>
-                    <th rowspan="3"><p>Tudo Gostoso</p>
-                                    <p>Membro desde 2005</p></th>
+                    <th class="iconetabela" rowspan="3" style="border: solid white 1px; padding: 0% 0% 0% 0%;"><img src="img/image-removebg-80.png" alt="" width="100%"></th>
+                    <th class="iconetabela" rowspan="3"  style="border: solid white 1px; margin: 0% 0% 0% 0%;">
+   
+    <p style="font-size: small; color: #fd6c23;">TUDOGOSTOSO</p>
+                        <p style="font-size: 60%;">Membro desde 2005</p>
                 </tr>
                 <tr><td>Preparo</td>
                     <td>Rendimento</td>
@@ -59,14 +56,14 @@
         </section>
         <div class="vazio"></div>
         <!--Ingredientes ao icone de comprar ingredientes-->
-        <section style="border: solid black 1px;"> <!--Ingredientes ao recheio-->
+        <section> <!--Ingredientes ao recheio-->
             <figure id="avental">
                 <img src="img/apron.png" alt="avental">
             </figure>
             <h2 id="ingredientes">Ingredientes</h2>
-            <article style="border: solid black 1px">
-                <h3 style="border: solid black 1px; background-color: #f0f0f0;">Massas</h3>
-                <ul style="border: solid rgb(94, 2, 2) 1px">
+            <article>
+                <h3 class="listas">MASSA</h3>
+                <ul>
                     <li>200ml de água</li>
                     <li>1 colher (sopa) de manteiga</li>
                     <li>4 colheres (sopa) açucar</li>
@@ -74,16 +71,16 @@
                     <li>1 xicara de farinha de trigo</li>
                 </ul>
             </article>
-            <article style="border: solid black 1px">
-                <h3 style="border: solid black 1px; background-color: #f0f0f0;">Empanamento</h3>
-                <ul style="border: solid black 1px">
+            <article>
+                <h3 class="listas">EMPANAMENTO</h3>
+                <ul>
                     <li>1 colher (sopa) de canela</li>
                     <li>1/2 xicara de açucar</li>
                 </ul>
             </article>
-            <article style="border: solid black 1px">
-                <h3 style="border: solid black 1px; background-color: #f0f0f0;">Recheio</h3>
-                <ul style="border: solid black 1px">
+            <article>
+                <h3 class="listas">RECHEIO</h3>
+                <ul>
                     <li>150g de doce de leite</li>
                 </ul>
             </article>
@@ -91,7 +88,9 @@
         <section>
             
                     <p id="button">
-                        <img src="" alt="">Comprar ingredientes</p>
+                        <img src="img/carrinho-de-compras.png" alt="carrinho_de_compras">
+                        Comprar ingredientes
+                    </p>
         </section>
     </main>
     <footer><!--Comprar ingredientes-->
