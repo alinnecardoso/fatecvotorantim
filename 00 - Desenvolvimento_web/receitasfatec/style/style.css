@@ -62,4 +62,8 @@ ul,li{
     border-radius: 25px;
     padding: 1% 0% 1% 0%;
     text-align: center;
+    display: inline-block;
+}
+.carrinho{
+   
 }
