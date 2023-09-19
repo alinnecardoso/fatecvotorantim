@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58b4ec1e-0394-46de-8695-f3beb7116cb2" name="Changes" comment="" />
+    <list default="true" id="58b4ec1e-0394-46de-8695-f3beb7116cb2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Aula06/exercicio01.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Aula06/exercicio02.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Aula06/exercicio03.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aula05/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../aula05/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,14 +30,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Alunos/Documents/Alinne/fatecvotorantim/00 - Algoritmo/pythonProject/aula05"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Alunos/Documents/Alinne/fatecvotorantim/00 - Algoritmo/pythonProject/aula05&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

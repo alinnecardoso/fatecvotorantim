@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d2dd094-756e-42cc-a37d-d86aee30dfab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ex01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex02.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex03.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex04.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exemplo01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exemplo02.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exemplo03.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exemplo04.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../aula04/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../aula04/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../00 - DesenvolvimentoWeb/receitasfatec/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00 - DesenvolvimentoWeb/receitasfatec/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../00 - DesenvolvimentoWeb/receitasfatec/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00 - DesenvolvimentoWeb/receitasfatec/style/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Aula06/exercicio01.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Aula06/exercicio02.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,13 +29,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "preferences.general"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
