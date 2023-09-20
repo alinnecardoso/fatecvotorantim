@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Fatec</title>
+</head>
+<body>
+    <h2> Roupas XIQUE XIQUE</h2>
+    <h3>Cadatro</h3>
+    <form>
+        <fieldset>
+            <legend>Dados pessoais</legend>
+            <label for="nome">Nome</label>
+            <input type="text" 
+                    id="nome" 
+                    name="nomecliente" 
+                    maxlength="30" 
+                    minlength="10" 
+                    size="50" 
+                    required
+                    >
+            <label for="senha"> Senha </label>
+            <input type="password" 
+                    name="senha" 
+                    id="senha"
+                    maxlength="12"
+                    placeholder="senha com letras e números">
+
+            <label for="estadocivil">Estadio Civil</label>
+            <input type="radio" name="estadocivil" id="solteiro" value="Solteiro" > <label for="solteiro">Solteiro</label>
+
+            <input type="radio" name="estadocivil" id="casado" value="Casado"> <label for="casado">Casado</label>
+
+            <input type="radio" name="estadocivil" id="viuvo" value="Viuvo"> <label for="viuvo">Viúvo</label>
+            <br><br>
+
+            <label for="cor">Cor preferida</label>
+            <input type="color" name="cor" id="cor">
+
+            <label for="satisfacao">Grau de Satisfação</label> <input type="range" name="Satisfação" id="satisfacao" min="1" max="10" step="1">
+
+        </fieldset>
+        <fieldset>
+            <legend> Dados de cobrança</legend>
+            <label for="cidade">Cidade</label>
+            <input type="text" 
+                    name="cidade" 
+                    id="cidade"
+                    value="Votorantim"
+                    disabled
+                    >
+
+            <label for="uf">UF</label>
+            <select id="uf" name="uf">
+                <optgroup label="Região Norte">
+                    <option value="Amazonas">AM</option>
+                    <option value="Acre">AC</option>
+                </optgroup>
+                <optgroup label="Região Sudeste">
+                    <option value="São Paulo">SP</option>
+                    <option value="Espírito Santo">ES</option>
+                    <option value="Rio de Janeiro">RJ</option>
+                    <option value="Minas Gerais">MG</option>
+                </optgroup>
+            </select>
+
+            <!-- Expressão Regular -regex- -->
+            <label for="cep">CEP</label>
+            <input type="" value="">
+
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" name="telefone" pattern="[0-9] {3} - [0-9] {3} - [0-9] {4}">
+
+            <input type="checkbox" id="envio" name="tipoenvio" checked>
+            <label for="envio">Express?</label>
+        </fieldset>
+        <button> Cadastrar </button>
+        <input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>
