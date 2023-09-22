@@ -29,41 +29,47 @@ th,tr{
   width: 22%;  
   background-color: #f0f0f0;
 }
+td.cor {
+    color: #fd6c23;
+}
 .iconetbela{
     border: solid white 1px;
     padding: 0% 0% 0% 0%;
     background-color: #f0f0f0;
+    
 }
 div.vazio{
     padding: 5%; width: 89.9%; 
     margin: 0.5% 0% 0.5% 0%; 
     background-color: #f0f0f0;
+    
 }
 h2#ingredientes{
-    border: solid black 1px; 
+    text-align: center;
     color: #fd6c23; 
-    width: 25%; 
+    width: 0%; 
+    margin: 0% 20% 0.5% 0%;
     display: inline-block;
+
 }
 figure#avental{
-    border: solid black 1px; 
-    width: 5%; 
+     text-align: center;
+    width: 0%; 
+    margin: 0.5% 4% 0% 0%;
     display: inline-block;
+
 }
 ul,li{
     text-align: justify;
 }
 #button{
-    font-size: small;
-    border: solid black 1px; 
+    font-size: small; 
     background-color: #fd6c23; 
     color: white;
-    width: 35%;
+    width: 30%;
     border-radius: 25px;
     padding: 1% 0% 1% 0%;
     text-align: center;
     display: inline-block;
-}
-.carrinho{
-   
+    margin: 0% 65% 2% 0%;
 }
