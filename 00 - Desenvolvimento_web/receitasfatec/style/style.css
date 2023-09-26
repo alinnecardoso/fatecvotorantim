@@ -1,0 +1,75 @@
+@charset "UTF-8";
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    margin: 2% 25% 2% 25%;
+    border: solid black 1px;
+}
+h1{
+    display: inline-block;
+    color: #fd6c23;
+}
+h3.listas{
+    padding:1.5% 0% 1.5% 0%;
+    font-size: small;
+    background-color: #f0f0f0;
+}
+figure#star{
+    display: inline-block;
+    margin: 0% 0% 2% 23%;
+}
+table{
+    display: contents;
+    margin: 2% 0% 0% 0%;
+    padding: 0% 12% 0% 12%;
+    width: 100%;;
+    background-color: #f0f0f0;
+}
+th,tr{
+  width: 22%;  
+  background-color: #f0f0f0;
+}
+td.cor {
+    color: #fd6c23;
+}
+.iconetbela{
+    border: solid white 1px;
+    padding: 0% 0% 0% 0%;
+    background-color: #f0f0f0;
+    
+}
+div.vazio{
+    padding: 5%; width: 89.9%; 
+    margin: 0.5% 0% 0.5% 0%; 
+    background-color: #f0f0f0;
+    
+}
+h2#ingredientes{
+    text-align: center;
+    color: #fd6c23; 
+    width: 0%; 
+    margin: 0% 20% 0.5% 0%;
+    display: inline-block;
+
+}
+figure#avental{
+     text-align: center;
+    width: 0%; 
+    margin: 0.5% 4% 0% 0%;
+    display: inline-block;
+
+}
+ul,li{
+    text-align: justify;
+}
+#button{
+    font-size: small; 
+    background-color: #fd6c23; 
+    color: white;
+    width: 30%;
+    border-radius: 25px;
+    padding: 1% 0% 1% 0%;
+    text-align: center;
+    display: inline-block;
+    margin: 0% 65% 2% 0%;
+}
