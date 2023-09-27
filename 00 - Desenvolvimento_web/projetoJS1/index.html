@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+</head>
+<body>
+    <h2>Cálculo de números</h2>
+    <label for="n1" id="ln1"> Número 1</label> 
+    <input type="text" id="n1" name="vn1">
+    <input type="button" value="Somar" onclick="somar()">
+    <button onclick="dobro()">Dobrar</button>
+
+    <script>
+        function somar()
+        {
+       let x = Number(document.getElementById('n1').value);
+       x = (x + 190).toFixed(2);
+       console.log('Valor de x é ' + x);
+       alert(x);
+       if (x > 0){
+        console.log("V");
+        alert(x);}
+        else
+            {console.log("F");}
+        }
+
+        function dobro()
+        {
+        let y = document.getElementById('n1').value;
+        y = Number(y) * 2
+        console.log('Valor de y é ' + y);
+        alert(y);
+        if (x > 0){
+            console.log("V");
+            alert(y);}
+        else
+            {console.log("F");}
+        }
+
+        
+    </script>
+</html>
