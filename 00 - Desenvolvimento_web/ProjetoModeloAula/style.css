@@ -58,13 +58,26 @@ footer a:hover{
 }
 #redesocial{
     display: inline-block;
-    margin: 0% 0% 0% 20%;
-    border: solid black 1px;
+    margin: 0% 0% 0% 17%;
+    border-right: solid black 1px;
+    border-left: solid black 1px;
     padding: 0% 1% 0% 1%;
+    width: 20%;
+    height: 200px;
 }
 #contato{
     display: inline-block;
-    margin: 1% 20% 1% 15%;
-    border: solid black 1px;
-    padding: 0% 1% 0% 1%; 
+    margin: 0% 0% 0% 0%;
+    padding: 0% 1% 0% 1%;
+    width: 20%;
+    height: 200px;
+}
+#endereco{
+    display: inline-block;
+    margin: 1% 0% 1% 0%;
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+    padding: 0% 1% 0% 1%;
+    width: 20%;
+    height: 200px;
 }
