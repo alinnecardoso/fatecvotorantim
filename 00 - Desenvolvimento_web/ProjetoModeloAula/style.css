@@ -1,0 +1,70 @@
+@charset "utf-8";
+h2 {
+    font-family: "Roboto Slab", Georgia, serif;
+    text-align: center;
+    
+}
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+nav ul li {
+    font-weight: bolder;
+    display: inline;
+    background-color: rgb(47, 0, 255);
+    border: solid black 1.5px;
+    border-radius: 25px;
+    padding:0.2% 1% 0.2% 1%;
+    color: white;
+    margin-left: 1%;
+}
+nav ul li:hover {
+    background-color: white;
+    color: black;
+    font-weight: bolder;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+}
+section{
+    background-color: lightskyblue;
+    border: rgb(0, 56, 91) 5px solid;
+    border-radius: 25px;
+    margin: 1% auto;
+    width: 80%;
+}
+.video{
+    display: block;
+    width: min-content;
+    height: 250px;
+    margin: 2% auto 2% auto;
+    border: solid 3px black;
+    border-radius: 25px;
+}
+audio{
+    display: inline;
+    margin: 1% 9.5% 1% 9.5%;
+    border: solid black 3.5px;
+    border-radius: 31px;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+footer a:hover{
+    color: red;
+}
+#redesocial{
+    display: inline-block;
+    margin: 0% 0% 0% 20%;
+    border: solid black 1px;
+    padding: 0% 1% 0% 1%;
+}
+#contato{
+    display: inline-block;
+    margin: 1% 20% 1% 15%;
+    border: solid black 1px;
+    padding: 0% 1% 0% 1%; 
+}
