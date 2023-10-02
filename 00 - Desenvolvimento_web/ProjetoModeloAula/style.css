@@ -1,4 +1,8 @@
 @charset "utf-8";
+body{
+    background-color: #F2F2F2;
+    margin: 0% 10% 0% 10%;
+}
 h2 {
     font-family: "Roboto Slab", Georgia, serif;
     text-align: center;
@@ -28,7 +32,7 @@ nav a{
     color: black;
 }
 section{
-    background-color: lightskyblue;
+    background-color: #5E9FF2;
     border: rgb(0, 56, 91) 5px solid;
     border-radius: 25px;
     margin: 1% auto;
@@ -44,11 +48,10 @@ section{
 }
 audio{
     display: inline;
-    margin: 1% 9.5% 1% 9.5%;
+    margin: 1% 9.0% 1% 9.0%;
     border: solid black 3.5px;
     border-radius: 31px;
 }
-
 footer a {
     text-decoration: none;
     color: black;
@@ -56,28 +59,33 @@ footer a {
 footer a:hover{
     color: red;
 }
+#informacao{
+    padding: 1%;
+}
 #redesocial{
     display: inline-block;
-    margin: 0% 0% 0% 17%;
-    border-right: solid black 1px;
+    padding-left: 1%;
+    padding-right: 1%;
+
+    width: 18%;
+    margin-left: 8%;
     border-left: solid black 1px;
-    padding: 0% 1% 0% 1%;
-    width: 20%;
-    height: 200px;
 }
 #contato{
     display: inline-block;
-    margin: 0% 0% 0% 0%;
-    padding: 0% 1% 0% 1%;
-    width: 20%;
-    height: 200px;
+    padding-left: 1%;
+    padding-right: 1%;
+
+    width: 28%;
+    border-left: solid black 1px;
+    border-right: solid black 1px;
 }
 #endereco{
     display: inline-block;
-    margin: 1% 0% 1% 0%;
-    border-left: solid black 1px;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1.5%;
+
+    width: 25%;
     border-right: solid black 1px;
-    padding: 0% 1% 0% 1%;
-    width: 20%;
-    height: 200px;
 }
