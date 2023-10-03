@@ -15,10 +15,10 @@ nav ul {
 nav ul li {
     font-weight: bolder;
     display: inline;
-    background-color: rgb(47, 0, 255);
-    border: solid black 1.5px;
+    background-color: #0540F2;
+    border: solid black 2px;
     border-radius: 25px;
-    padding:0.2% 1% 0.2% 1%;
+    padding:0.5% 1.5% 0.5% 1.5%;
     color: white;
     margin-left: 1%;
 }
@@ -26,6 +26,7 @@ nav ul li:hover {
     background-color: white;
     color: black;
     font-weight: bolder;
+    font-size: large;
 }
 nav a{
     text-decoration: none;
@@ -48,7 +49,7 @@ section{
 }
 audio{
     display: inline;
-    margin: 1% 9.0% 1% 9.0%;
+    margin: 1% 8.5% 1% 8.5%;
     border: solid black 3.5px;
     border-radius: 31px;
 }
@@ -63,29 +64,32 @@ footer a:hover{
     padding: 1%;
 }
 #redesocial{
-    display: inline-block;
-    padding-left: 1%;
-    padding-right: 1%;
-
     width: 18%;
-    margin-left: 8%;
+    margin-left: 11%;
     border-left: solid black 1px;
+    border-right: solid black 1px;
 }
 #contato{
-    display: inline-block;
-    padding-left: 1%;
-    padding-right: 1%;
-
     width: 28%;
+}
+#endereco{
+    width: 25%;
+    padding-bottom: 1.5%;
     border-left: solid black 1px;
     border-right: solid black 1px;
 }
-#endereco{
+footer div{
     display: inline-block;
     padding-left: 1%;
     padding-right: 1%;
-    padding-bottom: 1.5%;
-
-    width: 25%;
-    border-right: solid black 1px;
+}
+#videos h2, #audios h2, #videosY h2{
+    background-color: #F2F2F2;
+    color: #0540F2;
+    font-size: x-large;
+    width: fit-content;
+    padding: 1% 3% 1% 3%;
+    border-radius: 25px;
+    border: solid #030F26 2px;
+    margin: 2% 45%;
 }
