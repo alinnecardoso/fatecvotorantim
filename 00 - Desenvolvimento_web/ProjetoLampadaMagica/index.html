@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Lâmpada Mágica</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h2 id="titulo">Lâmpada Mágica</h2>
+    <img src="luzDesligada.gif" alt="Lâmpada Desligada" id="lampada" onmousemove="ligar()" onmouseout="desligar()">
+    <br><br>
+    <button onclick="ligar()">Ligar</button>
+    <button onmousemove="desligar()">Desligar</button>
+    <button onclick="aparecer()">Aparecer</button>
+    <button onclick="sumir()">Sumir</button>
+    <button onclick="alternar()">Alternar</button>
+</body>
+</html>
