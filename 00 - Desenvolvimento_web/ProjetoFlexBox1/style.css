@@ -1,0 +1,20 @@
+section, h2{
+    border: solid 1px black;
+}
+h2{
+    color: rgb(0, 0, 156);
+}
+main{
+    border: solid 1px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#sectionUm{
+    display: flex;
+}
+div{
+    border: solid 1px black;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,55 @@
+header{
+  width: 90%;
+  margin: 0.5% 40% 0.5% 40%;
+}
+body{
+  background-color: rgba(107, 57, 0, 0.555);
+}
+header nav a {
+  align-items: center;
+  background-color: rgb(47, 20, 0);
+  padding: 1%;
+  border-radius: 2rem;
+  color: white;
+  text-decoration: none;
+}
+
+
+img{
+  width: 25%;
+}
+article {
+  border: solid 1px black;
+  border-radius: 2%;
+  background-color: white;
+  margin: 0.5% 1% 0.5% 1%;
+}
+.DoSal{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 2%;
+  margin-top: 0%;
+  align-items: stretch;
+}
+article{
+  width: 500px;
+  text-align: center;
+}
+main{
+  display: flex;
+  flex-direction: column;
+}
+ul{
+  display: inline-block;
+  text-align: left;
+}
+h2{
+  text-align: center;
+  color: white;
+  background-color: rgb(47, 20, 0);
+  padding: 0.2% 1% 0.2% 1%;
+  width: 100px;
+  border-radius: 25px;
+  margin: 5% 45% 0.5% 45%;
+}

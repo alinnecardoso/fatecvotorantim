@@ -26,4 +26,4 @@ function piscar(){
     alternar()
     
 }
-setInterval(piscar, 500);
+/*setInterval(piscar, 500);*/
