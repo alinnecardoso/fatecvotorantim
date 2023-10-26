@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .img-carrossel{
+            width: 100%;
+            height: 35rem;
+            margin: 2% 0%;
+        }
+        h2{
+            display: inline-block;
+            margin-right: 81%;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container-fluid">
+        
+        <nav class="navbar bg-body-tertiary">
+            <div class="container">
+                
+              <a class="navbar-brand" href="#">
+                <img src="../projetocurriculocss/img/instagram.png" alt="Bootstrap" width="30" height="24">
+              </a>
+              <h2>Bootstrap</h2>
+            </div>
+          </nav>
+        <form>
+            <div class="alert alert-primary" role="alert">
+                Dados Pessoais
+        
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8">
+                        <Label for="nome" class="form-label">Nome:</Label>
+                        <input class="form-control" type="text" name="nome" id="nome">
+                    </div>
+        
+                    <br>
+                    <div class="col-md-4">
+                        <label for="senha" class="form-label">Senha:</label>
+                        <input type="password" name="senha" id="senha" class="form-control">
+                    </div>
+              </div>
+            <br><br>
+            <button class="btn btn-primary">Cadastrar</button>
+            <br><br>
+        </form>
+        <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-inner">
+              <div
+              class="carousel-item active">
+                <img class="img-carrossel" src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D"
+                class="d-block w-100" alt="...">
+              </div>
+              <div
+              class="carousel-item">
+                <img class="img-carrossel" src="https://th.bing.com/th/id/OIP.K-pewtiYGCenhCb-yCnRcAHaEc?w=282&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                class="d-block w-100" alt="...">
+              </div>
+              <div
+              class="carousel-item">
+                <img class="img-carrossel" src="https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODZ8fGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
