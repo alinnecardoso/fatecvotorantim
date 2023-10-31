@@ -2,7 +2,7 @@ i = 0
 lista = {}
 dic = {}
 
-while i < 10:
+while i < 5:
     i += 1
     idade = int(input(f"Digite a {i}º idade: "))
     if idade >= 18:
@@ -16,6 +16,6 @@ print(f'''O(s) sobrenome(s) do(s) maior(es) de idade é(são): ''')
 for chave, valor in dic.items():
     maior = ({chave})
     maior_str = str(maior)
-    str_sem_chaves = maior_str.replace('{','').replace('}', '')
+    str_sem_chaves = maior_str.replace('{', '').replace('}', '')
 
     print(str_sem_chaves)
