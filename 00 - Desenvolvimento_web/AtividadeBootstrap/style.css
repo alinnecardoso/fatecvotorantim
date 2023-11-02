@@ -1,0 +1,25 @@
+header{
+    background-color: #CCE5FF;
+    color: #1A4B86;
+    font-weight: 700;
+    padding: 2% 0% 5% 2%;
+    border-radius: 0.4rem;
+}
+main{
+    border: solid black 1px;
+    margin: 0% 10%;
+    padding: 1%;
+}
+#botao{
+    margin: 2% 25%;
+}
+textarea{
+    background-color: #E9ECEF;
+    width: 100%;
+    border-radius: 0.4rem;
+}
+#text{
+    background-color: #E9ECEF;
+    width: 100%;
+    border-radius: 0.4rem;
+}
