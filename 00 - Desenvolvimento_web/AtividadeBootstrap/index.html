@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- <header>
@@ -17,36 +18,40 @@
             <p>Hamburgueria XGostoso</p>
         </header>
         <section class="container">
-            <form class="row" class="container">
+            <!-- <form class="row" class="container"> -->
                 <div class="col-md-6">
                   <label for="inputEmail4" class="form-label"><i class="ri-phone-line"></i>Telefone</label>
                   <input type="email" class="form-control" id="inputEmail4">
                 </div>
                 <div class="col-md-6">
-                  <label for="inputPassword4" class="form-label"><i class="ri-user-line"></i>Nome do Cliente</label>
-                  <input type="password" class="form-control" id="inputPassword4">
+                  <label for="nome" class="form-label" id="labelnome"><i class="ri-user-line"></i>Nome do Cliente</label>
+                  <input type="text" class="form-control" id="nome">
                 </div>
                 <div class="col-6">
                   <label for="inputAddress" class="form-label">Combos</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="XSaldável">
+                  <select id="combo" class="form-select" aria-label="Default select example">
+                    <option value="20">R$20,00 ---------------------------------------- XSaudável </option>
+                    <option value="50">R$50,00 ---------------------------------------- XTudo </option>
+                    <option value="30">R$30,00 ---------------------------------------- Outros </option>
+                  </select>
                 </div>
                 <div class="col-3">
                     <p>Adicionais</p>
                     <div>
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1" name="adicionais" value="2">
+                        <label class="form-check-label" for="gridCheck1">
                         Bacon
                         </label>
                     </div>
                     <div>
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
+                        <input class="form-check-input" type="checkbox" id="gridCheck2" name="adicionais" value="2">
+                        <label class="form-check-label" for="gridCheck2">
                         Cheddar
                         </label>
                     </div>
                     <div>
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
+                        <input class="form-check-input" type="checkbox" id="gridCheck3" name="adicionais" value="2">
+                        <label class="form-check-label" for="gridCheck3">
                         Picles
                         </label>
                     </div>
@@ -58,14 +63,14 @@
                             <div class="form-check"> 
                                 <div class="form-check">
                                 <div>
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="entrega" id="gridRadios1" value="10" checked>
                                     <label class="form-check-label" for="gridRadios1">
                                     Para viagem
                                     </label>
                                 </div>
                                 <div>
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="gridRadios1">
+                                    <input class="form-check-input" type="radio" name="entrega" id="gridRadios2" value="0" checked>
+                                    <label class="form-check-label" for="gridRadios2">
                                     Balcão
                                     </label>
                             </div>
@@ -79,7 +84,7 @@
                 </div>
                     <div  id="botao" class="row">
                         <div class="col-2" class="container">
-                          <button type="submit" class="btn btn-primary">Calcular</button>
+                          <button class="btn btn-primary" onclick="calcularTotal()">Calcular</button>
                         </div>
                         <div class="col-2" class="container">
                             <button type="submit" class="btn btn-primary">Novo Pedido</button>
@@ -91,14 +96,14 @@
                 <section class="container">
                     <p><i class="ri-money-dollar-circle-line"></i>Total a Pagar:</p>
                     <div class="input-group mb-3">
-                        <input id="text" type="text" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input id="totalpagar" type="text" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                     <p><i class="ri-file-list-line"></i>Descrição do pedido:</p>
                     <div class="form-floating mb-3">
-                        <textarea id="floatingTextarea2Disabled"></textarea>
+                        <textarea id="floatingTextarea2Disabled" placeholder="..."></textarea>
                     </div>
                 </section>
-              </form>
+              <!-- </form> -->
         </section>
     </main>
 
