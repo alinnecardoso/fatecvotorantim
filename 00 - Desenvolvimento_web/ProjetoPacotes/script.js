@@ -8,7 +8,7 @@ function calcularTotalViagem()
     calcularAdicionais();
     let totalFinal = totalAdicionais + valorPacote;
     console.log(`Valor final: ${totalFinal}`);
-    // nome= document.getElementById('nome').value
+    combo= document.getElementById('nome').value
     // document.getElementById("mensagem").innerHTML = (`${nome} irá pagar ${valorPacote} pelo pacote e ${totalAdicionais} pelos adicionais `);
 }
 

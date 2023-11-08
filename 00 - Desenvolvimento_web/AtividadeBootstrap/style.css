@@ -22,4 +22,5 @@ textarea{
     background-color: #E9ECEF;
     width: 100%;
     border-radius: 0.4rem;
+    border: solid black 0.004rem;
 }

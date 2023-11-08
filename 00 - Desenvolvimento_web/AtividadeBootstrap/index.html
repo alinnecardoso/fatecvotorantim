@@ -10,14 +10,11 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- <header>
-        <p>Hamburgueria XGostoso</p>
-    </header> -->
     <main>
         <header>
             <p>Hamburgueria XGostoso</p>
         </header>
-        <section class="container">
+        <section class="row" class="container">
             <!-- <form class="row" class="container"> -->
                 <div class="col-md-6">
                   <label for="inputEmail4" class="form-label"><i class="ri-phone-line"></i>Telefone</label>
@@ -30,9 +27,9 @@
                 <div class="col-6">
                   <label for="inputAddress" class="form-label">Combos</label>
                   <select id="combo" class="form-select" aria-label="Default select example">
-                    <option value="20">R$20,00 ---------------------------------------- XSaudável </option>
-                    <option value="50">R$50,00 ---------------------------------------- XTudo </option>
-                    <option value="30">R$30,00 ---------------------------------------- Outros </option>
+                    <option value="20">R$20,00 ------------------------------------------------------- XSaudável </option>
+                    <option value="50">R$50,00 ------------------------------------------------------- XTudo </option>
+                    <option value="30">R$30,00 ------------------------------------------------------- Outros </option>
                   </select>
                 </div>
                 <div class="col-3">
@@ -96,7 +93,7 @@
                 <section class="container">
                     <p><i class="ri-money-dollar-circle-line"></i>Total a Pagar:</p>
                     <div class="input-group mb-3">
-                        <input id="totalpagar" type="text" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input id="totalpagar" class="form-control" type="text" aria-label="default input example">
                     </div>
                     <p><i class="ri-file-list-line"></i>Descrição do pedido:</p>
                     <div class="form-floating mb-3">
