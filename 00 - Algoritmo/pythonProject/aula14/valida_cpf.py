@@ -41,7 +41,7 @@ def valida_cpf():
 
     for k in cpf_semponto:
         if not k.isdigit():
-            
+
 
 
 print(valida_cpf())
