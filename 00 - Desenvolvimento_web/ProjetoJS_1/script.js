@@ -15,7 +15,7 @@ function calcularAreaTriangulo(){
     // calculando a área do triângulo
     area = 0.5 * base * altura;
     // Pegando o Elemento 'Caixa de Texto" e substituindo pela área do trângulo
-    document.getElementById("areatriangulo").value = `A área do Triângulo é ${area.toFixed(2)}m³`;
+    document.getElementById("areatriangulo").value = `A área do Triângulo é ${area.toFixed(2)}m²`;
 }
 
 function calcularMediaPonderada(){
@@ -68,118 +68,36 @@ function calcularConsumoMedio(){
     document.getElementById("consumomedio").value = `Consumo Médio: ${consumomedio.toFixed(2)}Km/L`;
 }
 function calcularTudo(){
-    // Pegar o valor do salário mês
-    let salario =  parseFloat(document.querySelector("#salario2").value);
-    // Pegar as horas trabalhadas na semana
-    let horasSem = parseFloat(document.querySelector("#horas").value);
+    const horas = 62;
+    const refeicao = 1.50;
 
-        
-    if (horasSem > 40){
-        // Horas trabalhadas no dia
-        horasDia = parseFloat(horasSem / 5);
-        // Horas Trabalhadas no Mês
-        horasMes = parseFloat(horasSem * 5);
+    // Pegar o valor do salário bruto
+    salario = parseFloat(document.querySelector("#salario2").value);
+    // Pegar o valor da quantidade de refeiçoes durante as 62 horas
+    qtdrefeicao = parseFloat(document.querySelector("#refeicao").value);
 
-        // Salário por hora
-        salHora = salario / horasMes;
-        // Salário por dia
-        salDia = salHora * 8;
-        // Salário semana
-        salSem = salDia * 5;
-        // Salário mês
-        salMes = salSem * 5;
+    // Valor total das refeições
+    valorrefeicao = qtdrefeicao * refeicao;
+    // Valor do Salário semanal
+    salSem = salario / 5;
+    // Valor do Salário por hora
+    salHora = salSem / horas;
 
+    document.getElementById("calcularTudo").innerHTML = `Salário Bruto: R$${salario.toFixed(2)}
+Desconto da Refeição: R$${valorrefeicao.toFixed(2)}
+Salário Liquido: R$${(salario - valorrefeicao).toFixed(2)}`
+}
 
-        // Valor Liquido (com Desconto da refeição no dia)
-        Desc_Dia = salDia - 1.5;
-        // Valor Liquido (com Desconto da refeição na semana)
-        Desc_Sem = salSem - (1.5 * 5);
-        // Valor Liquido (com Desconto da refeição no mês)
-        Desc_mes = salMes - (1.5 * 25);
-        
-
-        // Quantas horas a mais
-        horasExtra = horasSem - 40;
-        // Horas por mês
-        horasMes = horasSem * 5;
-        // Salário por hora normal
-        salHora = (salario / horasMes);
-
-        // Salário por hora extra vezes 3
-        salHora3 = (salario / horasMes) * 3;
-        // Valor a ser acrescentado no salário por horas extras
-        valorHoraExtra = salHora3 * horasExtra;
-        // Salário Bruto
-        bruto = salario + valorHoraExtra
-
-        // Quantidade total descontada no Mês
-        Desc_Refeicao = bruto - Desc_Sem;
-
-        // // Salário por hora
-        // salDia = salHora3 * 8;
-        // // Valor Liquido (com Desconto da refeição no dia)
-        // Desc_Dia = salDia - 1.5;
-        // // Valor Liquido (com Desconto da refeição na semana)
-        // Desc_Sem = Desc_Dia * 5;
-        // // Valor Liquido (com Desconto da refeição no mês)
-        // Desc_mes = Desc_Sem * 5;
-        // // Quantidade total descontada no Mês
-        // Desc_Refeicao = bruto - Desc_mes;
-
-
-//     alert(`Valor total de horas extras: R$${valorHoraExtra.toFixed(2)}
-//     Horas Extras: ${horasExtra}
-// Salário dia: R$${salDia.toFixed(2)}
-// dia com desconto: R$${Desc_Dia.toFixed(2)}
-// Salario Semana: R$${salSem.toFixed(2)}
-// semana com desconto: R$${Desc_Sem.toFixed(2)}
-// Salario mês: R$${salMes}
-// mês com desconto: R$${Desc_mes.toFixed(2)}`);
-
-    document.getElementById("calcularTudo").value = `Salário Bruto: R$${(bruto).toFixed(2)}
-    Desconto: R$${(1.5 * 25).toFixed(2)}
-    Salário Liquído: R$${(bruto - (1.5 * 25)).toFixed(2)}`;
-    }
-    else if (horasSem < 40){
-        alert("Carga horária miníma não atingida")
+function gerarNumeroAleatorio(min, max){
+    var min = 1
+    var max = 999
+    num = (Math.floor(Math.random() * (max - min + 1) ) + min);
+    console.log(num)
+    
+    if(num % 2 == 0){
+        document.getElementById("exibirnumero").innerHTML = `O número ${num} é PAR!`;
     }
     else{
-
-        // Horas trabalhadas no dia
-        horasDia = parseFloat(horasSem / 5);
-        // Horas Trabalhadas no Mês
-        horasMes = parseFloat(horasSem * 5);
-
-        // Salário por hora
-        salHora = salario / horasMes;
-        // Salário por dia
-        salDia = salHora * 8;
-        // Valor Liquido (com Desconto da refeição no dia)
-        Desc_Dia = salDia - 1.5;
-        // Valor Liquido (com Desconto da refeição na semana)
-        Desc_Sem = Desc_Dia * 5;
-        // Valor Liquido (com Desconto da refeição no mês)
-        Desc_mes = Desc_Sem * 5;
-        // Quantidade total descontada no Mês
-        Desc_Refeicao = salario - Desc_mes
-
-
-        document.getElementById("calcularTudo").value = `Salário Bruto: R$${salario.toFixed(2)}
-    Desconto: R$${Desc_Refeicao.toFixed(2)}
-    Salário Liquído: R$${Desc_mes.toFixed(2)}`;
+        document.getElementById("exibirnumero").innerHTML = `O número ${num} é ÍMPAR!`;
     }
 }
-
-function calculoHoraExtra(){
-    horasExtra = horasSem - 40;
-    horasMes = horasSem * 5;
-    horasDia = horasSem / 5;
-    salHora = (salario / horasMes) * 3;
-    valorHoraExtra = 3 * horasExtra;
-}
-
-//     document.getElementById("calcularTudo").value = `Salário Bruto: R$${salarioBrutoMes.toFixed(2)}
-// Desconto: R$${Desc_Refeicao.toFixed(2)}
-// Salário Líquido: R$${Desc_mes.toFixed(2)}`;
-
-
