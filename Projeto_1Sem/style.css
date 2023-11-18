@@ -1,6 +1,6 @@
-.roboto{
+.roboto_condensed_bold{
     color: #FFF;
-    font-family: Roboto;
+    font-family: 'Roboto Condensed';
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 600;
@@ -12,29 +12,34 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
-    mask-position: relative;
     width: 100%;
 }
 main{
     padding: 1%;
     margin: 0% 18%;
-    width: 75.125rem;
-    height: 46.375rem;
+    width:65%;
+    height: 40rem;
     flex-shrink: 0;
     border-radius: 0.5rem;
     background: var(--cor-primaria, #059954);
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 header.row{
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
     display: flex;
     flex-wrap: wrap;
-    margin-top: calc(-1 * var(--bs-gutter-y));
-    margin-right: calc(-.5 * var(--bs-gutter-x));
-    margin-left: calc(-.5 * var(--bs-gutter-x));
     justify-content: space-evenly;
 }
 main#voltar{
     padding: 5%;
+}
+section{
+    border: solid black 1px;
+}
+#divsao{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+{
+    background-color: rgba(255, 255, 255, 0);
 }
