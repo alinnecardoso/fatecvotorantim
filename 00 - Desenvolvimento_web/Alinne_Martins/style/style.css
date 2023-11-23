@@ -1,0 +1,66 @@
+body{
+    background-color: rgba(255, 195, 54, 0.379);
+}
+#body{
+    background-color: #ffc33661;
+    font-family: 'PT Serif', serif;
+    padding-bottom: 2%;
+}
+
+.img{
+    width: 15rem;
+    border-radius: 5rem;
+    border: solid orange 2px;
+}
+.img:hover{
+    width: 112%;
+}
+#imggrande{
+    width: 15rem;
+}
+p{
+    color: rgb(1, 1, 167);
+    background-color: rgba(105, 153, 255, 0.797);
+    padding: 1% 1%;
+    margin: 0% 3%;
+    border-radius: 0.2rem;
+}
+main{
+    margin: 1% 3%;
+}
+#nomefone{
+    margin-bottom: 1.5%;
+}
+#promocao{
+    margin: 1% 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.blockpro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.blockpro2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.blockpro input{
+    width: 100%;
+}
+#compra{
+    padding: 2% 0%;
+    background-color: rgba(169, 169, 0, 0.386);
+    height: 9.55rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+#compra label{
+    font-weight: 600;
+}
