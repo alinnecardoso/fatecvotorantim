@@ -1,7 +1,11 @@
+:root{
+    --tam-fonte: 1.25rem;
+}
 .roboto_condensed_bold{
+    
     color: var(--titulo,  #FFF);
     font-family: 'Roboto Condensed';
-    font-size: 1.25rem;
+    font-size: var(--tam-fonte);
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -10,12 +14,14 @@
 ::placeholder{
     color: var(--subtitulo, #DFDFDF);
     font-family: 'Roboto Condensed';
-    font-size: 1.25rem;
+    font-size: var(--tam-fonte);
     font-style: normal;
     font-weight: 300;
     line-height: normal;
 }
 body {
+    
+    font-size: var(--tam-fonte);
     background-image: url('img/Desktop\ -\ 1.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -43,17 +49,17 @@ main#voltar{
 
 }
 .sectionleft{
-    margin: 10% 0% 0% 8%;
+    margin: 0% 0% 0% 8%;
 }
 .sectionright{
-    margin: 5% 8% 0% 0%;
-    border-left: solid 1px white;
+    margin: 0% 8% 0% 0%;
 }
 #divisao{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 5%;
+    margin: 5% 0% 0% 5%;
 }
 .inputcadastro{
     background-color: rgba(255, 255, 255, 0);
@@ -68,7 +74,7 @@ main#voltar{
     box-shadow: 1px 1px 25px 1px rgba(0, 0, 0, 0.25) inset;
     border-color: none;
     width: 50%;
-    height: 3.875rem;
+    height: 3.075rem;
     margin: 5% 24% 2% 24%;
 }
 #logo{

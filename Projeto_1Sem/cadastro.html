@@ -25,56 +25,65 @@
     <main class="conteiner">
         <!-- Botão voltar -->
         <div id="voltar" class="row conteiner" >
-            <svg  class="col-1" xmlns="http://www.w3.org/2000/svg" width="32" height="36" viewBox="0 0 42 46" fill="none">
-                <path d="M33 9.30834L29.9494 6.11292L13 23.9856L29.9666 41.8583L33 38.6629L19.0668 23.9856L33 9.30834Z" fill="white"/>
-                <path d="M43 9.19542L39.9494 6L23 23.8727L39.9666 41.7454L43 38.55L29.0668 23.8727L43 9.19542Z" fill="white"/>
-            </svg>
-            <p class="col-1 roboto_condensed_bold">voltar</p>
+            <div class="col-1 conteiner-fluid">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="36" viewBox="0 0 42 46" fill="none">
+                    <path d="M33 9.30834L29.9494 6.11292L13 23.9856L29.9666 41.8583L33 38.6629L19.0668 23.9856L33 9.30834Z" fill="white"/>
+                    <path d="M43 9.19542L39.9494 6L23 23.8727L39.9666 41.7454L43 38.55L29.0668 23.8727L43 9.19542Z" fill="white"/>
+                </svg>
+            </div>
+            <p class="col-1 roboto_condensed_bold conteiner-fluid">voltar</p>
         </div>
         
-        <div id="divisao" class="row conteiner-fluid">
-            <!-- Nome -->
-            <section id="section1" class="col-5 sectionleft">
-                <div class="mb-3">
-                    <div class="col-12"><label class="roboto_condensed_bold" for="formGroupExampleInput" class="form-label">Nome</label></div>
-                    <input class="inputcadastro roboto_condensed_light col-12"  type="text" class="form-control"  id="inputnome" placeholder="Insira seu Nome">
-                  </div>
-            </section>
-            <!-- Email -->
-            <section id="section2" class="col-5 sectionright">
-                <div class="mb-3">
-                    <div class="col-12"><label class="roboto_condensed_bold" for="formGroupExampleInput" class="form-label">Email</label></div>
-                    <input class="inputcadastro roboto_condensed_light col-12"  type="text" class="form-control"  id="inputemail" placeholder="Insira seu Email">
-                  </div>
-            </section>
-            <!-- Senha -->
-            <section id="section3" class="col-5 sectionleft">
-                <div class="mb-3">
-                    <div class="col-12"><label class="roboto_condensed_bold" for="formGroupExampleInput" class="form-label">Senha</label></div>
-                    <input class="inputcadastro roboto_condensed_light col-12"  type="text" class="form-control"  id="inputsenha" placeholder="Insira sua Senha">
-                  </div>
-            </section>
-            <!-- Confirmar senha -->
-            <section id="section4" class="col-5 sectionright">
-                <div class="mb-3">
-                    <div class="col-12"><label class="roboto_condensed_bold" for="formGroupExampleInput" class="form-label">Confirmar senha</label></div>
-                    <input class="inputcadastro roboto_condensed_light col-12"  type="text" class="form-control"  id="inputconfirmar" placeholder="Confirme sua senha">
-                  </div>
-            </section>
-            <!-- Endereço -->
-            <section id="section5" class="col-5 sectionleft">
-                <div class="mb-3">
-                    <div class="col-12"><label class="roboto_condensed_bold" for="formGroupExampleInput" class="form-label">Endereço</label></div>
-                    <input class="inputcadastro roboto_condensed_light col-12"  type="text" class="form-control"  id="inputendereço" placeholder="Insira seu Endereço">
-                  </div>
-            </section>
-            <!-- Telefone -->
-            <section id="section6" class="col-5 sectionright">
-                <div class="mb-3">
-                    <div class="col-12"><label class="roboto_condensed_bold" for="formGroupExampleInput" class="form-label">Telefone</label></div>
-                    <input class="inputcadastro roboto_condensed_light col-12"  type="text" class="form-control"  id="inputtelefone" placeholder="Insira seu Telefone/Celular">
-                  </div>
-            </section>
+        <div id="divisao" class="row">
+            <div id="esquerda" class="col-6 conteiner-fluid">
+                <!-- Nome -->
+                <section id="section1" class="sectionleft">
+                    <div class="mb-3">
+                        <div class="col-12"><label class="roboto_condensed_bold conteiner" for="formGroupExampleInput" class="form-label">Nome</label></div>
+                        <input class="inputcadastro roboto_condensed_light col-12 "  type="text" class="form-control"  id="inputnome" placeholder="Insira seu Nome">
+                      </div>
+                </section>
+                <!-- Senha -->
+                <section id="section3" class="sectionleft">
+                    <div class="mb-3">
+                        <div class="col-12"><label class="roboto_condensed_bold" for="formGroupExampleInput" class="form-label">Senha</label></div>
+                        <input class="inputcadastro roboto_condensed_light col-12"  type="text" class="form-control"  id="inputsenha" placeholder="Insira sua Senha">
+                      </div>
+                </section>
+                <!-- Endereço -->
+                <section id="section5" class="sectionleft">
+                    <div class="mb-3">
+                        <div class="col-12"><label class="roboto_condensed_bold" for="formGroupExampleInput" class="form-label">Endereço</label></div>
+                        <input class="inputcadastro roboto_condensed_light col-12"  type="text" class="form-control"  id="inputendereço" placeholder="Insira seu Endereço">
+                      </div>
+                </section>
+            </div>
+
+            <div id="direita" class="col-6 conteiner">
+                <!-- Email -->
+                <section id="section2" class="sectionright">
+                    <div class="mb-3">
+                        <div class="col-12"><label class="roboto_condensed_bold" for="formGroupExampleInput" class="form-label">Email</label></div>
+                        <input class="inputcadastro roboto_condensed_light col-12"  type="text" class="form-control"  id="inputemail" placeholder="Insira seu Email">
+                      </div>
+                </section>
+                
+                <!-- Confirmar senha -->
+                <section id="section4" class="sectionright">
+                    <div class="mb-3">
+                        <div class="col-12"><label class="roboto_condensed_bold" for="formGroupExampleInput" class="form-label">Confirmar senha</label></div>
+                        <input class="inputcadastro roboto_condensed_light col-12"  type="text" class="form-control"  id="inputconfirmar" placeholder="Confirme sua senha">
+                      </div>
+                </section>
+                
+                <!-- Telefone -->
+                <section id="section6" class="sectionright">
+                    <div class="mb-3">
+                        <label class="roboto_condensed_bold col-12" for="formGroupExampleInput" class="form-label">Telefone</label>
+                        <input class="inputcadastro roboto_condensed_light col-12"  type="text" class="form-control"  id="inputtelefone" placeholder="Insira seu Telefone/Celular">
+                      </div>
+                </section>
+            </div>
         </div>
 
         <!-- Botão -->
