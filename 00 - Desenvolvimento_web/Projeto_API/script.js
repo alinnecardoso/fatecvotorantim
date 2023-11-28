@@ -1,7 +1,6 @@
 const bandeira = "https://flagsapi.com/"
 const imgapi = "https://source.unsplash.com/1600x900/?Votorantim"
 
-
 // api de clima
 
 // pega o icone do botão
