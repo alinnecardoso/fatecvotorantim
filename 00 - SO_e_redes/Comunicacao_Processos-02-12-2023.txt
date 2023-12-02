@@ -1,0 +1,161 @@
+Comunicação entre processos
+
+o que é socket?
+	- Os sockets podem ser definidos como um processo de comunicação que permite dois diferentes processos de conversarem e trocarem informação entre si. 
+	- Na internet, por exemplo, eles funcionam para gerar uma conexão entre usuário e site.
+
+Servidor Web tem que suportar a linguagem que está sendo trabalhada
+	- HTML / CSS
+	- PHP
+	- JavaScript
+
+Protocolo do Servidor Web:
+	- HTTP (HyperText Transfer Protocol)
+
+Armazena o código em um servidor Web
+
+Como faz para criar um servidor Web?
+	- Ele tem um sistema operacional
+		- Linux:
+			- Apache
+			- NGIX
+			- TomCat
+		- Windows:
+			- ISS
+
+	- Buffer: 
+		- Local em uma memória física
+		- No buffer ficam dados temporários para serem lidos ou movidos de um lugar para outro. 
+		- O buffer sempre será armazenado em hardware não importando se quem faz essa armazenagem é um software ou algum dispositivo físico.
+	- Buffering: 
+		- É o ato de guardar e ler dados dentro dessa memória física. 
+
+- Escalabilidade, aumentar a capacidade de acesso (Transfrir para outro servidor)
+
+- Servidor de Email:
+	- Enviar:
+		- SMTP
+	- Receber:
+		- POP
+		- IMAP
+Como identificar hospedeiro:
+- Nome do Hospedeiro
+- Endereço de IP
+
+Peer-to-peer (Ponto a Ponto)
+	- É um tipo de rede distribuída na qual os computadores conectados ao sistema funcionam também como servidores. 
+	- Distribuição de arquivos
+	- Bitorrent
+	- É mais rápido, porém, compartilha com toda a rede
+
+================================================================= Revisão ======================================================================
+
+Questionário:
+
+1. Camada de Enlace (Camada 2) - TC/IP
+	I. Correta
+	II. Correta
+	III. Correta
+	
+	- Usa o MAC
+	- Protocolo de comunicação: CSMA/CD (Carrier Sense Multiple Access with Collision Detection)
+	- Evita o ruído
+	- cada dispositivo tem uma portadora
+	- Faz o controle de acesso
+	- Detector/Controle de colisão
+	- Circuito Virtual
+	- Se a portadora não estiver funcionando, ele vai retransmitir, para que o circuito virtual não se perca
+
+2. Camada Física (Camada 1) - TC/IP
+	I. Correta
+	II. Incorreta
+	III. Correta
+
+	- Cria um tabela MAC
+	- Na camada de enlace, não usa nenhum mecanismo de controle pelo protocolo IP
+
+3. Camada de Rede (Camada 3) - TC/IP
+	I. Correta
+	II. Correta
+	III. Incorreta
+
+	- Processo de encaminhamento
+	- Roteamento - Uso de protocolo para determinar qual é o melhor caminho
+	- Caminho fica salvo na tabela
+	- Uso do IP
+
+4. Camada de rede
+	I.Correto
+	II.Correto
+	III.Correto
+
+	- Possui endereçamento lógico
+	- Possui Qualidade de Serviço
+	- Depende de um mecanismo para traduzir
+
+5. Camada de Enlace
+	I.Correto
+	II.Correto
+	III.Incorreto
+
+	- Serve para mapear o endereço logico associado ao endereço MAC
+	- Como o ARP funciona: 
+		-ARP faz um Request (quem tem o IP destino que eu quero mandar)
+		- Se não pertencer, irá devolver a informação
+		- O pedido precisa de uma resposta, se não tiver resposta é porque não pertence a esse dominio.
+		- usa ARP para fechar o circuito Virtual
+
+6. Camada de Enlace
+	I.Correto
+	II.Correto
+	III.Correto
+
+	- Portadora fica vendo se tá tendo erro
+	- CRC é realizada na camada de enlace.
+	- Ele fica fazendo teste, gerando valores, fazendo a comparação entre elas.
+	- Para detectar erros na comunicação (Se o enlace tiver algum tipo de erro)
+	
+7. Camada de Rede
+	I.Incorreto
+	II.Correto
+	III.Correto
+
+	- Estágio da conexão
+	- Protocolo IP é não orientado a conexão
+	- Protocolo IP trabalha com entrega de Melhor esforço
+
+8. Camada de rede
+	I.Correto
+	II.Correto
+	III.Correto
+	
+	- Se não encontrar o roteador vai repassar para outro até achar seu destino
+	- Vai fechar um circuito nessa comunicação, recomendação de criar um firewall na camada de rede
+
+9. Camada de Rede
+	I.Correta
+	II.Correta
+	III.Correta
+	
+	- ICMP: Emitir relatórios de erros
+	- Só entende o endereço IP
+	- Usado para testar a rede
+	- Por onde está percorrendo
+	- Time out (erro)
+	- Rede inalcansavel (erro)
+	- Tempo de ida e de volta (Diagnóstico de rede)
+
+10. camada de rede
+	I.Correto
+	II.Correto
+	III.Correto
+
+	- Protocolo RIP:
+		- Qual vai ser o caminho (em função dos saltos - cada roteador que passa tem um custo - quanto mais roteador, maior vai ser a demora)
+		- TraceRouter (comando)
+	- Protocolo IGRP:
+		- Nível de trafego alto, ele evita o caminho, mesmo tendo menos saltos
+	- Protocolo OSPF:
+		- Trata o status do link
+		- Não trata o congestionamento
+		- Caminho que tem menos salto
