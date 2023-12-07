@@ -1,0 +1,34 @@
+Capítulo 2 - Camada de Aplicação
+
+- É a camada responsável por escrever programas que se comunicam entre sistemas finais diferentes.
+
+- A página aborda os seguintes tópicos principais:
+
+    	- Arquiteturas de aplicação de rede:
+		1. cliente-servidor;
+		2. P2P
+		4. princípios (vantagens e desafios).
+
+    	- Comunicação entre processos: 
+		1. sockets;
+		2. protocolos de transporte;
+		3. serviços de transporte disponíveis para as aplicações.
+
+    	- Protocolos de camada de aplicação:
+		1. sintaxe;
+		2. semântica;
+		3. regras das mensagens trocadas entre processos de aplicação
+		- exemplos: 
+			1. HTTP;
+			2. FTP
+			3. SMTP;
+			4. DNS.
+
+    	- Aplicações P2P permitem:
+		1. distribuição de arquivos;
+		2. implementação de tabelas hash distribuídas;
+		3. resolução de problemas de escalabilidade, segurança e incentivos.
+
+    	- Programação de sockets, que é uma forma de criar aplicações de rede usando UDP ou TCP. 
+
+	- A página mostra exemplos de código em Python para uma aplicação cliente-servidor simples.

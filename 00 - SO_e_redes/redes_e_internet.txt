@@ -1,0 +1,78 @@
+Capítulo 1 - Redes de computadores e a internet
+
+
+	- Conceitos básicos de redes de computadores: 
+		1. Internet;
+		2. protocolos;
+		3. camadas;
+		4. atrasos;
+		5. vazões;
+		6. ameaças.
+
+	- Componentes da Internet: o capítulo explica como os seguintes componentes se conectam e interagem para formar a Internet:
+		1. os sistemas finais;
+		2. os enlaces de comunicação;
+		3. os comutadores de pacotes;
+		4. os provedores de serviços de Internet.
+
+	- Compara os dois modos de transferir dados entre os sistemas finais:
+		1. Comutação de pacotes;
+		2. Comutação de circuitos.
+
+	- Atraso e perda de pacote: o capítulo analisa os diferentes tipos de atraso que os pacotes podem sofrer ao atravessar uma rede, bem como as causas e consequências da perda de 	pacote.
+
+	- Arquitetura de camadas: o capítulo introduz o modelo de camadas usado para organizar e modularizar as funções de uma rede, com foco nas cinco camadas da Internet: 
+		1. aplicação;
+		2. transporte;
+		3. rede;
+		4. enlace;
+		5. física.
+
+	- História das redes de computadores e da Internet: o capítulo traça a evolução das redes de computadores desde os anos 1960 até os dias atuais, destacando os principais eventos, inovações e desafios.
+
+Leitura dos Slides:
+	====== Descrição dos componente da rede =====
+
+	• Sistemas finais são conectados entre si por enlaces (links) decomunicação e comutadores (switches) de pacotes.
+
+	• Eles acessam a Internet por meio de Provedores de Serviços de Internet.
+
+	• Os sistemas finais, os comutadores de pacotes e outras peças da Internet executam protocolos que controlam o envio e o recebimento de informações.
+
+	• O TCP e o IP são dois dos mais importantes da Internet
+
+
+	===== Descrição dos Serviços de Internet =====
+
+	• Os sistemas finais ligados à Internet oferecem uma Interface de Programação de Aplicação (API).
+
+	• Ela especifica como o programa solicita à infraestrutura da Internet que envie dados a um programa de destino específico.
+
+	• Essa API da Internet é um conjunto de regras que o software emissor deve cumprir para que a Internet seja capaz de enviar os dados ao programa de destino.
+	
+	
+	
+	===== Redes de acesso =====
+
+	• Rede física que conecta um sistema final ao primeiro roteador de um caminho partindo de um sistema final até outro qualquer
+
+
+
+	===== Comutação por Pacotes ====
+
+	- A comutação por pacotes é um método de transmissão de dados que divide a informação em blocos menores chamados pacotes, que são então transmitidos individualmente 				através de uma rede digital.
+
+	- A comutação por pacotes é eficiente porque permite que a rede seja usada continuamente, em vez de esperar que uma grande quantidade de dados seja transmitida de uma 				vez.
+
+	- Além disso, se uma parte da rede falhar ou ficar congestionada, os pacotes podem ser roteados por uma rota diferente, tornando a comutação por pacotes uma opção 				robusta e confiável para a transmissão de dados.
+
+	- Pode ser feito por rotedores ou comutadores (switches) de camada de Enlace.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+Capítulo 3 - Camada de Transporte
+
+
+	- Camada de transporte: fornece comunicação lógica entre processos de aplicações em hospedeiros diferentes, usando protocolos como:
+		1. UDP;
+		2. TCP.
+
+	- Transferência confiável de dados: descreve os princípios e mecanismos para garantir que os dados enviados pelo remetente sejam recebidos corretamente pelo destinatário, mesmo em canais com erros e perdas.
+
+	- Controle de fluxo: evita que o remetente sobrecarregue o buffer do destinatário, limitando a taxa de envio de acordo com a janela de recepção anunciada pelo destinatário.
+
+	- Gerenciamento da conexão TCP: estabelece e encerra conexões TCP entre hospedeiros, usando um processo de três vias (SYN, SYNACK, ACK) e estados do TCP.
+
+	- Controle de congestionamento: ajusta a taxa de envio do remetente de acordo com o congestionamento percebido na rede, usando algoritmos como partida lenta, prevenção de congestionamento e recuperação rápida.
