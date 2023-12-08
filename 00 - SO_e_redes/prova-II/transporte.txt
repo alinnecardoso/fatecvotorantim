@@ -1,0 +1,79 @@
+Capítulo 3 - Camada de Transporte
+
+
+	• Camada de transporte: fornece comunicação lógica entre processos de aplicações em hospedeiros diferentes, usando protocolos como:
+		1. UDP;
+		2. TCP.
+
+	• Transferência confiável de dados: 
+		- Descreve os princípios e mecanismos para garantir que os dados enviados pelo remetente sejam recebidos corretamente pelo destinatário, mesmo em canais com erros e perdas.
+
+	• Controle de fluxo:
+		- Evita que o remetente sobrecarregue o buffer do destinatário, limitando a taxa de envio de acordo com a janela de recepção anunciada pelo destinatário.
+
+	• Gerenciamento da conexão TCP:
+		- Estabelece e encerra conexões TCP entre hospedeiros, usando um processo de três vias (SYN, SYNACK, ACK) e estados do TCP.
+
+	• Controle de congestionamento:
+		- Ajusta a taxa de envio do remetente de acordo com o congestionamento percebido na rede, usando algoritmos como partida lenta, prevenção de congestionamento e recuperação rápida.
+
+
+=-=-=-=-=-=-=-=-=-=
+Leitura dos Slides:
+=-=-=-=-=-=-=-=-=-=
+
+	• Essa camada utiliza portas para identificar o destinatário e o remetente.
+	
+	• Usa números de porta para distinguir diferentes aplicações em um host e permitir a comunicação direta entre elas.
+	
+
+	===== Transporte não orientado para conexão =====
+	• UDP - User Datagram Protocol:
+		- É um protocolo de comunicação usado na internet para transmissões sensíveis ao tempo (vídeos ou pesquisa de DNS)
+
+		- Acelera as comunicações ao não estabelescer formalmente uma conexão antes que os dados sejam transferidos.
+		
+		- Permite que os dados sejam transferidos muito rapidamente.
+
+		- Pode fazer com que pacotes se percam em trânsito.
+
+		- * Envia pacotes diretamente para um computador de destino, sem estabelecer uma conexão antes, indicando a ordem desses pacotes ou verificando se eles chegaram como previsto.
+
+		- Isso torna UDP mais rápido, mas menos confiável.
+		- É comumente usado em comunicações sensíveis ao tempo, onde ocasionalmente descartar pacotes é melhor do que esperar.
+
+		- O tráfego de voz e vídeo geralmente é enviado usando esse protocolo, ´porque ambos são sensíveis ao tempo e projetados para lidar com algum nível de perda.
+
+
+	===== Transporte orientado para conexão =====
+	
+	• TCP - Transmission Control Protocol:
+
+		- É um protocolo de comunicação usado na internet que garante a entrega confiável e ordenada de dados.
+		
+		- Funciona estabelecendo uma conexão entre a origem e o destino, dividindo os dados em pacotes menores e enviando cada pacote de forma individual.
+
+		- Cada pacote é numerado e inclui informações de controle, como confirmações de recebimento.
+
+		- É usado quando é essencial que todos os dados sejam recebidos corretamente.
+		
+		- Usado para carregar uma página Web ou enviar um e-mail.
+
+		- Desempenha um papel crucial na garantia de que a comunicação na Internet seja confiável e precisa.
+
+	
+	===== Princípios de controle de congestionamento =====
+	• Buffers:
+
+		- São regiões da memória física usadas para armazenar temporariamente dados enquanto eles estão sendo movidos de um lugar para outro.
+
+		- São usados quando há uma diferença entre a taxa de recebimento e processamento de dados.
+		
+		- Ou quando essas taxas são variáveis, como em um serviço de streaming de vídeos.
+
+		- Desempenham um papel crucial na melhoria do desempenho do computador e na agilização da reprodução de vídeos em serviços de streaming
+
+	• AIMD
+	• Equidade
+
+

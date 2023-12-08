@@ -1,0 +1,197 @@
+Capítulo 1 - Redes de computadores e a internet
+
+
+	- Conceitos básicos de redes de computadores: 
+		1. Internet;
+		2. protocolos;
+		3. camadas;
+		4. atrasos;
+		5. vazões;
+		6. ameaças.
+
+	- Componentes da Internet: o capítulo explica como os seguintes componentes se conectam e interagem para formar a Internet:
+		1. os sistemas finais;
+		2. os enlaces de comunicação;
+		3. os comutadores de pacotes;
+		4. os provedores de serviços de Internet.
+
+	- Compara os dois modos de transferir dados entre os sistemas finais:
+		1. Comutação de pacotes;
+		2. Comutação de circuitos.
+
+	- Atraso e perda de pacote: o capítulo analisa os diferentes tipos de atraso que os pacotes podem sofrer ao atravessar uma rede, bem como as causas e consequências da perda de pacote.
+
+	- Arquitetura de camadas: o capítulo introduz o modelo de camadas usado para organizar e modularizar as funções de uma rede, com foco nas cinco camadas da Internet: 
+		1. aplicação;
+		2. transporte;
+		3. rede;
+		4. enlace;
+		5. física.
+
+	- História das redes de computadores e da Internet: o capítulo traça a evolução das redes de computadores desde os anos 1960 até os dias atuais, destacando os principais eventos, inovações e desafios.
+
+Leitura dos Slides:
+	====== Descrição dos componente da rede =====
+
+	• Sistemas finais são conectados entre si por enlaces (links) de comunicação e comutadores (switches) de pacotes.
+
+	• Eles acessam a Internet por meio de Provedores de Serviços de Internet.
+
+	• Os sistemas finais, os comutadores de pacotes e outras peças da Internet executam protocolos que controlam o envio e o recebimento de informações.
+
+	• O TCP e o IP são dois dos mais importantes da Internet
+
+
+	===== Descrição dos Serviços de Internet =====
+
+	• Os sistemas finais ligados à Internet oferecem uma Interface de Programação de Aplicação (API).
+
+	• Ela especifica como o programa solicita à infraestrutura da Internet que envie dados a um programa de destino específico.
+
+	• Essa API da Internet é um conjunto de regras que o software emissor deve cumprir para que a Internet seja capaz de enviar os dados ao programa de destino.
+	
+	
+	
+	===== Redes de acesso =====
+
+	• Rede física que conecta um sistema final ao primeiro roteador de um caminho partindo de um sistema final até outro qualquer
+
+
+
+	===== * Comutação por Pacotes ====
+
+	- A comutação por pacotes é um método de transmissão de dados que divide a informação em blocos menores chamados pacotes, que são então transmitidos individualmente através de uma rede digital.
+
+	- A comutação por pacotes é eficiente porque permite que a rede seja usada continuamente, em vez de esperar que uma grande quantidade de dados seja transmitida de uma vez.
+
+	- Além disso, se uma parte da rede falhar ou ficar congestionada, os pacotes podem ser roteados por uma rota diferente, tornando a comutação por pacotes uma opção 	robusta e confiável para a transmissão de dados.
+
+	- Pode ser feito por rotedores ou comutadores (switches) de camada de Enlace.
+
+
+	===== Transimissão armazena e reenvia =====
+	
+	• Significa que o comutador de pacotes deve receber o pacote inteiro antes de poder começar a transmitir o primeiro bit para o enlace de saída
+
+
+	===== Tabelas de repasse e protocolos de roteamento =====
+	• Cada roteador possui uma tabela de encaminhamento que mapeia os endereçoes de destino para enlaces de saída desse roteador
+	• Um protocolo de roteamento pode, por exemplo, determinar o caminho mais curto de cada roteador a cada destino e utilizar os resultados para configurar as tabelas de encaminhamento nos roteador
+
+
+	===== * Comutação de circuitos =====
+
+	• As redes de telefonias tradicionais.
+
+	• FDM separa os sinais atribuindo diferentes frequências
+
+	• TDM aloca intervalos de tempo para cada sinal.
+
+ 	• Ambas as técnicas são eficazes para a multiplexação de sinais em telecomunicações.
+
+	• Cada tipo tem suas vantagens e é adequado para aplicações diferentes dependendo da natureza dos sinais que estão sendo transmitidos.
+	
+	
+	===== Atraso e perda de pacotes =====
+
+	• Um pacote começa em um sistema final (a origem), passa por uma série de roteadores e termina sua jornada em outro sistema final (o destino).
+
+	• Quando um pacote viaja de um nó ao nó, sofre, ao longo desse caminho, diversos tipos de atraso em cada nó.
+
+	• Os mais importantes deles são:
+
+		1. o atraso de processamento nodal,
+		2. o atraso de fila
+		3. o atraso de transmissão
+		4. e o atraso de propagação;
+
+	• Juntos, eles se acumulam para formar o atraso nodal total.
+
+	• O desempenho de muitas aplicações da Internet é bastante afetado por atrasos na rede.
+
+
+	===== Camadas de protocolo =====
+	
+	• Uma camada de protocolo pode ser executada em software, em hardware, ou em uma combinação dos dois.
+	
+	• A modularidade facilite a atualização de componentes de sistema.
+
+	===== Camada de Aplicação =====
+	
+	• É onde residem aplicações de rede e seus protocolos.
+
+	• Responsável por prover serviços de rede para as aplicações utilizadas pelos usuários.
+
+	• Ela engloba protocolos que realizam a comunicação fim-a-fim entre aplicações, como:
+		1. HTTP
+		2. SMTP
+		3. FTP
+	• É onde as aplicações se conectam para acessar a rede
+
+	===== Camada de transporte =====
+
+	• A camada de transporte da Internet carrega mensagens da camada de aplicação entre os lados do cliente e servidor de uma aplicação.
+
+	• Há dois protocolos de transporte na Internet:
+		1. TCP
+		2. UDP
+
+	• Controla o fluxo de dados e trata erros
+
+	===== Camada de rede =====
+
+	• A camada de rede da Internet é responsável pela movimentação, de um hospedeiro para outro, de pacotes da camada de rede, conhecidos como "Datagramas"
+	
+	• Responsável por enviar pacotes de dados entre diferentes redes.
+
+	• Usa o protocolo de Internet (IP) e outro protocolos de roteamento para garantir que os dados sejam enviados corretamente.
+
+	• Além disso, a camada de rede divide os dados em pacotes menores e determina o melhor caminho físico para que os dados cheguem ao seu destino.
+	
+	===== Camada de Enlace ===== 
+	
+	• É responsável por dividir os dados em quadros, adicionar endereços físicos, controlar o fluxo de dados, detectar erros e gerenciar o acesso ao meio de transmissão. Essas funções garantem a transmissão eficiente e precisa dos dados na rede.
+
+
+	===== Camada Física =====
+	
+	• Movimentar os bits individuais que estão dentro do quadro de um nó para o seguinte.
+	
+	• Responsável pela transmissão e recepção de sinais brutos entre dispositivos em uma rede.
+
+	• Ela lida com a conexão física:
+		1. Cabos;
+		2. Switches;
+		3. hubs;
+		4. Outros equipamentos que transmitem sinais elétricos, ópticos ou de radiofranquência
+	
+	• Define os padrões de configuração de pinagem de fio e design físico para os fios de cobre nos cabos de rede.
+
+
+	===== Encapsulamento =====
+	
+	• Ocorre em todas as camadas do modelo OSI
+
+	• No conjunto de IP:
+		1. O conteúdo de uma página Web é encapsulado com um cabeçalho HTTP
+		2. Em seguida, por um cabeçalho TCP
+		3. Um cabeçalho IP
+		4. E finalmente, por um cabeçalho e trailer de quadro(parte do quadro de dados que é adicionada ao final do quadro durante o processo de encapsulamento na camada de enlace).
+
+
+	===== Redes sob ameaça =====
+
+ 	• Os vilões podem colocar "malware" em seu hospedeiro por meio da Internet
+
+	• Os vilões podem atacar servidores e infraestrutura de redes
+
+
+	• Os vilões podem analisar pacotes
+
+	• Os vilões podem se pssar por alguém de sua confiança
+
+
+
+
+
+

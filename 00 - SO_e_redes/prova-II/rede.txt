@@ -1,0 +1,114 @@
+Capítulo 4 - Camada de Rede
+
+
+• É responsável por transportar pacotes de um hospedeiro remetente a um hospedeiro destinatário na Internet.
+
+• A página aborda os seguintes tópicos principais:
+    - Modelos de serviço de rede: define as características do transporte de dados fim a fim, como: 
+		1. entrega garantida;
+		2. atraso limitado;
+		3. largura de banda mínima.
+		4. Entrega de pacotes na ordem
+		5. Jitter no máximo garantido.
+		6. Serviços de segurança.
+
+    - Redes de circuitos virtuais e redes de datagramas:
+		• Compara dois tipos de redes que diferem na forma como os pacotes são repassados pelos roteadores.
+
+    - Arquitetura de roteador: descreve os componentes internos de um roteador, como: 
+		1. portas de entrada;
+		2. elemento de comutação;
+		3. portas de saída;
+		4. filas de pacotes.
+
+    - O Protocolo da Internet (IP):
+		1. formato do datagrama IP;
+		2. endereçamento IPv4;
+		3. DHCP;
+		4. NAT;
+		5. ICMP;
+		6. IPv6.
+
+    - Algoritmos de roteamento: apresenta os conceitos e os exemplos de algoritmos:
+		1. de roteamento global;
+		2. descentralizado;
+		3. estático;
+		4. dinâmico;
+		5. sensível à carga;
+		6. de estado de enlace;
+		7. de vetor de distâncias;
+		8. hierárquico;
+		9. intra-AS;
+		10. inter-AS.
+
+    - Serviço para um grupo (multicast): discute os desafios e as soluções para fornecer comunicação para um grupo de destinatários, como IGMP e protocolos de roteamento para um grupo.
+
+=-=-=-=-=-=-=-=-=-=
+Leitura dos Slides:
+=-=-=-=-=-=-=-=-=-=
+
+	===== Introdução =====
+	• É responsável pela transmissão de dados entre diferentes redes.
+
+	• Utiliza o Protocolo de Internet(IP) e outros protocolos de roteamento e criptografia para garantir a comunicação segura dos dados.
+
+	• Configura as rotas que os pacotes de dados seguirão e verifica se um servidor em outra rede está funcionando.
+
+	• Ela é responsável por endereçar e receber pacotes de IP de outras redes.
+
+	===== Repasse e roteamento =====
+	
+	• O papel da camada de rede é transportar pacotes de um hospedeiro remetente a um hospedeiro destinatário.
+
+	• Repasse:
+		- Quando um pacote chaga ao enlace de entrada de um roteador, este deve conduzi-lo até o enlace de saída apropriado.
+
+	• Tabela de repasse:
+		- Determina a rota ou o caminho tomado pelos pacotes ao fluírem de um remetente a um destinatário.
+		- Ela é como um guia de navegação para pacotes de dados, ajudando-os a encontrar o caminho mais eficiente para o seu destino
+
+	• Roteamento:
+		- A camada de rede deve determinar a rota ou o caminho tomado pelos pacotes ao fluírem de um remetente a um destinatário
+		- Algoritmos de roteamento determinam valores em tabelas de repasse
+
+
+	===== Redes de circuitos virtuais =====
+
+	• São um meio de transportar dados em uma rede de computadores de comutação de pacotes, de modo que pareça existir um enlace da camada físicaentre os sistemas finais de origem e destino desses dados.
+
+	• Elas são orientados a conexão, o que significa que os recursos são reservados para a transmissão de dados entre dois nós.
+
+	• A comunicação de circuitos virtuais assemelha-se à comutação de circuitos, pois ambas são orientados a conexão.
+
+	===== Redes de datagramas =====
+
+	• Toda vez que um sistema final quer enviar um pacote, ele marca o pacote com o endereço do sistema final de destino e então o envia dentro da rede
+
+	• São um tipo de rede de comutação de pacotes que fornecem um serviço de comunicação sem conexão.
+
+	• Isso significa que cada pacote de dados é tratado de forma independente, sem a necessidade de uma conexão estabelecida entre origem e o destino.
+
+	===== O que é Comutação =====
+
+	• É o ato de substituir ou mudar algo.
+
+	• Determinação do caminho que vincula dois usuários durante o desenvolvimento de uma comunicação.
+
+
+	===== Endereçamento IPv4 =====
+	• É composto por 32 bits
+
+
+	===== DHCP =====
+	• Dynamic Host Configuration
+
+	• É um protocolo de serviço TCP/IP que oferece configuração dinâmica de terminais
+
+	===== Endereçamento IPv6 =====
+	• É composto por 128 bits
+
+
+
+
+
+

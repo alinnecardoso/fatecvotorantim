@@ -1,0 +1,127 @@
+Capítulo 2 - Camada de Aplicação
+
+- É a camada responsável por escrever programas que se comunicam entre sistemas finais diferentes.
+
+- A página aborda os seguintes tópicos principais:
+
+    	- Arquiteturas de aplicação de rede:
+		1. cliente-servidor;
+		2. P2P
+		4. princípios (vantagens e desafios).
+
+    	- Comunicação entre processos: 
+		1. sockets;
+		2. protocolos de transporte;
+		3. serviços de transporte disponíveis para as aplicações.
+
+    	- Protocolos de camada de aplicação:
+		1. sintaxe;
+		2. semântica;
+		3. regras das mensagens trocadas entre processos de aplicação
+		- exemplos: 
+			1. HTTP;
+			2. FTP
+			3. SMTP;
+			4. DNS.
+
+    	- Aplicações P2P permitem:
+		1. distribuição de arquivos;
+		2. implementação de tabelas hash distribuídas;
+		3. resolução de problemas de escalabilidade, segurança e incentivos.
+
+    	- Programação de sockets, que é uma forma de criar aplicações de rede usando UDP ou TCP. 
+
+	- A página mostra exemplos de código em Python para uma aplicação cliente-servidor simples.
+
+=-=-=-=-=-=-=-=-=-=
+Leitura dos slides:
+=-=-=-=-=-=-=-=-=-=
+	
+	===== Arquiteturas de aplicação de rede =====
+
+	• A comunicação de uma aplicação de rede ocorre entre sistemas finais na camada de aplicação.
+
+
+	• Arquitetura P2P:
+		- É um modelo de rede de computadores onde cada nó da rede tem as mesmas responsabilidades e capacidades.
+		- Isso significa que cada nó pode funcionar tanto como cliente quanto como servidor
+
+	===== Comunicação entre processos =====
+
+	• Socket: 
+		- É como uma "tomada" virtual que permite a comunicação entre dois programas, seja no mesmo computador ou em computadores diferente conectados por uma rede.
+
+		- São fundamentais para a comunicação em redes.
+		- São usados em muitos protocolos de rede, como TCP e UDP.
+		- Permitem que os programas enviem e recebam dados uns dos outros
+		- É composto pelo endereço IP e um número de porta.
+		- É usado para estabelecer conexões fim-a-fim entre aplicações em diferentes hosts.
+
+	• Diferença entre Socket, MAC e IP:
+		- MAC é usado para comunicação na mesma rede local.
+		- IP é usado para rotear pacote através de redes.
+		- Socket é usado para distinguir diferentes aplicações em um host e permitir a comunicação direta entre elas.
+
+
+	===== Protocolos da camda de aplicação =====
+	• HTTP - HyperText Transfer Protocol:
+		- Aplicação Web
+		- Executado em dois programas, cliente e servidor.
+		- Usa o TCP como seu protocolo de transporte
+		- Denominado de Protocolo sem estado.
+	
+	• FTP - File Transfer Protocol:
+		- O usuário quer transferir arquivos para um computador remoto ou receber arquivos desse computador
+		- Transporta arquivos entre sistemas de arquivo local e remoto:
+
+	===== Correio eletrônico na Internet =====
+
+	• Sistema de e-mail da Internet
+
+	• SMTP - Simple Mail Transfer Protocol:
+
+		- O SMTP transfere mensagens de servidores de correio remetentes para servidores de correio destinatários.
+
+		- É o protocolo utilizado para enviar e-mails pela internet.
+
+		- Responsável pelo fluxo desles no ambiente virtual.
+		
+		- Quando você escreve um e-mail e envia para o destinatário escolhido, todas as informações relacionadas a esse e-mail são enviadas a um servidor SMTP.
+
+		- SMTP é fundamental para o envio de e-mails
+	• POP3 - Post Office Protocol 3:
+		- É um protocolo de recebimento de e-mails.
+		- Permite acessar a caixa de entrada de um correio eletrônico e transferir todas as mensagens para um dispositivo local.
+
+	• IMAP - Internet Message Access Protocol:
+		- É um protocolo de recebimento de e-mails.
+		- Mantém as mensagens nos servidor
+		
+		- Permitindo que sejam acessadas de qualquer dispositivo
+
+
+	===== DNS: o serviço de diretório da Internet =====
+
+	• DNS - Domain Name System:
+		1. É um banco de dados distrbuído executado em uma hierarquia de servidores de DNS
+		2. É um protocolo de camada de aplicação que permite que os hospedeiros consultem o banco de dados distribuído.
+
+		- Ele traduz os nomes de domínio, que são fáceis para nós humanos lembrarmos e digitarmos, em endereços IP, que são usados pelos computadores para identificar uns aos outros na rede.
+
+
+	===== Aplicações P2P =====
+
+	• São programas que utilizam a arquitetura P2P para permitir a comunicação direta entre usuários, sem a necessidade de um servidor central.
+
+	• Esse aplicações permitem o compartilhamento de arquivos, documento e informações de maneira descentralizada.
+
+	• Tabelas Hash:
+		- São uma estrutura de dados que armazenam informações de maneira organizada para permitir uma busca eficiente
+
+		- (chave, Valor)
+		- São uma ferramenta poderosa para armazenar e recuperar dados de maneira eficiente
+
+	• DHTs - Distributed Hash Tables:
+		- São uma forma de organizar dados em sistemas P2P
+		- Funcionam como um banco de dados distrbuído que armazena pares de chave-valor
+		- Permitem que os sistemas P2p armazenem e recuperem dados de maneira eficiente e descentralizada
