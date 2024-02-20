@@ -19,15 +19,25 @@ public class Pessoa {
         
     public String ApresentarFilhos(){
         String resposta = "Meu filhos são ";
+        int qtdFilhosAux = 0;
+        
         
         for(int i =0;i<20; i++){
-            resposta += nomeFilhos[i] + ", ";
-          
             
+            if(nomeFilhos[i] !=  null){
+                qtdFilhosAux ++;
+                resposta += nomeFilhos[i] + ", ";
+                
+                
+            }
+        if(qtdFilhosAux>0)
+            return resposta + "QTD Filhos: " + qtdFilhosAux;
+        else
+            return "Não tem filhos!";
         }
         
-            return resposta;
-            
+        return resposta + "QTD Filhos: " + qtdFilhosAux;
+           
     
     }
 }
