@@ -1,0 +1,3 @@
+CREATE DATABASE BD_Teste;
+
+USE BD_Teste;
