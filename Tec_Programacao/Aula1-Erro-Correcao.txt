@@ -1,0 +1,41 @@
+Com ERRO:
+
+public String ApresentarFilhos(){
+        String resposta = "Meu filhos são ";
+        int qtdFilhosAux = 0;
+        
+        
+        for(int i =0;i<20; i++){
+            
+            if(nomeFilhos[i] !=  null){
+                qtdFilhosAux ++;
+                resposta += nomeFilhos[i] + ", ";
+                
+                
+            } <!-- Não Fechou o for com chaves {} -->
+        if(qtdFilhosAux>0)
+            return resposta + "QTD Filhos: " + qtdFilhosAux;
+        else
+            return "Não tem filhos!";
+        }
+        
+        return resposta + "QTD Filhos: " + qtdFilhosAux;
+    }
+
+
+Sem ERRO:
+
+String resposta = "Meus filhos são ";
+        int qtdFilhosAux = 0;
+        
+        for(int i = 0; i < 20; i++){
+            if(nomeFilhos[i] != null){
+                qtdFilhosAux++;
+                resposta += nomeFilhos[i] + ", ";
+            }
+        }
+        
+        if(qtdFilhosAux > 0)
+            return resposta + "QTD Filhos: " + qtdFilhosAux;
+        else
+            return "Não tem filhos!";
