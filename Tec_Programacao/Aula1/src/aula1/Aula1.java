@@ -14,22 +14,38 @@ public class Aula1 {
         Pessoa mae;
         mae = new Pessoa();
         mae.nome = "Alinne";
-        mae.qtdFilhos = 0;
-        mae.qtdIrmaos = 3;
-        System.out.println("A " + mae.Apresentar());
+        mae.qtdFilhos = 2;
+        mae.qtdIrmaos = 2;
+        
+        System.out.println(mae.Apresentar());
+        
+        mae.nomeFilhos[0] = "Maria";
+        mae.nomeFilhos[1] = "João";
+        
+        mae.nomeIrmaos[0] = "Rafael";
+        mae.nomeIrmaos[1] = "Matheus";
+        
         
         Pessoa pai = new Pessoa();
         pai.nome = "Gabriel";
-        pai.qtdFilhos = 0;
-        pai.qtdIrmaos = 2;
+        pai.qtdFilhos = 2;
+        pai.qtdIrmaos = 1;
         
-        System.out.println("O " + pai.Apresentar());
+        System.out.println(pai.Apresentar() + "\n");
         
         
         pai.nomeFilhos[0] = "Maria";
         pai.nomeFilhos[1] = "João";
         
-        System.out.println(pai.ApresentarFilhos());
+        pai.nomeIrmaos[0] = "Carol";
+        
+        
+        System.out.println(pai.ApresentarFilhos()+"\n"+ mae.ApresentarFilhos() + "\n");
+        
+        
+        System.out.println(mae.ApresentarIrmaos());
+        
+        System.out.println(pai.ApresentarIrmaos() + "\n");
                 
     }
     
