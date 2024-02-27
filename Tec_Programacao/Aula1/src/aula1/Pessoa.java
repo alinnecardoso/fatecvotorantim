@@ -5,11 +5,12 @@ package aula1;
  * @author Alunos
  */
 public class Pessoa {
+    
     //Atributos da classe
-    String nome;
-    int qtdFilhos, qtdIrmaos;
-    String[] nomeFilhos = new String[20];
-    String[] nomeIrmaos = new String[20];
+    private String nome;
+    private int qtdFilhos, qtdIrmaos;
+    private String[] nomeFilhos = new String[20];
+    private String[] nomeIrmaos = new String[20];
     private String cpf;
     
     /* Método construtor */
@@ -24,7 +25,12 @@ public class Pessoa {
     
     /****************************************/
     
-    /***** Métodos Setter *****/
+    /***** Métodos Setter Getter *****/
+    
+    /* resolver o exercício com get e set
+        realizar isso com irmãos e filhos
+        agora as variáveis estão privadas
+        deve-se usar esse novo método para resolver*/
     public void setCpf(String cpf){
         // verifica se CPF é null
         if(this.cpf == null)
