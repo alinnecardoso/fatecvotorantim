@@ -10,7 +10,29 @@ public class Pessoa {
     int qtdFilhos, qtdIrmaos;
     String[] nomeFilhos = new String[20];
     String[] nomeIrmaos = new String[20];
+    private String cpf;
     
+    /* Método construtor */
+    
+    public Pessoa (String nome){
+        this.nome = nome;
+    }
+    public Pessoa(String nome, String cpf){
+        this(nome); //chama o construtor Pessoa(String nome)
+        this.cpf = cpf;
+    };
+    
+    /****************************************/
+    
+    /***** Métodos Setter *****/
+    public void setCpf(String cpf){
+        // verifica se CPF é null
+        if(this.cpf == null)
+            this.cpf=cpf;
+    }
+    public String getCpf(){
+        return this.cpf;
+    }
     
     /*Método "Apresentar", responde com o Nome concatenado com a quantidade de Filhos.*/
     
