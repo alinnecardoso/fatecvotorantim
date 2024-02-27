@@ -7,10 +7,10 @@ package aula1;
 public class Pessoa {
     
     //Atributos da classe
-    private String nome;
-    private int qtdFilhos, qtdIrmaos;
-    private String[] nomeFilhos = new String[20];
-    private String[] nomeIrmaos = new String[20];
+    String nome;
+    int qtdFilhos, qtdIrmaos;
+    String[] nomeFilhos = new String[20];
+    String[] nomeIrmaos = new String[20];
     private String cpf;
     
     /* Método construtor */
