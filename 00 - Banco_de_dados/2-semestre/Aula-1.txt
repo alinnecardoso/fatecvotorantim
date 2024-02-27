@@ -1,0 +1,22 @@
+Structure Query Language - Linguagem de Consulta Estruturada - SQL
+
+Linguagem declarativa
+
+Usado em banco de dados relacionais
+
+DDL - Linguagem de definição de dados
+DML - Linguagem de Manipulação de Dado
+DCL - Linguagem de Controle de Dados
+
+NotNull - A pessoa é obrigada a adicionar algum dado
+
+Declarações SQL nao são case-sensitive (Não diferencia as letras maiúsculas de minúsculas)
+
+Indentações são usados apenas para facilitar a leitura
+
+- Criar um Banco de Dados por comando:
+	CREATE DATABASE BD_Teste;
+
+	USE BD_Teste;
+- Apagar o Banco de Dados:
+	DROP DATABASE BD_Teste

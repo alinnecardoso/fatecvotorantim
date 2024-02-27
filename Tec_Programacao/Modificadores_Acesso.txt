@@ -1,0 +1,45 @@
+Modificadores de acesso em Java
+
+Tudo o que é regra da própria Classe - Private
+
+Só consegue alcançar o método dentro da classe se ela for pública
+
+Declaração de Métodos:
+Modificador Acesso
+
+Tipo da variável de Retorno
+	Void/boolean/char etc 
+	O que é retornado pelo método (return)
+
+Declaração de Variavel
+Modificador acesso
+	public/private
+tipo da variável
+	int/boolean/char etc
+
+Padrão de Metodo e variável: getValor(){.....}
+
+========= Construtures =========
+Para que preciso de um Construtor?
+	Para garantir a inicialiazação de variáveis obrigatórias
+
+this.nome -> Variável (nome) do próprio método
+
+Construtures é executado antes de criar o objeto
+Construtures é executado somente UMA vez
+Obrigar alguém a preecher as informações
+
+criar um escopo que delimita a forma como o usário irá usar aquela classe
+
+
+===============
+String é um vetor de char
+
+==============================
+	Encapsulamento
+==============================
+É um dos pilares da Orientação a Objeto
+
+Os métodos Getter permitem controlar o acesso aos atributos de uma classe e facilita a manutenção do código
+
+A utilização de métodos Stter permitem controla a atribuição de variáveis de uma classe, faciliando a manutnção do código

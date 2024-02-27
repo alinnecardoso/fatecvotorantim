@@ -5,12 +5,40 @@ package aula1;
  * @author Alunos
  */
 public class Pessoa {
-    //Atributos da classe
-    String nome;
-    int qtdFilhos, qtdIrmaos;
-    String[] nomeFilhos = new String[20];
-    String[] nomeIrmaos = new String[20];
     
+    //Atributos da classe
+    private String nome;
+    private int qtdFilhos, qtdIrmaos;
+    private String[] nomeFilhos = new String[20];
+    private String[] nomeIrmaos = new String[20];
+    private String cpf;
+    
+    /* Método construtor */
+    
+    public Pessoa (String nome){
+        this.nome = nome;
+    }
+    public Pessoa(String nome, String cpf){
+        this(nome); //chama o construtor Pessoa(String nome)
+        this.cpf = cpf;
+    };
+    
+    /****************************************/
+    
+    /***** Métodos Setter Getter *****/
+    
+    /* resolver o exercício com get e set
+        realizar isso com irmãos e filhos
+        agora as variáveis estão privadas
+        deve-se usar esse novo método para resolver*/
+    public void setCpf(String cpf){
+        // verifica se CPF é null
+        if(this.cpf == null)
+            this.cpf=cpf;
+    }
+    public String getCpf(){
+        return this.cpf;
+    }
     
     /*Método "Apresentar", responde com o Nome concatenado com a quantidade de Filhos.*/
     
