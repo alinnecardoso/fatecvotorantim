@@ -9,41 +9,69 @@ public class Pessoa {
     //Atributos da classe
     String nome;
     int qtdFilhos, qtdIrmaos;
-    String[] nomeFilhos = new String[20];
-    String[] nomeIrmaos = new String[20];
-    private String cpf;
+     String[] nomeFilhos;
+     String[] nomeIrmaos;
+     String cpf;
     
     /* Método construtor */
     
-    public Pessoa (String nome){
+    public Pessoa(String nome) {
         this.nome = nome;
     }
-    public Pessoa(String nome, String cpf){
-        this(nome); //chama o construtor Pessoa(String nome)
+    public Pessoa(String nome, String cpf) {
+        this(nome);//chama o construtor Pessoa(String nome)
         this.cpf = cpf;
-    };
-    
+    }
+    public Pessoa(String nome, String cpf, String[] nomeFilhos, String[] nomeIrmaos) {
+        this(nome, cpf); //chama o construtor Pessoa(String nome, String cpf)
+        this.nomeIrmaos = new String[20];
+        this.nomeFilhos = new String[20];
+    }
+
+
     /****************************************/
     
-    /***** Métodos Setter Getter *****/
+    /***** Métodos Setter Getter
     
     /* resolver o exercício com get e set
         realizar isso com irmãos e filhos
         agora as variáveis estão privadas
         deve-se usar esse novo método para resolver*/
-    public void setCpf(String cpf){
-        // verifica se CPF é null
-        if(this.cpf == null)
-            this.cpf=cpf;
+    
+    // CPF
+    public void setCpf(String cpf) {
+        if (this.cpf == null) {
+            this.cpf = cpf;
+        }
     }
-    public String getCpf(){
+    public String getCpf() {
         return this.cpf;
     }
     
+    // FILHOS
+    public void setNomeFilhos(String[] nomeFilhos) {
+        if (this.nomeFilhos == null) {
+            this.nomeFilhos = nomeFilhos;
+        }
+    }
+    public String[] getNomeFilhos(){
+        return this.nomeFilhos;
+    }
+    
+    // IRMÃOS
+    public void setNomeIrmaos(String[] nomeIrmaos) {
+        if (this.nomeIrmaos == null) {
+            this.nomeIrmaos = nomeIrmaos;
+        }
+    }
+
+    public String[] getNomeIrmaos() {
+        return this.nomeIrmaos;
+    }
     /*Método "Apresentar", responde com o Nome concatenado com a quantidade de Filhos.*/
     
-    public String Apresentar(){
-        return "[1]" + nome + " possui " + qtdFilhos + " filhos e " + qtdIrmaos + " irmãos.";
+    public String Apresentar() {
+        return nome + " possui " + nomeFilhos.length + " filhos e " + nomeIrmaos.length + " irmãos.";
     }
         
     public String ApresentarFilhos(){
