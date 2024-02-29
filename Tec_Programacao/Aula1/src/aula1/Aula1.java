@@ -43,12 +43,20 @@ public class Aula1 {
                 
         
 //        Apresenta Filhos
-        System.out.println(pai.ApresentarFilhos()+"\n"+ mae.ApresentarFilhos() + "\n");
+        // System.out.println(pai.ApresentarFilhos()+"\n"+ mae.ApresentarFilhos() + "\n");
+        
+        System.out.println(mae.getNomeFilhos());
+        System.out.println(mae.setNomeFilhos(args));
+        
+        System.out.println(pai.getNomeFilhos());
+        System.out.println(pai.setNomeFilhos(args));
         
 //        Apresenta Irmãos
-        System.out.println(mae.ApresentarIrmaos());
+        System.out.println(mae.getNomeIrmaos());
+        System.out.println(mae.setNomeIrmaos(args));
         
-        System.out.println(pai.ApresentarIrmaos() + "\n");
+        System.out.println(pai.getNomeIrmaos());
+        System.out.println(pai.setNomeIrmaos(args));
         
 //        Mostrar CPF Pai
         System.out.println("CPF do pai: " + pai.getCpf());
