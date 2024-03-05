@@ -9,9 +9,9 @@ public class Pessoa {
     //Atributos da classe
     String nome;
     int qtdFilhos, qtdIrmaos;
-    private String[] nomeFilhos = new String [20];
-    private String[] nomeIrmaos = new String [20];
-    private String cpf;
+    String[] nomeFilhos = new String [20];
+    String[] nomeIrmaos = new String [20];
+    String cpf;
     
     /* Método construtor */
     
