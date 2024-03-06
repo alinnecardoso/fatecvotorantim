@@ -1,0 +1,2 @@
+get - retorna o valor de um atributo - retorna o ponteiro
+set - atribui a informação - Altera aquilo que o ponteiro está apontando
