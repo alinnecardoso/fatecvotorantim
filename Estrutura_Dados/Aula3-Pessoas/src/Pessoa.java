@@ -8,7 +8,9 @@ public class Pessoa {
     private Pessoa mae;
     private Pessoa pai;
     private Pessoa[] listaFilhos = new Pessoa[10];
+    private Pessoa[] listaIrmaos = new Pessoa[10];
     private int qtdFilhos=0;
+    private int qtdIrmaos=0;
     //**********************//
     
     // Construtor
@@ -55,8 +57,25 @@ public class Pessoa {
     }
     // LISTA FILHOS
     public Pessoa[] getListaFilhos(){
-        return listaFilhos;
+        return this.listaFilhos;
     }
+    // TELEFONE
+    public String getTelefone(){
+        return this.telefone;
+    }
+    // GÊNERO
+    public String getGenero(){
+        return this.genero;
+    }
+    // CPF
+    public String getCpf(){
+        return this.cpf;
+    }
+    //LISTA IRMÃOS
+    public Pessoa[] getListaIrmaos(){
+        return this.listaIrmaos;
+    }
+    
     
     // ****** metódo Set ******//
     
@@ -72,6 +91,26 @@ public class Pessoa {
     public void setPai(Pessoa pai){
         this.pai = pai;
     }
+    // LISTA FILHOS
+    public void setListaFilhos(Pessoa[] listaFilhos){
+        this.listaFilhos = listaFilhos;
+    }
+    // TELEFONE
+    public void setTelefone(String telefone){
+        this.telefone = telefone;
+    }
+    //  GÊNERO
+    public void setGenero(String genero){
+        this.genero = genero;
+    }
+    // CPF
+    public void setCpf(String cpf){
+        this.cpf = cpf;
+    }
+    // LISTA IRMÃOS
+    public void setListaIrmaos(Pessoa[] listaIrmaos){
+        this.listaIrmaos = listaIrmaos;
+    }
     
     
     //****** Método para adicionar um filho a lista ******//
@@ -82,17 +121,39 @@ public class Pessoa {
     public String retornaListaFilho(){
         // Este método deve retornar uma String com todos os filhos concatenados
         // e separados por ", "
-        this.qtdFilhos = qtdFilhos;
         String retorno = "";
-        for(int i=0; i<qtdFilhos; i++){
-            retorno += listaFilhos[i].getNome() + ", ";
-            
-            if(listaFilhos[i] == null){
-                retorno += listaFilhos[i].getNome() + ". ";
+        for (int i = 0; i < qtdFilhos; i++) {
+            if (listaFilhos[i].getNome() != null) {
+                retorno += listaFilhos[i].getNome();
+                if (i < qtdFilhos - 1) {
+                    retorno += ", ";
+                }
             }
         }
         
-        
-        return retorno;
+        retorno += ".";
+        return "Possui " + qtdFilhos + " filhos: " + retorno;
     }
+    
+    public void addIrmao(Pessoa irmao){
+        listaIrmaos[qtdIrmaos]=irmao;
+        qtdIrmaos++;
+    }
+    
+    
+    public String retornaListaIrmaos(){
+        String retorno = "";
+        for(int i = 0; i < qtdIrmaos; i++){
+            if (listaIrmaos[i].getNome() != null){
+                retorno += listaIrmaos[i].getNome();
+                if (i < qtdIrmaos - 1) {
+                    retorno += ", ";
+                }
+            }
+        }
+        retorno += ".";
+         return "Possui " + qtdIrmaos + " irmãos: " + retorno;
+    
+    }
+    
 }
