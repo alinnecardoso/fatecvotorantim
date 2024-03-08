@@ -1,0 +1,134 @@
+const pessoa: {
+    name: string,
+    idade: number,
+    email: string,
+
+    getNome: () => string,
+    getIdade: () => number,
+    getEmail: () => string
+} = {
+    email: 'alinne14cardoso@gmail.com',
+    idade: 19,
+    name: 'Alinne Martins Cardoso',
+
+    getEmail: () => {
+        return pessoa.email
+    },
+
+    getIdade: () => {
+        return pessoa.idade
+    },
+
+    getNome: () => {
+        return pessoa.name
+    },
+};
+/*
+console.log(pessoa)
+console.log(pessoa.email)
+console.log(pessoa.idade)
+console.log(pessoa.name)*/
+
+enum DiasDeFuncionamento {
+    "TercaFeira",
+    "QuintaFeira",
+    "Sabado"
+};
+
+// console.log(DiasDeFuncionamento.Sabado)
+
+let cpf: string | number | boolean = '111.111.111-11'
+//console.log(cpf)
+
+cpf = 22222222222;
+//console.log(cpf)
+
+cpf = true;
+//console.log(cpf)
+
+type UserCPF = string | number;
+
+let newCPF: UserCPF = '333.333.333-33'
+
+//console.log(newCPF)
+
+newCPF = '444.444.444-44'
+
+//console.log(newCPF)
+
+interface Pedido {
+    id: number;
+    id_produto: number;
+    valor: number;
+    data: Date;
+}
+interface Pessoa{
+    id: number;
+    nome: string;
+    cpf: UserCPF;
+    email: string;
+    pedidos: Pedido[]
+}
+
+const novaPessoa: Pessoa = {
+    id: 1,
+    nome: 'Comprador A',
+    email: 'comprador@gmail.com',
+    cpf: '111.222.333-09',
+    pedidos: [
+        {
+            data: new Date('2024'),
+            id: 1,
+            id_produto: 2,
+            valor: 5000
+        }
+    ]
+}
+
+novaPessoa.pedidos.push({
+    data: new Date(),
+    id:2,
+    id_produto: 3,
+    valor: 678
+})
+
+//console.log(novaPessoa)
+
+interface TipoA {
+    id: number;
+    data: Date;
+}
+
+interface TipoB extends TipoA{
+    nome: string;
+}
+
+type TipoC = TipoA & TipoB
+
+/*interface Parametro<TipoParametro> = any > {
+    dado: TipoParametro
+}
+function func (argumento: Parametro)  {
+    console.log(typeof argumento)
+}
+
+console.log(func)*/
+
+/*
+const soma = (a: number, b:number): number =>{
+    return a + b;
+}
+
+console.log(soma(1, 4))*/
+
+type OperacaoMatematica = (a: number, b:number) => number;
+
+const soma: OperacaoMatematica = (a: number, b: number) => a + b;
+
+const subtracao: OperacaoMatematica = (a: number, b: number) => a - b;
+
+const executarOperacao = (a: number, b: number, operacao: OperacaoMatematica) =>{
+    return operacao(a, b);
+}
+
+console.log(soma(1,2))

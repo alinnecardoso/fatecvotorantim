@@ -1,0 +1,78 @@
+TypeScript
+
+Superset para JavaScript - Mais recuroso para o JavaScript
+
+Typagem estática
+
+VANTAGEM
+1. Tipagem Estática Opcional - Tipos estáticos para detectar erros de tipo durante o desenvolvimento
+
+2. Melhor Suporte a ferramentas de Desenvolvimento - Verificação de erros em tempo real
+
+3. Manutenção de Código - Facilita a compreesão e alteração do código existente, ajudando a entender a estrutura do código
+
+4. Compatibilidade com JavaScript
+
+5. Ecossistema Forte - É amplamente adotado pela comunidade de desenvolvimento, com suporte oficial ou não oficial
+
+DESVANTAGEM
+1. Curva de aprendizado - Pode ser mais difícil para quem não está acostumado;
+
+2. "Menor flexibilidade" - Limita a flexibilidade do código por conta da tipagem;
+
+3. "Maior complexibilidade" - O código fica mais complexo por conta das tipagens, se não usadas corretamente;
+
+4. Maior uso de memória - Requer mais memória do que JavaScript, pois pracisa armazenar informações adicionais sobre tipo etc.
+
+Tipos Primitivos
+1. Number
+
+2. String
+
+3. Boolean
+
+4. null e undefined
+
+5. void - não tem valor no retorno da função
+
+Sintaxe
+
+let valorInteiro: number = 42;
+let valorReeal: nunber = 3.14;
+
+function funcSemRetornoA(): void{
+	const soma = 1 + 1;
+
+	return;
+}
+
+
+Null - Usado em nó, não sabe o próximo valor
+
+class Node{
+	
+}
+
+cons objetos: {nome: string, idade: number}[] = [{nome: "Alinne", idade: 19}]
+
+enum - é basicamente constantes
+
+enum DiasDeFuncionamento {
+	Terça-feira,
+	Quarta-feira,
+	Quinta-feira
+}
+
+let cpf: string | number = '111.111.111-08';
+
+	cpf = 11111111108;
+
+type aliases - apelidos
+
+Interfaces - É uma ferramenta poderosa para definir contratos ou estruturas de objetos em uma aplicação.
+	- Com interfaces podemos "tipar" variáveis, objetos, parâmetros de funçoes, retornos de funções etc.
+
+Generics (tipos genéricos)
+
+========== functions ==========
+
