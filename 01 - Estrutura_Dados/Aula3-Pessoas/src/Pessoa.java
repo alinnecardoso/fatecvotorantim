@@ -23,19 +23,23 @@ public class Pessoa {
     public Pessoa(String nome){
         // "this" acessa a vari�vel dele mesmo, a vari�vel global
         this.nome = nome;
+        
     }// encerra o construtor e apaga as vari�veis dentro dele
     
     // *** Construtor 2 *** //
     public Pessoa(String nome, Pessoa mae){
         this(nome); // chama o construtor 1
         this.mae = mae;
+        
+        mae.addFilho(this);
+        
+        
     }
     
     // *** Construtor 3 *** //
     public Pessoa(String nome, Pessoa mae, Pessoa pai){
         this(nome, mae);
         this.pai = pai;
-        
     }
     
     
@@ -115,8 +119,19 @@ public class Pessoa {
     
     //****** Método para adicionar um filho a lista ******//
     public void addFilho(Pessoa filho){
-        listaFilhos[qtdFilhos]=filho;
-        qtdFilhos++;
+        // Devemos verificar se na lista de filhos
+        // já existe o objeto antes de adiciona-lo
+        
+        boolean encontrei = false;
+        for(int i=0; i<qtdFilhos; i++){
+            if(filho.equals(listaFilhos[i])) //comparação - valor do nome dentro da lista filhos
+                encontrei = true; //se for verdadeiro, não adiciona na lista de filhos
+        }
+        if(encontrei == false){ // se for falso
+            listaFilhos[qtdFilhos]=filho;
+            qtdFilhos++; // adiciona na lista de filho
+        }
+        
     }
     public String retornaListaFilho(){
         // Este método deve retornar uma String com todos os filhos concatenados
@@ -138,6 +153,9 @@ public class Pessoa {
     public void addIrmao(Pessoa irmao){
         listaIrmaos[qtdIrmaos]=irmao;
         qtdIrmaos++;
+        
+        this.mae.addFilho(irmao);
+
     }
     
     
@@ -157,3 +175,4 @@ public class Pessoa {
     }
     
 }
+// Certificar se o nome do filho já não foi adicionado

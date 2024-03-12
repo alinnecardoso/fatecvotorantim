@@ -17,27 +17,27 @@ public class Principal {
      */
     public static void main(String[] args) {
         
-        Pessoa voDoJoao = new Pessoa("Ana");
+        //Pessoa voDoJoao = new Pessoa("Ana");
         // apenas o nome da mãe do joão
         // não tem necessidade da mãe do João ter o nome da sua mãe como parâmetro
-        Pessoa maeDoJoao = new Pessoa("Maria", voDoJoao);
+        Pessoa mae = new Pessoa("Maria"); //voDoJoao -> parametro (nome, mae))
         
-        Pessoa paiDoJoao = new Pessoa("José");
+        Pessoa pai = new Pessoa("José");
         
         // João está recebendo 3 parâmetros (nome, mae, pai)
-        Pessoa Joao = new Pessoa("João", maeDoJoao, paiDoJoao);
+        Pessoa Joao = new Pessoa("João", mae, pai);
         
         // Irmãos João
-        Pessoa irmaoJoao = new Pessoa("Jorel", maeDoJoao);
-        Pessoa irmao2 = new Pessoa("Rafael", maeDoJoao);
-        Pessoa irmao3 = new Pessoa("Matheus", maeDoJoao);
+        Pessoa irmaoJoao = new Pessoa("Jorel", mae);
+        Pessoa irmao2 = new Pessoa("Rafael", mae);
+        Pessoa irmao3 = new Pessoa("Matheus", mae);
         
          // Adiciona irmãos a João
-        maeDoJoao.addIrmao(irmaoJoao);
+        Joao.addIrmao(irmaoJoao);
         
-        maeDoJoao.addIrmao(irmao2);
+        Joao.addIrmao(irmao2);
         
-        maeDoJoao.addIrmao(irmao3);
+        Joao.addIrmao(irmao3);
         
         
         // Nome João
@@ -49,28 +49,26 @@ public class Principal {
         
         System.out.println("Mãe: " + Joao.getMae().getNome());
             // Adiciona Filhos
-        maeDoJoao.addFilho(irmaoJoao);
+        //Joao.addIrmao(irmaoJoao);
         
-        maeDoJoao.addFilho(irmao2);
+        //maeDoJoao.addFilho(irmao2);
         
-        maeDoJoao.addFilho(irmao3);
+        //maeDoJoao.addFilho(irmao3);
         
-        maeDoJoao.addFilho(Joao);
+        //maeDoJoao.addFilho(Joao);
         
-        //System.out.println("Filhos da " + Joao.getMae().getNome()+": ");
-        //System.out.println(Joao.getMae().getListaFilhos()[0].getNome());
         
         // Vó João
-        System.out.println("Vó: " + Joao.getMae().getMae().getNome());
+        //System.out.println("Vó: " + Joao.getMae().getMae().getNome());
         
         // Pai João
         System.out.println("Pai: " + Joao.getPai().getNome());
         
         //Lista filhos
-        System.out.println(Joao.getMae().getNome() + " " + Joao.getMae().retornaListaFilho());
+        System.out.println(mae.getNome() + " e " + pai.getNome() + " " + mae.retornaListaFilho());
         
         //Lista Irmãos
-        System.out.println(Joao.getNome() + " " + Joao.getMae().retornaListaIrmaos());
+        System.out.println(Joao.getNome() + " " + Joao.retornaListaIrmaos());
         
     }
     
