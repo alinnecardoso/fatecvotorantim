@@ -174,5 +174,20 @@ public class Pessoa {
     
     }
     
+    public String arvoreGenealogica(){
+        if (mae == null) return nome + " == Fim ==";
+        
+        else
+            return nome + " -> " + mae.arvoreGenealogica();
+    }
+    
+    public String arvoreGenealogicaFilha(){
+        if (mae  == null ) return nome + " == Fim ==";
+        
+        else
+            return mae.arvoreGenealogicaFilha() + " -> " + nome;
+    }
+    
+    
 }
 // Certificar se o nome do filho já não foi adicionado
