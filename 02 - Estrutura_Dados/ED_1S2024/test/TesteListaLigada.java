@@ -35,9 +35,15 @@ public class TesteListaLigada {
         
         minhaLista.addNo("Alinne");
         minhaLista.addNo("Rafael");
+        minhaLista.addNo("Matheus");
         
         assertEquals("Alinne", minhaLista.get(0));
         assertEquals("Rafael", minhaLista.get(1));
+        assertEquals("Matheus", minhaLista.get(2));
+        
+        System.out.println(minhaLista.get(0));
+        System.out.println(minhaLista.get(1));
+        System.out.println(minhaLista.get(2));
         
         
         
