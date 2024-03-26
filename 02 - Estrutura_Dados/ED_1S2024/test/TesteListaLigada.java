@@ -26,7 +26,7 @@ public class TesteListaLigada {
         assertEquals("Alinne", meuPrimeiroNo.getInfo());
         
         
-    }   
+    }
     
     @Test
     public void testeCriacaoLista() {
@@ -36,14 +36,17 @@ public class TesteListaLigada {
         minhaLista.addNo("Alinne");
         minhaLista.addNo("Rafael");
         minhaLista.addNo("Matheus");
+        minhaLista.addNo("Gabriel");
         
         assertEquals("Alinne", minhaLista.get(0));
         assertEquals("Rafael", minhaLista.get(1));
         assertEquals("Matheus", minhaLista.get(2));
+        assertEquals("Gabriel", minhaLista.get(3));
         
         System.out.println(minhaLista.get(0));
         System.out.println(minhaLista.get(1));
         System.out.println(minhaLista.get(2));
+        System.out.println(minhaLista.get(3));
         
         
         
