@@ -4,6 +4,10 @@
  */
 package ListaDuplaLigada;
 
+import ListaDuplaLigada.TipoOrdenacao.*;
+import static ListaDuplaLigada.TipoOrdenacao.TipoOrdenacao.CRESCENTE;
+import static ListaDuplaLigada.TipoOrdenacao.TipoOrdenacao.DECRESCENTE;
+
 /**
  *
  * @author alinn
@@ -143,6 +147,53 @@ public class ListaDuplamenteLigada {
         return listaConcatenada; //Retorna a lista concatenada
 
     }
+    
+    // método que adiciona valores numéricos em ordem crescente ou decrescente
+    public void adicionarOrdenado(int valor, TipoOrdenacao tipo){
+       NoDuplo novoNo = new NoDuplo(valor, null);
+
+        if (primeiroNo == null) {
+            // Se a lista estiver vazia, insere o novo nó como o primeiro e o último nó
+            primeiroNo = ultimoNo = novoNo;
+        } else {
+            NoDuplo atual = primeiroNo;
+            NoDuplo anterior = null;
+
+            // Percorre a lista até encontrar a posição correta para inserir o novo nó
+            
+            while (atual != null) {
+                if 
+                (
+                (tipo == CRESCENTE && valor < atual.getInfo()) 
+                        ||
+                (tipo == DECRESCENTE && valor > atual.getInfo())
+                        
+                )
+                {break;
+                }
+                anterior = atual;
+                atual = atual.getProximoNo();
+            }
+
+            if (anterior == null) {
+                // Inserção no início da lista
+                novoNo.setProximoNo(primeiroNo);
+                primeiroNo = novoNo;
+            } 
+            else {
+                // Inserção após o nó anterior
+                novoNo.setProximoNo(atual);
+                anterior.setProximoNo(novoNo);
+                if (atual == null) {
+                    // Atualiza o último nó se o novo nó for o último da lista
+                    ultimoNo = novoNo;
+                }
+            }
+        }
+
+        tamanhoLista++;
+    }
+
     
 }   
 
