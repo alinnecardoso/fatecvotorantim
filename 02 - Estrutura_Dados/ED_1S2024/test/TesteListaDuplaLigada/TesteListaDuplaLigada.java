@@ -20,8 +20,8 @@ public class TesteListaDuplaLigada {
     @Test
     public void testeCriacaoDeNos() {
         ListaDuplamenteLigada minhaLista = new ListaDuplamenteLigada();
-        TipoOrdenacao CRESCENTE = TipoOrdenacao.TipoOrdenacao.CRESCENTE;
-        TipoOrdenacao DECRESCENTE = TipoOrdenacao.TipoOrdenacao
+        TipoOrdenacao CRESCENTE = TipoOrdenacao.CRESCENTE;
+        //TipoOrdenacao DECRESCENTE = TipoOrdenacao.DECRESCENTE;
         
         /* minhaLista.adicionar("Alinne");
         minhaLista.adicionar("Rafael");
@@ -45,6 +45,9 @@ public class TesteListaDuplaLigada {
         
         minhaLista.adicionarOrdenado(22, CRESCENTE);
         minhaLista.adicionarOrdenado(21, CRESCENTE);
+        minhaLista.adicionarOrdenado(2, CRESCENTE);
+        minhaLista.adicionarOrdenado(29, CRESCENTE);
+        minhaLista.adicionarOrdenado(19, CRESCENTE);
         
         System.out.println(minhaLista.imprimirLista());
          

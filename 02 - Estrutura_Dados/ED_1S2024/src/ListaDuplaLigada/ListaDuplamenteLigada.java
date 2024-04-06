@@ -5,8 +5,6 @@
 package ListaDuplaLigada;
 
 import ListaDuplaLigada.TipoOrdenacao.*;
-import static ListaDuplaLigada.TipoOrdenacao.TipoOrdenacao.CRESCENTE;
-import static ListaDuplaLigada.TipoOrdenacao.TipoOrdenacao.DECRESCENTE;
 
 /**
  *
@@ -121,12 +119,7 @@ public class ListaDuplamenteLigada {
         return aux;
     }
     
-    // Método que retorna a quantidade de elementos da lista
-    public int tamanhoLista(){
-        return tamanhoLista;
-    }
     
-    // Método que retorna um String com as informações do primeiro ao último item concatenado
     public String imprimirLista(){
         
         String listaConcatenada = ""; //Inicializa a String Vazia
@@ -148,9 +141,53 @@ public class ListaDuplamenteLigada {
 
     }
     
+    
+    // Método que retorna a quantidade de elementos da lista
+    public int tamanhoLista(){
+        return tamanhoLista;
+    }
+    
+    
     // método que adiciona valores numéricos em ordem crescente ou decrescente
     public void adicionarOrdenado(int valor, TipoOrdenacao tipo){
        NoDuplo novoNo = new NoDuplo(valor, null);
+       
+       //Se a lista estiver vazia, insere o novo nó como o primeiro
+       // e último nó
+       if (primeiroNo == null) {
+           primeiroNo = ultimoNo = novoNo;
+       }
+       else{
+           
+           
+           if(tipo.equals(TipoOrdenacao.CRESCENTE)){
+               percorreListaOrdenada(tipo, valor).getInfo();
+           }
+       }
+    }
+    
+    //Método privado para percorrer a lista e encontrar o nó
+    //que esteja entre os valores maior e menor
+    public NoDuplo percorreListaOrdenada(TipoOrdenacao tipo, int valor){
+        NoDuplo aux = primeiroNo;
+        
+        
+        for(int i = 0; i < tamanhoLista; i++){
+            
+            
+            if (tipo.equals(TipoOrdenacao.CRESCENTE)){
+                if((int)getLista(i) > valor ){
+                    adicionar(valor, i);
+                }
+            }
+                
+                
+            
+        }
+        return aux;
+    }
+    
+    /* NoDuplo novoNo = new NoDuplo(valor, null);
 
         if (primeiroNo == null) {
             // Se a lista estiver vazia, insere o novo nó como o primeiro e o último nó
@@ -191,9 +228,10 @@ public class ListaDuplamenteLigada {
             }
         }
 
-        tamanhoLista++;
-    }
-
+        tamanhoLista++; */
+    
+    // Método que retorna um String com as informações do primeiro ao último item concatenado
+    
     
 }   
 

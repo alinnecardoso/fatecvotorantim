@@ -8,17 +8,6 @@ package ListaDuplaLigada;
  *
  * @author alinn
  */
-public class TipoOrdenacao {
-
-    public enum TipoOrdenacao{
-       CRESCENTE,
-
-        /**
-         *
-         */
-        DECRESCENTE
-    }
-    
-    
-    
+public enum TipoOrdenacao {
+       CRESCENTE, DECRESCENTE
 }
