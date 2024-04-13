@@ -40,12 +40,20 @@ public class ListaCircularDuplamenteLigada {
         NoDuplo aux;
         NoDuplo novoNo;
         
-        aux=percorreLista(indice);
+        
+        
+        aux = percorreLista(indice);
         
         /* ****Implemente o código necessário para permitir adiciona em qualquer posição da lista *****/
-        for(int i=0;i<indice;i++){
-            aux = aux.getProximo();
+        
+            
+            NoDuplo auxProx = aux.getProximo();
+            NoDuplo auxAnt = aux.getAnterior();
+            
+            auxAnt.setProximo() = auxProx;
+            auxProx.setProximo() = auxAnt;
         }
+        
         
         
             
@@ -56,7 +64,7 @@ public class ListaCircularDuplamenteLigada {
             
     }
      
-     public void remover(int indice){
+    public void remover(int indice){
         NoDuplo aux;
         if((indice%qtdNos)==0 ){
             //% calcula o modulo da divisão do índice pela qtdNos
