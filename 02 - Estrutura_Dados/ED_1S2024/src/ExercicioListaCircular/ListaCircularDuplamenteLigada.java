@@ -1,18 +1,16 @@
 
 package ExercicioListaCircular;
 
-import ExercicioListaCircular.NoDuplo;
-
 public class ListaCircularDuplamenteLigada {
     
     //Atributos da Lista
     private int qtdNos ;
     private NoDuplo primeiroNo;
     
-    
+    //Construtor da lista circular duplamente ligada
     public ListaCircularDuplamenteLigada(){
-        qtdNos=0;
-        primeiroNo=null;        
+        qtdNos=0; //inicializa a quantidade de nós com 0
+        primeiroNo=null;//inicializa a referência para o primeiro nó como nula
     }
     
     //Método que realiza a adição de um novo elemento no final da lista
@@ -35,35 +33,58 @@ public class ListaCircularDuplamenteLigada {
         }
         
     }
-     public void adicionar(Object item, int indice){
-        //adiciona o item na posição referenciada pelo indice começando por zero
+    //Método que adiciona um elemento em uma posição específica da lista
+    public void adicionar(Object item, int indice){
+        // adiciona o item na posição referenciada pelo indice começando por zero
         NoDuplo aux;
-        NoDuplo novoNo;
-        
-        
-        
+        NoDuplo novoNo; // Cria um novo nó com o item
+
         aux = percorreLista(indice);
-        
+
         /* ****Implemente o código necessário para permitir adiciona em qualquer posição da lista *****/
-        
-            
-            NoDuplo auxProx = aux.getProximo();
-            NoDuplo auxAnt = aux.getAnterior();
-            
-            auxAnt.setProximo() = auxProx;
-            auxProx.setProximo() = auxAnt;
+
+        novoNo = new NoDuplo(null, null, item);
+        // Se a lista estiver vazia, faça o novo nó ser o primeiro e o último nó
+        if (primeiroNo == null) {
+            primeiroNo = novoNo;
+            qtdNos++;
+            return;
         }
+        // Se o índice for 0, adicione o novo nó no início da lista
+        if (indice == 0) {
+            novoNo.setProximo(primeiroNo);
+            primeiroNo.setAnterior(novoNo);
+            primeiroNo = novoNo;
+            qtdNos++;
+            return;
+        }
+        // Se o índice for igual ao tamanho da lista, adicione o novo nó no final da lista
+        if (indice == qtdNos) {
+            NoDuplo ultimoNo = novoNo;
+            ultimoNo.setProximo(novoNo);
+            novoNo.setAnterior(ultimoNo);
+            qtdNos++;
+            return;
+        }
+        novoNo = new NoDuplo(aux.getAnterior(), aux, item);
+        novoNo.setProximo(aux.getProximo());
+        aux.getProximo().setAnterior(novoNo);
+        aux.setProximo(novoNo);
+        novoNo.setAnterior(aux);
+        novoNo.getProximo().setAnterior(novoNo);
+        qtdNos++;
         
-        
-        
-            
+
         /********************************************************************************************/
-        /*Se o índice se refere ao primeiro item, realiza a atualização da referencia do primeiroNo
+        /* Se o índice se refere ao primeiro item, realiza a atualização da referencia do primeiroNo
         Utiliza indice MODULO qtdNos para identificar se o índice se refere ao primeiro Nó*/
-        if((indice%qtdNos)==0){}
-            
+        if ((indice % qtdNos) == 0) {
+            primeiroNo = novoNo;
+        }
     }
-     
+    
+    
+    
     public void remover(int indice){
         NoDuplo aux;
         if((indice%qtdNos)==0 ){
@@ -102,6 +123,8 @@ public class ListaCircularDuplamenteLigada {
         return percorreLista(indice).getInfo();
     }
     
+
+    //Método que percorre a lista
     private NoDuplo percorreLista(int indice){
         //Se o indice for negativo percorre no sentido anti horario
         // Se o indice for positivo percorre no sentido horario

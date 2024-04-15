@@ -5,11 +5,14 @@ public class NoDuplo {
     private NoDuplo proximo, anterior;
     private Object info;
 
+    
     public NoDuplo(NoDuplo proximo, NoDuplo anterior, Object info) {
         this.proximo = proximo;
         this.anterior = anterior;
         this.info = info;
     }
+
+    
 
     public void setProximo(NoDuplo proximo) {
         this.proximo = proximo;
