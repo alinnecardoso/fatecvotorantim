@@ -1,0 +1,13 @@
+MVC (Model - View - Controller)
+
+- Dividir e diminuir a dependência entre os módulos do sistema
+
+- Aumenta flexibilidade e facilita manutenções e atualizações
+
+- Cada camada executa uma função especifica
+
+- Permite interface de usuário
+
+- Model comunica com o banco
+
+- view solicita ao controller para requisições
