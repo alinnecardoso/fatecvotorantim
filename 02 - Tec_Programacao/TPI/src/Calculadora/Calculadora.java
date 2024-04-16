@@ -236,9 +236,6 @@ public class Calculadora extends javax.swing.JFrame {
         }
         double numero1 = Double.parseDouble(txt1.getText());
         double numero2 = Double.parseDouble(txt2.getText());
-        if(numero2 == 0){
-            txtbResultado.setText("Nao e possivel dividir por ZERO!");
-        }
         
         txtbResultado.setText(Double.toString(Calcular.dividir(numero1, numero2)));
     }//GEN-LAST:event_btoDivisaoMouseClicked
