@@ -89,6 +89,11 @@ public class Calculadora extends javax.swing.JFrame {
         });
 
         btoResultado.setText("Resultado");
+        btoResultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btoResultadoActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Calculadora");
 
@@ -258,6 +263,10 @@ public class Calculadora extends javax.swing.JFrame {
         double numero2 = Double.parseDouble(txt2.getText());
         txtbResultado.setText(Double.toString(Calcular.multiplicar(numero1, numero2)));
     }//GEN-LAST:event_btoMultiplicacaoMouseClicked
+
+    private void btoResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btoResultadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btoResultadoActionPerformed
 
     /**
      * @param args the command line arguments
