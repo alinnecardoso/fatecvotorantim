@@ -39,7 +39,7 @@ public class ListaCircularDuplamenteLigada {
         NoDuplo aux;
         NoDuplo novoNo; // Cria um novo nó com o item
 
-        aux = percorreLista(indice);
+        aux = percorreLista(indice - 1);
 
         /* ****Implemente o código necessário para permitir adiciona em qualquer posição da lista *****/
 
@@ -61,8 +61,8 @@ public class ListaCircularDuplamenteLigada {
         // Se o índice for igual ao tamanho da lista, adicione o novo nó no final da lista
         if (indice == qtdNos) {
             NoDuplo ultimoNo = novoNo;
-            ultimoNo.setProximo(novoNo);
-            novoNo.setAnterior(ultimoNo);
+            ultimoNo.setProximo(primeiroNo);
+            novoNo.setAnterior(ultimoNo.getAnterior());
             qtdNos++;
             return;
         }
@@ -97,7 +97,11 @@ public class ListaCircularDuplamenteLigada {
         }
         else{
             /**********Implemente o código que permita remove de qualquer outra posição da lista **********/
-            
+            aux = percorreLista(indice - 1);
+            aux.setProximo(aux.getProximo().getProximo());
+            //altera o nó 
+            aux.getProximo().setAnterior(aux);
+            qtdNos--;
             
             
             /*********************************************************************************************/
