@@ -10,6 +10,7 @@ package ProdutoMateriaPrima;
  * @author Alunos
  */
 class Margem {
+    /* Margem de Lucro, Margem de Garantia, Margem de Desconto */
     /* Atributos da Classe */
     private String nome;
     private String descricao;
