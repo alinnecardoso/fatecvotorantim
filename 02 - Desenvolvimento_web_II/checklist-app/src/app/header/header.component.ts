@@ -4,7 +4,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
 /**
- * @title Toolbar overview
+ * @title Basic toolbar
  */
 @Component({
   selector: 'app-header',
@@ -14,4 +14,3 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   imports: [MatToolbarModule, MatButtonModule, MatIconModule],
 })
 export class HeaderComponent {}
-
