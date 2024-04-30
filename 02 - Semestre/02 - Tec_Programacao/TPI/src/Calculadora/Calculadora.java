@@ -187,10 +187,10 @@ public class Calculadora extends javax.swing.JFrame {
         
         //double soma = numero1 + numero2;
         
-        while(txt1.getText().isBlank()){
+        while(txt1.getText().isEmpty()){
             txt1.setText(JOptionPane.showInputDialog("Digite um valor numerica"));
         }
-        while (txt2.getText().isBlank()) {
+        while (txt2.getText().isEmpty()) {
            txt2.setText(JOptionPane.showInputDialog("Digite um valor numerica"));
             
         }
@@ -215,10 +215,10 @@ public class Calculadora extends javax.swing.JFrame {
         // TODO add your handling code here:
         //double soma = numero1 + numero2;
         
-        while(txt1.getText().isBlank()){
+        while(txt1.getText().isEmpty()){
             txt1.setText(JOptionPane.showInputDialog("Digite um valor numerica"));
         }
-        while (txt2.getText().isBlank()) {
+        while (txt2.getText().isEmpty()) {
            txt2.setText(JOptionPane.showInputDialog("Digite um valor numerica"));
             
         }
@@ -232,10 +232,10 @@ public class Calculadora extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-        while(txt1.getText().isBlank()){
+        while(txt1.getText().isEmpty()){
             txt1.setText(JOptionPane.showInputDialog("Digite um valor numerica"));
         }
-        while (txt2.getText().isBlank()) {
+        while (txt2.getText().isEmpty()) {
            txt2.setText(JOptionPane.showInputDialog("Digite um valor numerica"));
             
         }
@@ -251,10 +251,10 @@ public class Calculadora extends javax.swing.JFrame {
 
     private void btoMultiplicacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btoMultiplicacaoMouseClicked
         // TODO add your handling code here:
-        while(txt1.getText().isBlank()){
+        while(txt1.getText().isEmpty()){
             txt1.setText(JOptionPane.showInputDialog("Digite um valor numerica"));
         }
-        while (txt2.getText().isBlank()) {
+        while (txt2.getText().isEmpty()) {
            txt2.setText(JOptionPane.showInputDialog("Digite um valor numerica"));
             
         }
