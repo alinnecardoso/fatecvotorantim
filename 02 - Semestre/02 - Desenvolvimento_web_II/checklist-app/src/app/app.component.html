@@ -1,3 +1,43 @@
-<app-header></app-header>
 
-</router-outlet>
+<!-- <app-header></app-header>
+
+<div>
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav>
+            <mat-list role="list">
+                <mat-list-item>
+                    <a href="/"><mat-icon>home</mat-icon></a>
+
+                </mat-list-item>
+                <mat-list-item role="listitem">Item 2</mat-list-item>
+                <mat-list-item role="listitem">Item 3</mat-list-item>
+              </mat-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p>
+            <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
+            <p>Events:</p>
+            <div class="example-events">
+              @for (e of events; track e) {
+                <div>{{e}}</div>
+              }
+            </div>
+        </mat-sidenav-content>
+
+    </mat-sidenav-container> -->
+
+    <router-outlet></router-outlet>
+
+<!-- </div>
+
+<h1>{{title}}</h1>
+
+<app-category></app-category>
+<app-test></app-test>
+<label>Texto Binding</label>
+<input type="text" [(ngModel)]="valorTexto" >
+<span>{{valorTexto}}</span>  -->
+
+<app-footer></app-footer>
+

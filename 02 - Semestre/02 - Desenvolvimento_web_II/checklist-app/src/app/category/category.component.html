@@ -1,0 +1,9 @@
+<p>category works!</p>
+
+<div [ngSwitch]="status">
+    <p *ngSwitchCase="'ativo'">O usuário está ativo.</p>
+    <p *ngSwitchCase="'inativo'">O usuário está inativo.</p>
+    <p *ngSwitchCase="'pendente'">O usuário está pendente de aprovação.</p>
+    <p *ngSwitchDefault>O status do usuário é desconhecido.</p>
+</div>
+  

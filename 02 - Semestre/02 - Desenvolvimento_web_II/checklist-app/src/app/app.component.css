@@ -1,0 +1,17 @@
+.main-conteiner{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.a{
+    color: black;
+    text-decoration: none;
+}
+
+.a:hover{
+    font-size: 18px;
+}
