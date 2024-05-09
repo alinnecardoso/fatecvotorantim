@@ -1,0 +1,16 @@
+PROVA
+Diferença entre Classe abstrata e Interface
+
+Classe Abstrata
+	- Não pode instanciar
+	- Só existe a assinatura do método
+	- Quando o método se torna abstrato, a classe também se torna abstrata
+	- A Classe filha pode implementar o método abstrato
+	- Obriga as Classes filhas a implementar o método
+
+Interface
+	- Todos os métodos são abstratos
+	- Não conse ter métodos concreto
+	- É como se assumisse um contrato
+	- Pode ter várias interfaces dentro da Classe
+
