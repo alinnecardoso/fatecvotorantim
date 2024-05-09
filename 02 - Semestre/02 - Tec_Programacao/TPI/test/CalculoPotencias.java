@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
  *
  * @author Alunos
  */
-public class CauculoPotencias {
+public class CalculoPotencias {
     
     @Test
     public void testePotenciaDeDois() {
