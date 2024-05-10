@@ -8,11 +8,11 @@ import { MaterialModule } from '../material.module';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit {
-   constructor(private autorizacaoService: AutorizacaoService){
+export class LoginComponent{
+  //  constructor(private autorizacaoService: AutorizacaoService){implements OnInit
 
-   }
+  //  }
 
-   descricaoLogin() =>
-   this.autorizacaoService.status
+  //  descricaoLogin() =>
+  //  this.autorizacaoService.status
 }
