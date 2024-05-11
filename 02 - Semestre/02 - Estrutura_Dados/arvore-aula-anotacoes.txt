@@ -1,0 +1,42 @@
+=== ARVORE ===
+
+- Estrutura hierarquica
+
+- A árvore tem os nós e arestas
+
+- Nó limitado a duas arestas, é chamado nó binário
+
+- As arestas são os ponteiros e os nós são as "Info"
+
+- Não tem índice -> parecido com a lista ligada
+
+- PROVA -> Expressão mátematica utilizando árvore
+
+- Uma árvore sempre começa pelo nó raíz
+
+- Nós folha -> Nó que não tem filho, não possui o ponteiro apontando para outro nó
+
+- 3 filhos -> Grau 3
+
+- 2 filhos -> Grau 2
+
+- Nó folha -> Grau 0
+
+- Profundidade do nó -> raíz - profundidade 0
+
+=== SUB-ÁRVORE ===
+- Precisa usar a recursão para percorrer a árvore
+
+- Recursão -> Divide um problema em pedaços menores
+
+=== APLICAÇÕES DE ÁRVORES BINÁRIAS ===
+
+- Calculo de expressões matemáticas
+
+- Ordenação e Busca
+
+- Terá uma lista de ponteiros, caso um nó tenha vários filhos
+
+- Se não tiver padrão, não vale a pena fazer recursão
+
+- Se o padrão se repetir, é possível utlizar padrão (Sub-árvores)
