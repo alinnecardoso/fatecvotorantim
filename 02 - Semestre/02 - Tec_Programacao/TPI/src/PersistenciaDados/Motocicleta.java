@@ -27,6 +27,28 @@ public class Motocicleta implements Serializable{
     public float getVelocidade() {
         return velocidade;
     }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+    //MÉTODOS SETTER
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public void setVelocidade(float velocidade) {
+        this.velocidade = velocidade;
+    }
+    
     
     // MÉTODOS
     public float alterarVelocidade(float fatorAceleracao){
