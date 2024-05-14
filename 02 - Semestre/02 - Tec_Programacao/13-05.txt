@@ -1,0 +1,32 @@
+Aula 9 - Técnicas de Programação
+
+=== Serialização e Persistência de Objetos ===
+
+-> Gravação em arquivos (.bin)
+
+- É necessário a serialização antes de registrar em um arquivo
+	- Um arquivo em um grande vetor de bits
+	- Pega um objeto e transforma em uma grande String
+
+- interface Serializable
+	- ObjectOutputStream(write)
+	- ObjectInputStream(read)
+	- FileinputStream e FileOutputStream (gravação e leitura do arquivo no disco)
+
+
+- public class motocicleta implements Serializable
+
+- Implements -> Permite que implemente uma interface
+
+
+Classe Controller
+- lista<Motocicleta>
+- Cadastrar(marca, modelo, velocidade)
+- deletar(id)
+- gravar()
+- ler()
+- listarMotoca(): table
+
+Classe Serializador
+-gravar(list)
+- list = ler()
