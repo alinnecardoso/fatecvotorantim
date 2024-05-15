@@ -254,9 +254,7 @@ public class Cadastro extends javax.swing.JFrame {
         System.out.println("Size of listaMotocicleta after deletion: " + controller.getSizeListaMotocicleta());
 
         // Update the table model with the remaining Motocicleta objects after deletion
-        DefaultTableModel tableModel = controller.upadteDeletelistarMotocas();
-        tblTabela.setModel(tableModel);
-        
+       
     
         /*int selectedRow = tblTabela.getSelectedRow();
         if (selectedRow >= 0) {

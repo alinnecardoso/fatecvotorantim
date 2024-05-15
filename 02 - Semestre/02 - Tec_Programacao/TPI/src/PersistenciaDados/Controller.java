@@ -60,20 +60,6 @@ public class Controller {
         }
         return listaMotocicleta;
     }
-    public DefaultTableModel upadteDeletelistarMotocas(){
-        DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel.addColumn("ID");
-        tableModel.addColumn("Marca");
-        tableModel.addColumn("Modelo");
-        tableModel.addColumn("Velocidade");
-        
-        for (int i = 0; i < listaMotocicleta.size(); i++) {
-            tableModel.removeRow(i-1);
-        }
-        
-
-        return tableModel;
-    }
     
     
     public void gravarMotocicleta(String endereco, Object Motocicleta) throws IOException{
