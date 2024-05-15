@@ -13,6 +13,7 @@ import java.io.Serializable;
  */
 public class Motocicleta implements Serializable{
     //ATRIBUTOS DA CLASSE
+    private int id;
     private String marca, modelo;
     private float velocidade;
     
@@ -35,6 +36,10 @@ public class Motocicleta implements Serializable{
     public String getModelo() {
         return modelo;
     }
+    public int getId() {
+        return id;
+    }
+
     //MÉTODOS SETTER
 
     public void setMarca(String marca) {
@@ -47,6 +52,10 @@ public class Motocicleta implements Serializable{
 
     public void setVelocidade(float velocidade) {
         this.velocidade = velocidade;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
     }
     
     

@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -49,6 +50,8 @@ public class Cadastro extends javax.swing.JFrame {
         btoDeletar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTabela = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        txtId = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -111,9 +114,8 @@ public class Cadastro extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tblTabela);
-        if (tblTabela.getColumnModel().getColumnCount() > 0) {
-            tblTabela.getColumnModel().getColumn(0).setCellEditor(null);
-        }
+
+        jLabel5.setText("Insira o ID");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,13 +137,18 @@ public class Cadastro extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(202, 202, 202)
                         .addComponent(jLabel1))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btoGravar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btoCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btoLer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btoDeletar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(65, 65, 65)
+                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(88, 88, 88)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(btoGravar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btoCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btoLer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btoDeletar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -166,7 +173,10 @@ public class Cadastro extends javax.swing.JFrame {
                     .addComponent(txtVelocidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btoLer))
                 .addGap(44, 44, 44)
-                .addComponent(btoDeletar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btoDeletar)
+                    .addComponent(jLabel5)
+                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(62, Short.MAX_VALUE))
@@ -190,6 +200,9 @@ public class Cadastro extends javax.swing.JFrame {
         
         List<Motocicleta> listaMotocicletas = controller.addLista(marca, modelo, velocidade);
         System.out.println("Lista de motos adicionadas: " + listaMotocicletas);
+        
+        DefaultTableModel tableModel = controller.listarMotocas();
+        tblTabela.setModel(tableModel);
         
         
         
@@ -233,12 +246,25 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void btoDeletarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btoDeletarMouseClicked
         // TODO add your handling code here:
-        String marca = txtMarca.getText();
-        String modelo = txtModelo.getText();
-        float velocidade = Float.parseFloat(txtVelocidade.getText());
+        int id1 = Integer.parseInt(txtId.getText());
+        System.out.println("ID to delete: " + id1);
+        System.out.println("Size of listaMotocicleta before deletion: " + controller.getSizeListaMotocicleta());
+        List<Motocicleta> updatedList = controller.deletar(id1);
+        System.out.println(updatedList);
+        System.out.println("Size of listaMotocicleta after deletion: " + controller.getSizeListaMotocicleta());
+
+        // Update the table model with the remaining Motocicleta objects after deletion
+        DefaultTableModel tableModel = controller.upadteDeletelistarMotocas();
+        tblTabela.setModel(tableModel);
         
-        
-        System.out.println(controller.deletar(marca, modelo, velocidade));
+    
+        /*int selectedRow = tblTabela.getSelectedRow();
+        if (selectedRow >= 0) {
+            int id = (int) tblTabela.getValueAt(selectedRow, 0);
+            System.out.println(controller.deletar(id));
+            DefaultTableModel tableModel = controller.listarMotocas();
+            tblTabela.setModel(tableModel);
+        }*/
         
     }//GEN-LAST:event_btoDeletarMouseClicked
 
@@ -287,8 +313,10 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblTabela;
+    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtMarca;
     private javax.swing.JTextField txtModelo;
     private javax.swing.JTextField txtVelocidade;

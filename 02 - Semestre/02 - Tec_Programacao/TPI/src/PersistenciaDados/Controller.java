@@ -8,6 +8,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -20,6 +22,9 @@ public class Controller {
     //CONSTRUTOR DA CLASSE
     public Controller() {
         listaMotocicleta = new ArrayList<>();
+    }
+    public int getSizeListaMotocicleta(){
+        return listaMotocicleta.size();
     }
     
     // MÉTODO PARA CADASTRAR A MOTOCICLETA
@@ -42,19 +47,34 @@ public class Controller {
     
     
     //MÉTODO PARA REMOVER UMA MOTOCICLETA POR ID
-    // O ID será a ordem em que foi adicionado à lista -> Ainda não sei fazer por ID
-    public List<Motocicleta> deletar(String marca, String modelo, float velocidade) {
-        for(int i=0;i<listaMotocicleta.size();i++){
-            if(listaMotocicleta.get(i).getMarca().equals(marca) &&
-                listaMotocicleta.get(i).getModelo().equals(modelo)&&
-                listaMotocicleta.get(i).getVelocidade() == velocidade){
-                
-                listaMotocicleta.remove(i);
+    public List<Motocicleta> deletar(int id) {
+        for (int i = 0; i < listaMotocicleta.size(); i++) {
+            Motocicleta motocicleta = listaMotocicleta.get(i);
+            motocicleta.setId(id);
+            System.out.println("ID in list: " + motocicleta.getId());
+            if (motocicleta.getId() == id) {
+                System.out.println("id da motocicleta deletada: "+ motocicleta.getId());
+                listaMotocicleta.remove(id);
                 return listaMotocicleta;
             }
         }
         return listaMotocicleta;
     }
+    public DefaultTableModel upadteDeletelistarMotocas(){
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.addColumn("ID");
+        tableModel.addColumn("Marca");
+        tableModel.addColumn("Modelo");
+        tableModel.addColumn("Velocidade");
+        
+        for (int i = 0; i < listaMotocicleta.size(); i++) {
+            tableModel.removeRow(i-1);
+        }
+        
+
+        return tableModel;
+    }
+    
     
     public void gravarMotocicleta(String endereco, Object Motocicleta) throws IOException{
         Serializador.gravar(endereco, Motocicleta);
@@ -65,5 +85,22 @@ public class Controller {
         Serializador.ler(endereco);
     }
     
+    public DefaultTableModel listarMotocas() {
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.addColumn("ID");
+        tableModel.addColumn("Marca");
+        tableModel.addColumn("Modelo");
+        tableModel.addColumn("Velocidade");
+        
+        for (int i = 0; i < listaMotocicleta.size(); i++) {
+            Motocicleta motocicleta = listaMotocicleta.get(i);
+            Object[] row = {i + 1, motocicleta.getMarca(), motocicleta.getModelo(), motocicleta.getVelocidade()};
+            tableModel.addRow(row);
+        }
+        
+
+        return tableModel;
+    }
+
     
 }
