@@ -249,20 +249,19 @@ public class Cadastro extends javax.swing.JFrame {
         int id1 = Integer.parseInt(txtId.getText());
         System.out.println("ID to delete: " + id1);
         System.out.println("Size of listaMotocicleta before deletion: " + controller.getSizeListaMotocicleta());
-        List<Motocicleta> updatedList = controller.deletar(id1);
+        List<Motocicleta> updatedList = controller.deletar(id1-1);
         System.out.println(updatedList);
         System.out.println("Size of listaMotocicleta after deletion: " + controller.getSizeListaMotocicleta());
 
         // Update the table model with the remaining Motocicleta objects after deletion
        
-    
-        /*int selectedRow = tblTabela.getSelectedRow();
+        int selectedRow = tblTabela.getSelectedRow();
         if (selectedRow >= 0) {
             int id = (int) tblTabela.getValueAt(selectedRow, 0);
             System.out.println(controller.deletar(id));
             DefaultTableModel tableModel = controller.listarMotocas();
             tblTabela.setModel(tableModel);
-        }*/
+        }
         
     }//GEN-LAST:event_btoDeletarMouseClicked
 

@@ -1,0 +1,121 @@
+- Modelos de teste de software: SW-CMM, ISO/IEC 12207, ISO/IEC 15504 e CMMI.
+
+========== -- ==========
+
+- Falta de profissionais 
+especializados na área de teste de software
+
+- Dificuldade em implantar um processo 
+de teste utilizando as técnicas existentes na literatura.
+
+========== -- ==========
+
+- DEFINIÇÃO FORMAL: Teste de software é o processo de executar o software de uma maneira controlada com o objetivo de avaliar se o mesmo se comporta conforme 
+o especificado.
+
+
+========== -- ==========
+
+- A dificuldade em testar software 
+é caracterizada por alguns pontos importantes como:
+	- O teste de software é um processo caro;
+	- Existe uma falta de conhecimento sobre a relação custo/benefício do teste;
+	- Há falta de profissionais especializados na área de teste;
+	- Existem dificuldades em implantar um processo de teste;
+	- Há o desconhecimento de um procedimento de teste adequado;
+	- Há o desconhecimento de técnicas de teste adequadas;
+	- Há o desconhecimento sobre como planejar a atividade de teste; 
+	- E finalmente, a preocupação com a atividade de teste somente na fase final do projeto.
+
+========== -- ==========
+
+-  A estratégia de teste  compreende a definição dos seguintes itens:
+	- O nível de teste, isto é, a definição da fase do desenvolvimento do software em que o teste será aplicado;
+	- A técnica de teste a ser utilizada;
+	- O critério de teste a ser adotado;
+	- O tipo de teste a ser aplicado no software.
+
+
+========== -- ==========
+
+- O nível de teste depende da fase do desenvolvimento do software em que o teste poderá ser 
+aplicado:
+	- Teste de unidade -> Compreendendo a codificação dos módulos do sistema
+
+	- Teste de Integração -> A integração dos módulos do sistema
+
+	- Teste de Sistema -> Atendimento aos requisitos funcionais e não funcionais do sistema
+
+	- Teste de Aceitação -> Aceitação do sistema pelo usuário
+
+	- Teste de Regreção -> aplicado na fase de manutenção do sistema
+
+
+========== -- ==========
+
+- Existem duas técnicas de teste:
+	- Teste de Estrutura -> Técnica de teste que adota critérios para a geração dos casos de teste com a finalidade de identificar defeitos nas estruturas internas do software, através de situações que exercitem adequadamente todas as estruturas utilizadas na codificação; 
+
+	- Teste Funcional -> Técnica de teste que adota critérios para a geração dos casos de teste com a finalidade de garantir que os requisitos do software que foi construído sejam plenamente atendidos.
+
+========== -- ==========
+
+- Ao adotar uma dessas técnicas, é necessário escolher um critério de teste
+	- O critério de teste serve para orientar o testador na geração dos casos de teste
+	-  Os elementos requeridos de um critério de teste são os elementos ou as características do software que deverão ser exercitados quando o software for testado.
+
+========== -- ==========
+
+- Tipos de Testes -> Características do software que podem ser testadas:
+	- Teste de Funcioanlidade;
+	- Teste de Interface;
+	- Teste de Desempenho;
+	- Teste de carga (Stress);
+	- Teste de Usabilidade;
+	- Teste de Volume;
+	- Teste de Segurança
+
+========== -- ==========
+
+- Divisão de Melhoria de Processos de Software - DMPS, desenvolveu um projeto que teve como 
+objetivo criar uma metodologia para a introdução ou melhoria do processo de teste de software em empresas produtoras de software, englobando técnicas, procedimentos e ferramentas, capacitando-as a desenvolver produtos de melhor qualidade
+	- A metodologia de teste foi projetada e desenvolvida de uma forma que as empresas pudessem instanciar o processo de teste de acordo com as suas necessidades e disponibilidade de recursos.
+
+	- A metodologia de teste pode ser aplicada a qualquer tipo de software, seja ele sistema de informações ou software científico.
+
+	- A implantação do processo de teste envolve um conjunto de atividades que vai desde o levantamento das necessidades da empresa -> passa pela realização de treinamentos da equipe técnica e -> vai até ao acompanhamento dos trabalhos realizados, constituindo assim, um completo ciclo de implantação da atividade de teste dentro da empresa.
+
+	1. TREINAMENTO: Através de cursos, consiste da capacitação em conceitos básicos sobre teste de 
+software, técnicas de teste, documentação de teste e processo de teste.
+
+	2. PROCESSO DE TESTE: A metodologia define um processo genérico de teste que prevê a realização das atividades de planejamento, projeto, execução e acompanhamento dos testes de unidade, integração, sistemas e aceitação.
+
+	3. SUPORTE PARA GERAÇÃO DE DOCUMENTOS: Consiste na aplicação de uma técnica para a criação de documentos que serão utilizados para a gerência do processo de teste, tanto na fase de preparação para a atividade de teste quanto na fase de registro dos resultados do teste.
+
+========== -- ==========
+
+- O enfoque das atividades de teste não é somente identificar problemas, mas principalmente previnir problemas
+
+========== -- ==========
+
+- Plano de Teste -> Planejamento para execução do teste, incluindo a abrangência, abordagem, recursos e cronograma das atividades de teste. Identifica os itens e as funcionalidades a serem testados, as tarefas a serem realizadas e os riscos associados com a atividade de teste.
+
+- Especificação de Testes:
+	- Especificação de Projeto de Teste -> Refina a abordagem apresentada no Plano de Teste e identifica as funcionalidades e características a serem testadas pelo projeto e por seus testes 
+associados.  Este documento também identifica os casos e os procedimentos de teste, se existirem, e apresenta os critérios de aprovação. 
+
+	- Especificação de Caso de Teste -> Define os casos de teste, incluindo dados de entrada, resultados esperados, ações e condições gerais para a execução do teste.
+
+	- Especificação de Procedimento de Teste -> Especifica os passos para executar um conjunto de 
+casos de teste.
+
+- Relatórios de Teste:
+	- Diário de Teste -> Apresenta registros cronológicos dos detalhes relevantes relacionados com a execução dos testes. 
+	
+	- Relatório de Incidente de Teste ->  Documenta qualquer evento que ocorra durante a atividade de teste e que requeira análise posterior.
+
+	- Relatório-Resumo de Teste -> Apresenta de forma resumida os resultados das atividades de teste  
+associadas com uma ou mais especificações de projeto de teste e provê avaliações baseadas nesses resultados 
+
+	- Relatório de encaminhamento de Item de Teste ->  Identifica os itens encaminhados para teste 
+no caso de equipes distintas serem responsáveis pelas tarefas de desenvolvimento e de teste.
