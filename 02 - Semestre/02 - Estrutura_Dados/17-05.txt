@@ -1,0 +1,10 @@
+Árvore Binária
+
+Percursos em Árvores Binárias
+
+- Pré-ordem: pai -> filho-esquerdo -> filho-direito (Copiar ordem)
+
+- Em ordem: filho-esquerdo -> pai -> filho-direito (Pegar em ordem crescente)
+
+- Pós-ordem: filho-esquerdo -> filho-direito -> pai (resolver expressões matemáticas)
+
