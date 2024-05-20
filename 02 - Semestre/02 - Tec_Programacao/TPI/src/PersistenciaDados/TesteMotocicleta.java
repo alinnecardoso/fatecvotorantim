@@ -6,8 +6,6 @@
 package PersistenciaDados;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -15,7 +13,7 @@ import java.util.logging.Logger;
  */
 public class TesteMotocicleta {
     public static void main(String[] args) {
-        Motocicleta motoca = new Motocicleta("Honda", "Cg 150", 100);
+        Motocicleta motoca = new Motocicleta(1,"Honda", "Cg 150", 100);
         Motocicleta motoca2 = null;
         
         System.out.println("Velocidade atual: " + motoca.getVelocidade());

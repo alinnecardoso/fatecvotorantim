@@ -7,8 +7,6 @@ package PersistenciaDados;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -194,12 +192,15 @@ public class Cadastro extends javax.swing.JFrame {
         String marca = txtMarca.getText();
         String modelo = txtModelo.getText();
         float velocidade = Float.parseFloat(txtVelocidade.getText());
+        int id = Integer.parseInt(txtId.getText());
         
-        Motocicleta novaMotocicleta = controller.cadastrar(marca, modelo, velocidade);
-        System.out.println("Nova moto adicionada:\n" + novaMotocicleta.getMarca());
         
-        List<Motocicleta> listaMotocicletas = controller.addLista(marca, modelo, velocidade);
-        System.out.println("Lista de motos adicionadas: " + listaMotocicletas);
+        controller.cadastrar(id, marca, modelo, velocidade);
+        //System.out.println("Nova moto adicionada:\n" + novaMotocicleta.getMarca());
+        
+        controller.addLista(id, marca, modelo, velocidade);
+        
+        //System.out.println("Lista de motos adicionadas: " + listaMotocicletas + "\n ID: " + id);
         
         DefaultTableModel tableModel = controller.listarMotocas();
         tblTabela.setModel(tableModel);
@@ -214,8 +215,9 @@ public class Cadastro extends javax.swing.JFrame {
         String marca = txtMarca.getText();
         String modelo = txtModelo.getText();
         float velocidade = Float.parseFloat(txtVelocidade.getText());
+        int id = Integer.parseInt(txtId.getText());
         
-        Motocicleta novaMotocicleta = new Motocicleta(marca, modelo, velocidade);
+        Motocicleta novaMotocicleta = new Motocicleta(id, marca, modelo, velocidade);
        
         try {
             Serializador.gravar("motoca.dat", novaMotocicleta);
@@ -233,8 +235,9 @@ public class Cadastro extends javax.swing.JFrame {
         String marca = txtMarca.getText();
         String modelo = txtModelo.getText();
         float velocidade = Float.parseFloat(txtVelocidade.getText());
+        int id = Integer.parseInt(txtId.getText());
         
-        Motocicleta novaMotocicleta = new Motocicleta(marca, modelo, velocidade);
+        Motocicleta novaMotocicleta = new Motocicleta(id, marca, modelo, velocidade);
         try {
             novaMotocicleta = (Motocicleta)Serializador.ler("motocicleta.dat");
         } catch (Exception ex) {
@@ -245,23 +248,18 @@ public class Cadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_btoLerMouseClicked
 
     private void btoDeletarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btoDeletarMouseClicked
-        // TODO add your handling code here:
-        int id1 = Integer.parseInt(txtId.getText());
-        System.out.println("ID to delete: " + id1);
-        System.out.println("Size of listaMotocicleta before deletion: " + controller.getSizeListaMotocicleta());
-        List<Motocicleta> updatedList = controller.deletar(id1-1);
-        System.out.println(updatedList);
-        System.out.println("Size of listaMotocicleta after deletion: " + controller.getSizeListaMotocicleta());
+        
+        /// TODO add your handling code here:
+        int id = Integer.parseInt(txtId.getText());
+        //System.out.println("ID to delete: " + id);
+        //System.out.println("Size of listaMotocicleta before deletion: " + controller.getSizeListaMotocicleta());
+        controller.deletar(id);
+        //System.out.println("Size of listaMotocicleta after deletion: " + controller.getSizeListaMotocicleta());
 
-        // Update the table model with the remaining Motocicleta objects after deletion
-       
-        int selectedRow = tblTabela.getSelectedRow();
-        if (selectedRow >= 0) {
-            int id = (int) tblTabela.getValueAt(selectedRow, 0);
-            System.out.println(controller.deletar(id));
-            DefaultTableModel tableModel = controller.listarMotocas();
-            tblTabela.setModel(tableModel);
-        }
+        // Atualiza a tabela com a lista atualizada de motocicletas
+        DefaultTableModel tableModel = controller.listarMotocas();
+        tblTabela.setModel(tableModel);
+        
         
     }//GEN-LAST:event_btoDeletarMouseClicked
 

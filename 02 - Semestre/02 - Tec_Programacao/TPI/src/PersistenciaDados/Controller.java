@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 /**
  *
@@ -35,34 +34,52 @@ public class Controller {
     //};
 
     // MÉTODO PARA CADASTRAR A MOTOCICLETA
-    public Motocicleta cadastrar(String marca, String modelo, float velocidade) {
-        Motocicleta novaMotocicleta = new Motocicleta(marca, modelo, velocidade);
+    public Motocicleta cadastrar(int id, String marca, String modelo, float velocidade) {
+        Motocicleta novaMotocicleta = new Motocicleta(id, marca, modelo, velocidade);
+        if (existeId(id)) {
+            System.err.println("ID ja existe!");
+            return null;
+    }
+        
+        //System.out.println("ID cadastrar: " + id);
         return novaMotocicleta;
     }
-    public List<Motocicleta> addLista(String marca, String modelo, float velocidade){
-        listaMotocicleta.add(cadastrar(marca, modelo, velocidade));
+    // MÉTODO PARA VERIFICAR SE O ID EXISTE NA LISTA
+    private boolean existeId(int id) {
+        for (Motocicleta motocicleta : listaMotocicleta) {
+            if (motocicleta.getId() == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public List<Motocicleta> addLista(int id, String marca, String modelo, float velocidade){
+        listaMotocicleta.add(cadastrar(id, marca, modelo, velocidade));
+        //System.out.println("ID addList: " + id);
         return listaMotocicleta;
         
     }
     
     
     //MÉTODO PARA REMOVER UMA MOTOCICLETA POR ID
-    public List<Motocicleta> deletar(int id) {
-        for (int i = 0; i < listaMotocicleta.size(); i++) {
-            Motocicleta motocicleta = listaMotocicleta.get(i);
-            motocicleta.setId(id);
-            System.out.println("ID in list: " + motocicleta.getId());
-            if (motocicleta.getId() == id) {
-                System.out.println("id da motocicleta deletada: "+ motocicleta.getId());
-                listaMotocicleta.remove(id);
-                return listaMotocicleta;
-            }
-        }
-        return listaMotocicleta;
+public List<Motocicleta> deletar(int id) {
+    if (!existeId(id)) {
+        System.err.println("ID nao encontrado!");
+        return null;
     }
+    for (int i = 0; i < listaMotocicleta.size(); i++) {
+        Motocicleta motocicleta = listaMotocicleta.get(i);
+        if (motocicleta.getId() == id) {
+            //System.out.println("id da motocicleta deletada: "+ motocicleta.getId());
+            listaMotocicleta.remove(i);
+            return listaMotocicleta;
+        }
+    }
+    return listaMotocicleta;
+}
     
     
-    public void gravarMotocicleta(String endereco, Object Motocicleta) throws IOException{
+    public void gravarMotocicleta(int id, String endereco, Object Motocicleta) throws IOException{
         Serializador.gravar(endereco, Motocicleta);
     }
     
@@ -80,7 +97,8 @@ public class Controller {
         
         for (int i = 0; i < listaMotocicleta.size(); i++) {
             Motocicleta motocicleta = listaMotocicleta.get(i);
-            Object[] row = {i + 1, motocicleta.getMarca(), motocicleta.getModelo(), motocicleta.getVelocidade()};
+            //System.out.println("listarMotoca ID: " + motocicleta.getId());
+            Object[] row = { String.valueOf(motocicleta.getId()), motocicleta.getMarca(), motocicleta.getModelo(), motocicleta.getVelocidade()};
             tableModel.addRow(row);
         }
         

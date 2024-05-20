@@ -18,7 +18,8 @@ public class Motocicleta implements Serializable{
     private float velocidade;
     
     // CONSTRUTOR -> Constrói o objeto
-    public Motocicleta(String marca, String modelo, float velocidade){
+    public Motocicleta(int id, String marca, String modelo, float velocidade){
+        this.id = id;
         this.marca = marca;
         this.modelo = modelo;
         this.velocidade = velocidade;
