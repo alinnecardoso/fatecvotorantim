@@ -313,6 +313,11 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
+        String filename = File.separator;
+        JFileChooser fc = new JFileChooser(new File(filename));
+        fc.showOpenDialog(jPanel2);
+        File selFile= fc.getSelectedFile();
+        PersistenciaDados.salvar(controle, selFile.toString());
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void txtValorMaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorMaxActionPerformed
@@ -339,12 +344,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_cboxTipoVeiculoActionPerformed
 
     private void jMenuItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseClicked
-        // TODO add your handling code here:
-        String filename = File.separator;
-        JFileChooser fc = new JFileChooser(new File(filename));
-        fc.showOpenDialog(jPanel2);
-        File selFile= fc.getSelectedFile();
-        PersistenciaDados.salvar(controle, selFile.toString());
+
     }//GEN-LAST:event_jMenuItem1MouseClicked
 
     /**
