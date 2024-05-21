@@ -1,0 +1,40 @@
+Classe Veiculo
+- Marca
+- Modelo
+- Cor
+- Ano
+- ValorVenda
+
+Classe Moto extends Veiculo
+- TiposMotos
+- 
+
+Classe Carro extends Veiculo
+- TipoCarros
+
+
+Classe Pessoa
+- Nome
+- Telefone
+- CPF
+
+Classe Cliente extends Pessoa
+- valorMax
+- valorMin
+- tipoVeiculo
+
+
+View
+- Tela Cadastro
+	- Cliente
+	- Veiculos
+	- tipoVeiiculo
+
+Controller
+- CadastarCliente
+- CadastrarVeiculo
+- EditarCliente
+- EditarVeiculo
+- Salvar
+- Abrir
+
