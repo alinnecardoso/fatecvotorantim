@@ -1,0 +1,13 @@
+Controle Transacional -> Preservar a integridade e a consitência dos dados
+
+Begin Transaction: É um comando no Microsoft SQL Server que é usado para iniciar uma transação no Banco
+
+
+Commit: Comando que confirma uma transação. Todas as operações são concluídas com sucesso, e as mudanças não podem ser desfeitas
+
+RoolBack: Comando que desfaz uma transação. Desfaz todas as operações realizadas dentro da transação. Isso garante que o banco de dados retorne ao seu estado original.
+
+case - permite que uma expressão tenha valores condicionais
+
+begin..end - Define um bloco de comandos
+
