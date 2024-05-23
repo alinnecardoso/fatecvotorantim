@@ -1,0 +1,26 @@
+.main-conteiner{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 50px 80px;
+}
+
+.example-events {
+    width: 300px;
+    height: 200px;
+    overflow: auto;
+    border: 1px solid #555;
+  }
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    font-size: 18px;
+}
+

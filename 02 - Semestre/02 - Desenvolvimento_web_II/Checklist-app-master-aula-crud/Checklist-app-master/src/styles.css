@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.h-p100{
+    height: 100%;
+}
+.w-p10{
+    width: 20%;
+}
+
+.ml-15{
+    margin-left: 15px;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.w-300{
+    width: 300px;
+}
+.mg-20{
+    margin: 20px;
+}
+
+.mr-10{
+    margin-right: 10px;
+}
+
+.flx-center-row{
+    display: flex;
+    flex-direction: row ;
+    align-items: center;
+} 
+
+.flx-evly{
+    justify-content: space-evenly;
+}

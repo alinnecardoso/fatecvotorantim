@@ -1,0 +1,7 @@
+table {
+    width: 100%;
+  }
+
+.botao {
+    margin-right: 10px; /* Adiciona uma margem de 10 pixels à direita de cada botão */
+}

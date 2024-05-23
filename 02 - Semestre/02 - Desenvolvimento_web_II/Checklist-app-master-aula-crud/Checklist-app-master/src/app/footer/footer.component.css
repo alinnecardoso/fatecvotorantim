@@ -1,0 +1,8 @@
+.app-footer-style{
+    justify-content: end;
+}
+.app-footer-style span {
+    font-weight: bold;
+    font-size: 12px;
+    color: blue;
+}
