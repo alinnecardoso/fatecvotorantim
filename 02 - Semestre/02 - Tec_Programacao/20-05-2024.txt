@@ -28,7 +28,7 @@ View
 - Tela Cadastro
 	- Cliente
 	- Veiculos
-	- tipoVeiiculo
+	- tipoVeiculo
 
 Controller
 - CadastarCliente
