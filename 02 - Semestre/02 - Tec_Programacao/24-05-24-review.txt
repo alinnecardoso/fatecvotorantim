@@ -1,0 +1,62 @@
+Grafos
+
+Vértices e arestas
+
+Vértices -> Nós
+Arestas -> Ligam os vértices (Setas)
+
+Arestas direcionadas -> Mão unica
+
+Arestas Não-Direcionadas -> Mão dupla
+
+A árvore é um grafo direcional
+
+Grafos com Peso
+
+Cada nó da lista contém o vértice vizinho e o custo da aresta (Sem infinitos)
+
+
+busca em profundidade
+A cada passo, é escolhida uma aresta que parte do vértice escolhido que foi visitado por último
+
+A cada passo, é escolhida uma aresta que parte do vértice escolhido que foi visitado primeiro
+
+Busca em largura
+
+A cada passo, é escolhida uma aresta que parte do vertice que foi escolhido primeiro
+
+Abstração -> Diminuir a complexidade na hora de programar
+
+Polimorfismo -> Mudança (Aluno transforma funcionário), ou seja, existem caracteristicas semelhantes herdadas da classe Pai
+
+Para que serve a Maquina virtual Java?
+
+Explicar encapsulamento
+
+Não aceita multiplas heranças (Herança simples - Herda apenas de UMA classe)
+
+Pode ter várias Interfaces
+
+Uma classe definida como FINAL não pode ter subclasse(herdeiros)
+
+Método FINAL não pode ser redefinido
+
+Atributo FINAL não pode ser modificado
+
+Método Abstrato -> Passa a implementação desse método para os filhos
+
+Classe Abstrata -> se tiver um método abstrato, a classe tem que se tornar abstrata também. Não pode ser instanciada
+
+Se Pessoa for abstrata, não pode instanciar Pessoa, apenas as Classes filhas podem ser instanciadas
+
+Interface não tem nenhuma implementação
+	private login();
+	private logout();
+Interface define contrato e o tipo de retorno de cada método implementado
+
+Os serializadores são usados:
+transforma tudo em uma lista de bits
+Arquivos de configuração
+.config
+-> Possui o xml (Grava as configurações)
+.dat
