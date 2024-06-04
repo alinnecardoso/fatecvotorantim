@@ -1,0 +1,45 @@
+<div style="margin: 20px; border: 2px solid black;">
+    <h1 *ngIf="showTitle">Isso é um teste</h1>
+    <p><button (click)="changeButtonDisplayStatus()">Exibir Titulo</button></p>
+</div>
+
+
+<div style="margin: 20px; border: 4px solid black;">
+    <ul>
+        <li *ngFor="let item of itens" [ngClass]="item.id % 2 ? 'style-1' : 'style-2'">{{item.descricao}}</li>
+    </ul>
+</div>
+
+<div style="margin: 20px; border: 1px solid black;">
+    <h1>Impressão de Título Digitado</h1>
+    <p><button (click)="processClick('Hello World')">Hello</button></p>
+    <h1 *ngIf="showTitle">Título Digitado Exibido</h1>
+    <p><button (click)="changeButtonDisplayStatus()">Exibir Titulo</button></p>
+    <p>{{stringInterpolation}}</p>
+</div>
+
+<p><button [disabled]="isDisabled">Botao 1</button></p>
+<p><button (click)="disableButton()">Botao 2</button></p>
+
+<div [ngSwitch]="statusUsuario">
+    <p *ngSwitchCase="'ativo'">O usuário está ativo.</p>
+    <p *ngSwitchCase="'inativo'">O usuário está inativo.</p>
+    <p *ngSwitchCase="'pendente'">O usuário está pendente de aprovação.</p>
+    <p *ngSwitchDefault>O status do usuário é desconhecido.</p>
+</div>
+  
+
+<!--*
+<app-category></app-category> "-->
+
+<label>Texto Binding</label>
+<input type="text" [(ngModel)]="valorTexto" >
+<span>{{valorTexto}}</span> 
+
+
+
+<!--* <button (click)="processClick('Hello World')">Test</button> *-->
+
+
+
+
