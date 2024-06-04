@@ -1,0 +1,29 @@
+Alterar o nome produto que está como int para string 
+
+Alterar o preço do produto como double ou float
+
+	
+
+-------
+Restaurante
+
+- Alterar pedido enviado e começarPedido para utilizar o enum StatusPedido
+
+- novo método verStatusPedido (adicionar)
+
+--------
+Empresa
+
+consertar ListaDePedido > ListaPedido
+- PresençaFuncionario retornar uma List<Funcionarios>
+- CNPJ mudar para string
+- Consertar escrita do método somar_pedido > somarPedido
+- Nova propriedade restauranteSelecionado
+
+------------
+Administrador
+
+CrudNovoUsuario > CrudUsuario
+
+
+
