@@ -1,0 +1,57 @@
+-- [1]
+SELECT f.nrfatura, f.datafatura, c.codcliente, c.nome
+FROM fatura f
+JOIN cliente c ON f.codcliente = c.codcliente
+ORDER BY c.nome;
+
+-- [2]
+SELECT p.codproduto, p.descricao, p.preco, f.nomeforn, p.saldo
+FROM produto p
+JOIN fornecedor f ON p.codforn = f.codforn
+ORDER BY p.descricao;
+
+-- [3]
+SELECT f.nrfatura, SUM(fd.valor) AS valor_total
+FROM fatura f
+JOIN itens_fatura id ON f.nrfatura = fd.nrfatura
+GROUP BY f.nrfatura;
+
+-- [4]
+SELECT f.nomeforn, COUNT(p.codproduto) AS quantidade_produtos
+FROM produto p
+JOIN fornecedor f ON p.codforn = f.codforn
+GROUP BY f.nomeforn;
+
+-- [5]
+SELECT f.nrfatura, COUNT(fd.qtde) AS quantidade_itens
+FROM fatura f
+JOIN itens_fatura fd ON f.nrfatura = fd.nrfatura
+GROUP BY f.nrfatura;
+
+-- [6]
+SELECT c.nome, SUM(fd.valor) AS valor_total
+FROM cliente c
+JOIN fatura f ON c.codcliente = f.codcliente
+JOIN itens_fatura fd ON f.nrfatura = fd.nrfatura
+GROUP BY c.nome;
+
+-- [7]
+SELECT c.area, COUNT(c.codcliente) AS quantidade_clientes
+FROM cliente c
+GROUP BY c.area;
+
+-- [8]
+SELECT f.nomeforn, COUNT(p.codproduto) AS quantidade_produtos
+FROM produto p
+JOIN fornecedor f ON p.codforn = f.codforn
+GROUP BY f.nomeforn;
+
+-- [9] 
+SELECT AVG(valor) AS media_valor_faturado
+FROM itens_fatura;
+
+-- [10]
+SELECT nrfatura, 
+FROM itens_fatura
+GROUP BY nrfatura
+HAVING COUNT(*) > 2;
