@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="openSideNav()">
+  <mat-icon>menu</mat-icon>
+  </button>
+  
+  <span> Aplicação Aula Prática </span> 
+
+  <span class="spacer"></span>
+
+  <button mat-button [matMenuTriggerFor]="aboveMenu" (click)="checkLoginRead()">
+    Above
+  </button>
+  <mat-menu #aboveMenu="matMenu" yPosition="above">
+    <button mat-menu-item>
+      <a [routerLink]="['/home']" (click)="checkLoginRead()">Home</a>
+    </button>
+    <button mat-menu-item *ngIf="loginRead">
+      <a [routerLink]="['/element']" (click)="checkLoginRead()">Elementos</a>
+    </button>
+  </mat-menu>
+ 
+</mat-toolbar>

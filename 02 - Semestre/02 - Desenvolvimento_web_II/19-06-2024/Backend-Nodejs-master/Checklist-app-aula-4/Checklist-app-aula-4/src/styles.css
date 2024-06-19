@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.h-p100{
+    height: 100%;
+}
+.w-p10{
+    width: 20%;
+}
+
+.ml-15{
+    margin-left: 15px;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.w-300{
+    width: 300px;
+}
+.mg-20{
+    margin: 20px;
+}
+
+.mr-10{
+    margin-right: 10px;
+}
+
+.flx-center-row{
+    display: flex;
+    flex-direction: row ;
+    align-items: center;
+} 
+
+.flx-evly{
+    justify-content: space-evenly;
+}
+
+/* Define a altura mínima para o sidenav */
+.sidenav-container {
+    height: 100vh;
+  }
+  
+  .sidenav {
+    min-height: 50vh; /* Altura mínima para ocupar 50 % da altura da janela */
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+  
+  .sidenav-content {
+    margin-left: 250px; /* Ajuste conforme a largura da sua sidenav */
+    padding: 20px;
+  }
+
+/* sidebar.component.css */
+.sidebar {
+    min-height: 100vh; /* Define a altura mínima para a sidebar ocupar toda a altura da tela */
+    background-color: #f8f9fa; /* Cor de fundo da sidebar */
+    padding: 20px; /* Espaçamento interno */
+  }
+  
+  .main-content {
+    margin-left: 250px; /* Ajuste conforme a largura da sua sidebar */
+    padding: 20px;
+  }

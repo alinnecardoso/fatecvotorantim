@@ -1,0 +1,72 @@
+<btnpadrao typeBtn = "solid-primary"  class="ml-15" > </btnpadrao> 
+
+<btnpadrao typeBtn = "outline-primary" class="ml-15"> </btnpadrao> 
+
+<btnpadrao typeBtn = "outline-secondary" class="ml-15"> </btnpadrao> 
+
+
+<div style="margin: 20px; border: 2px solid black;">
+    <h1 *ngIf="showTitle">Isso é um teste</h1>
+    <p><button (click)="changeButtonDisplayStatus()">Exibir Titulo</button></p>
+</div>
+
+
+<div style="margin: 20px; border: 4px solid black;">
+    <ul>
+        <li *ngFor="let item of itens" [ngClass]="item.id % 2 ? 'style-1' : 'style-2'">{{item.descricao}}</li>
+    </ul>
+</div>
+
+<div style="margin: 20px; border: 1px solid black;">
+    <h1>Impressão de Título Digitado</h1>
+    <p><button (click)="processClick('Hello World')">Hello</button></p>
+    <h1 *ngIf="showTitle">Título Digitado Exibido</h1>
+    <p><button (click)="changeButtonDisplayStatus()">Exibir Titulo</button></p>
+    <p>{{stringInterpolation}}</p>
+</div>
+
+<p><button [disabled]="isDisabled">Botao 1</button></p>
+<p><button (click)="disableButton()">Botao 2</button></p>
+
+<div [ngSwitch]="statusUsuario">
+    <p *ngSwitchCase="'ativo'">O usuário está ativo.</p>
+    <p *ngSwitchCase="'inativo'">O usuário está inativo.</p>
+    <p *ngSwitchCase="'pendente'">O usuário está pendente de aprovação.</p>
+    <p *ngSwitchDefault>O status do usuário é desconhecido.</p>
+</div>
+  
+
+<!--*
+<app-category></app-category> "-->
+
+<div class="container">
+    <div class="item">
+        <label>Texto Binding</label>
+        <input type="text" [(ngModel)]="valorTexto" >
+        <span>{{valorTexto}}</span> 
+    </div>
+    <div class="item">
+    <ol>
+        <li>
+          <label id="dialog-user-name">What's your name?</label>
+          <input for="dialog-user-name" [(ngModel)]="name">
+        </li>
+        <li>
+          <button (click)="openDialog()">Pick one</button>
+        </li>
+        @if (animal) {
+          <li>
+            You chose: <em>{{animal}}</em>
+          </li>
+        }
+      </ol>
+    </div>
+</div>
+
+
+
+<!--* <button (click)="processClick('Hello World')">Test</button> *-->
+
+
+
+

@@ -1,0 +1,38 @@
+:host{
+    button{
+        border: 0px;
+        height: 35px;
+        width: 120px;
+        border-radius: 6px;
+    }
+
+    button[typeBtn = "solid-primary"] {
+        background: green;
+        border: 0px;
+        color: white;
+        transition: 600ms;
+        &:hover{
+            background: #3f6031;
+        }
+    }
+
+    button[typeBtn = "outline-primary"] {
+        background: transparent;
+        border: 1px solid blue;
+        color: blue;
+        transition: 600ms;
+        &:hover{
+            background: #dbe4f6;
+        }
+    }
+
+    button[typeBtn = "outline-secundary"] {
+        background: transparent;
+        border: 1px solid red;
+        color: red;
+        transition: 600ms;
+        &:hover{
+            background: #f6dbdb;
+        }
+    }
+}

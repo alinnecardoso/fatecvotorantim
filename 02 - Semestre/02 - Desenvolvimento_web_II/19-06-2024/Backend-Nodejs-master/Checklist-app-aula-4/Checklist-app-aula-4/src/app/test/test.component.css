@@ -1,0 +1,21 @@
+.style-1, .style-2{
+    font-size: 20px;
+    font-weight: bold;
+    color:blue
+}
+
+.style-2{
+    color: green;
+}
+
+.container {
+    display: flex; /* Ativa o layout flexbox */
+  }
+  
+  .item {
+    flex: 1; /* Ajusta o tamanho dos itens para ocupar o mesmo espaço */
+    padding: 10px;
+    background-color: lightblue;
+    margin: 5px;
+  }
+  
