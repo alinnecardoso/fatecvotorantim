@@ -8,7 +8,7 @@ const dbConfig = {
     user: 'dba_sqlserver',
     password: 'pla(omp',
     server: '192.168.0.61',
-    database: 'Checklist_app',
+    database: 'Checklist-app',
     options: {
         encrypt: false, // Desabilita criptografia
         enableArithAbort: true,
@@ -37,6 +37,7 @@ app.get('/api/test-connection', async (req, res) => {
             message: 'Conexão bem-sucedida!',
             result: result.recordset
         });
+        res.send('Servidor está funcionando');
     } catch (err) {
         console.error('Erro ao conectar ao banco de dados:', err);
         res.status(500).send('Erro ao conectar ao banco de dados');
@@ -53,6 +54,7 @@ app.get('/api/PeriodicElement', async (req, res) => {
         const result = await sql.query`SELECT id, position, name, weight, symbol FROM PeriodicElement`;
         
         res.json(result.recordset);
+        
     } catch (err) {
         console.error(err);
         res.status(500).send('Erro no servidor');
