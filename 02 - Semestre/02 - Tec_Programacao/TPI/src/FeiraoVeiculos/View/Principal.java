@@ -157,6 +157,11 @@ public class Principal extends javax.swing.JFrame {
                 btoCadastrarClientesMouseClicked(evt);
             }
         });
+        btoCadastrarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btoCadastrarClientesActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Editar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -346,6 +351,10 @@ public class Principal extends javax.swing.JFrame {
     private void jMenuItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseClicked
 
     }//GEN-LAST:event_jMenuItem1MouseClicked
+
+    private void btoCadastrarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btoCadastrarClientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btoCadastrarClientesActionPerformed
 
     /**
      * @param args the command line arguments
