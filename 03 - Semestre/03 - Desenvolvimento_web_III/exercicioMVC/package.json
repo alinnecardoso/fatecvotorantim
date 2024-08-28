@@ -4,7 +4,8 @@
   "description": "exercicio valendo um ponto na prova",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "keywords": [
     "mvc",
@@ -16,7 +17,7 @@
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.19.2",
-    "node": "^22.7.0",
+    "nodemon": "^3.1.4",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.1"
   }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Inicial</title>
+</head>
+<body>
+  <h1>Página Inicial</h1>
+  <p>O projeto visa criar uma plataforma que facilite a comunicação entre restaurantes, pequenas e médias empresas. A ideia é permitir que os donos das empresas e seus funcionários escolham facilmente onde desejam pedir o almoço. A plataforma propõe uma “lista de chamada” para que os funcionários possam selecionar suas opções diretamente do menu do restaurante escolhido. Além disso, as empresas terão a opção de fechar prazos maiores com o mesmo restaurante, garantindo preços melhores.</p>
+  <section style="border: solid 1px black">
+    <%- include('formulario.ejs') %>
+  </section>
+
+  <section>
+    <h1>Users List</h1>
+    <ul>
+      <% users.forEach(user => { %>
+        <li>Nome: <%= user.name %>, Email: <%= user.email %></li>
+      <% }); %>
+    </ul>
+  </section>
+
+  
+</body>
+</html>
