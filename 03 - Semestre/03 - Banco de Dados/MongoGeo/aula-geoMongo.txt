@@ -1,0 +1,7 @@
+Operadores de Geo Referência
+
+$near -> Encontrar documentos proóximos a um ponto
+Exemplo: Quais os locais mais próximos de mim?
+
+$geowithin -> Encontrar documentos dentro de uma área
+Exemplo: Quais lojas estão dentro da área demarcada

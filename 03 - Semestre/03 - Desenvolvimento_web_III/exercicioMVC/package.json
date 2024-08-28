@@ -1,0 +1,23 @@
+{
+  "name": "exerciciomvc",
+  "version": "1.0.0",
+  "description": "exercicio valendo um ponto na prova",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mvc",
+    "grabber",
+    "node"
+  ],
+  "author": "Alinne",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "node": "^22.7.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  }
+}

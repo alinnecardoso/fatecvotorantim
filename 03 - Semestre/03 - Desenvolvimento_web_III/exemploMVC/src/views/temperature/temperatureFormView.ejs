@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+</head>
+<body>
+    <form action="/temperature-send" method="post">  
+        <label>Tipo</label>      
+        <select id="type" name="type">
+            <option value="C">Celsius</option>
+            <option value="F">fahrenheit</option>
+        </select>
+        <label>Temperatura</label>
+        <input type="text" name="temperature" id="temperature">
+
+        <input type="submit" id="enviar" value="Enviar">
+    </form>
+    
+</body>
+</html>

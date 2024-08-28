@@ -1,0 +1,3 @@
+PATCH -> atualiza parte do recurso
+
+HEADER -> JWT (JSON Web Tokens), Chaves de API
