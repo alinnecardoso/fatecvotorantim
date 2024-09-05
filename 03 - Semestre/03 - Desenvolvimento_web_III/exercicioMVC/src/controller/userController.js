@@ -1,17 +1,14 @@
-const userModel = require('../model/user')
+const UserModel = require('../model/user')
+
+const userModel = new UserModel();
+
+let users = userModel.getAll();
 
 exports.getForms = ((req, res) =>{
   res.redirect("/users")
   res.render("index")
 })
 
-// Supondo que `users` esteja definido e seja um array
-let users = [
-  { 
-    name: 'John Doe',
-    email: 'john@example.com'
-  },
-]; // Definição inicial de users como um array
 
 exports.postForms = ((req, res) => {
   const { name, email } = req.body;
@@ -22,7 +19,7 @@ exports.postForms = ((req, res) => {
   };
 
   // Adiciona o novo usuário ao array users
-  users.push(newUser);
+  users.save(newUser);
 
   // Responde com sucesso e o novo usuário adicionado
   res.status(200) // Corrigido para usar status
