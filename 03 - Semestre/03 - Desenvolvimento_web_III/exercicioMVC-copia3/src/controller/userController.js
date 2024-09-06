@@ -5,7 +5,8 @@ const userModel = new UserModel();
 let users = userModel.getAll();
 
 exports.getForms = ((req, res) =>{
-  res.render("index")
+  const message = {}; 
+  res.render("index",{ message })
 })
 
 exports.postForms = ((req, res) => {
@@ -16,12 +17,26 @@ exports.postForms = ((req, res) => {
     email: email,
   };
 
-  userModel.save(newUser)
 
-  // Responde com sucesso e o novo usuário adicionado
-  res.status(200) // Corrigido para usar status
-  res.redirect('/users'); // Redireciona para a página de listagem
+  // Verifica se o email já existe
+  const existingUser = users.find((user) => user.email === email);
+
+  if (existingUser) {
+    // Exibe mensagem de erro e interrompe a execução
+    return res.render('index', {
+      message: { type: 'danger', text: 'Esse email já existe' }
+    });
+  }
+
+  // Salva o novo usuário se o email não existir
+  userModel.save(newUser);
+
+  // Exibe mensagem de sucesso
+  res.render('index', {
+    message: { type: 'success', text: 'Usuário cadastrado com sucesso!' }
+  });
 });
+
 
 exports.listUsers = ((req, res) => {
   res.render("adm", { users });

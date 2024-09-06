@@ -7,16 +7,32 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container mt-5">
-    <h1 class="mb-4">Página Inicial</h1>
-    <p class="lead">
-      O projeto visa criar uma plataforma que facilite a comunicação entre restaurantes, pequenas e médias empresas. A ideia é permitir que os donos das empresas e seus funcionários escolham facilmente onde desejam pedir o almoço. A plataforma propõe uma “lista de chamada” para que os funcionários possam selecionar suas opções diretamente do menu do restaurante escolhido. Além disso, as empresas terão a opção de fechar prazos maiores com o mesmo restaurante, garantindo preços melhores.
-    </p>
+  <header>
+      <%- include('./components/header/index.ejs') %>
+  </header>
+  <main class="container mt-5">
+    <section>
+      <h1 class="mb-4">Página Inicial</h1>
+      <p class="lead">
+        O projeto visa criar uma plataforma que facilite a comunicação entre restaurantes, pequenas e médias empresas. A ideia é permitir que os donos das empresas e seus funcionários escolham facilmente onde desejam pedir o almoço. A plataforma propõe uma “lista de chamada” para que os funcionários possam selecionar suas opções diretamente do menu do restaurante escolhido. Além disso, as empresas terão a opção de fechar prazos maiores com o mesmo restaurante, garantindo preços melhores.
+      </p>
+    </section>
+    
     <section>
       <h2 class="mt-5">Formulário</h2>
       <%- include('formulario.ejs') %>
     </section>
-  </div>
+
+    <section>
+      <!-- Área para exibir as mensagens -->
+    <% if (message) { %>
+      <div class="alert alert-<%= message.type %>">
+        <%= message.text %>
+      </div>
+      <% } %>
+      
+    </section>
+  </main>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
