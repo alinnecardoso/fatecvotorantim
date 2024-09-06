@@ -1,0 +1,113 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "MVC Exercicio",
+    "description": "Showing how to use mvc"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/forms": {
+      "get": {
+        "tags": [
+          "Forms"
+        ],
+        "summary": "Exibe o formulário de cadastro",
+        "description": "Renderiza a página com o formulário para cadastro de usuários",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Forms"
+        ],
+        "summary": "Cadastro de novo usuário",
+        "description": "Recebe os dados do formulário e salva um novo usuário, verificando se o e-mail já existe.",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "any"
+                  },
+                  "email": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/qtdEmail": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Conta o número de usuários",
+        "description": "Retorna a contagem total de usuários cadastrados.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Lista todos os usuários",
+        "description": "Renderiza a página de administração com a lista de usuários.",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/forms/{email}": {
+      "post": {
+        "tags": [
+          "Users, email"
+        ],
+        "summary": "Deleta um usuário por email",
+        "description": "Remove um usuário da lista com base no email fornecido.",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    }
+  }
+}

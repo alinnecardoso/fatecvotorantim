@@ -1,0 +1,102 @@
+openapi: 3.0.0
+info:
+  title: API de Usuários
+  description: API para gerenciar usuários, incluindo criação, listagem, e exclusão.
+  version: 1.0.0
+paths:
+  /forms:
+    get:
+      summary: Exibe o formulário de cadastro
+      responses:
+        '200':
+          description: Página inicial com o formulário
+          content:
+            text/html:
+              schema:
+                type: string
+    post:
+      summary: Cria um novo usuário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "John Doe"
+                email:
+                  type: string
+                  example: "john@example.com"
+      responses:
+        '200':
+          description: Usuário criado com sucesso
+          content:
+            text/html:
+              schema:
+                type: string
+        '400':
+          description: Erro ao criar usuário
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /users:
+    get:
+      summary: Lista todos os usuários
+      responses:
+        '200':
+          description: Lista de usuários
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /users/{email}:
+    delete:
+      summary: Exclui um usuário pelo email
+      parameters:
+        - in: path
+          name: email
+          required: true
+          schema:
+            type: string
+            example: "john@example.com"
+      responses:
+        '200':
+          description: Usuário excluído com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  deleted:
+                    type: boolean
+                    example: true
+        '400':
+          description: Usuário não encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "User not found"
+
+  /users/count:
+    get:
+      summary: Conta o número de usuários
+      responses:
+        '200':
+          description: Contagem de usuários
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 10
