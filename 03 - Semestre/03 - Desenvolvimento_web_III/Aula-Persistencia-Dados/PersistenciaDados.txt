@@ -1,0 +1,9 @@
+Persistência de Dados
+MongoDB
+
+ORM -> Object Relational Model
+
+trycatch -> imediato
+.then.catch -> Futuro
+
+Promise -> Não precisa esperar o processo terminar -> Trabalha em paralelo
