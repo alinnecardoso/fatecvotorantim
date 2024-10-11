@@ -9,6 +9,7 @@ package DAO;
  * @author Alunos
  */
 public class CLIENTES {
+
     private int idCli;
     private String nomeCli;
     private String endeCli;
@@ -16,6 +17,12 @@ public class CLIENTES {
     private String complCli;
     private String bairCli;
     private String cidaCli;
+    private String ufCli;
+    private String cepCli;
+    private String foneCli;
+    private String cpfCli;
+    private String dataNasc;
+    private String cnpjCli;
 
     public CLIENTES(int idCli, String nomeCli, String endeCli, String numeCli, String complCli, String bairCli, String cidaCli, String ufCli, String cepCli, String foneCli, String cpfCli, String dataNasc, String cnpjCli) {
         this.idCli = idCli;
@@ -35,7 +42,27 @@ public class CLIENTES {
 
     public CLIENTES() {
     }
-    
+
+    public String dadosSQLInsert() {
+        String dadosClientes;
+        dadosClientes = "'"
+                + this.getIdCli() + "','"
+                + this.getNomeCli() + "','"
+                + this.getEndeCli() + "','"
+                + this.getNumeCli() + "','"
+                + this.getComplCli() + "','"
+                + this.getBairCli() + "','"
+                + this.getCidaCli() + "','"
+                + this.getUfCli() + "','"
+                + this.getCepCli() + "','"
+                + this.getFoneCli() + "','"
+                + this.getCpfCli() + "','"
+                + this.getDataNasc() + "','"
+                + this.getCnpjCli() + "'";
+
+        return dadosClientes;
+    }
+
     public void setIdCli(int idCli) {
         this.idCli = idCli;
     }
@@ -139,11 +166,5 @@ public class CLIENTES {
     public String getCnpjCli() {
         return cnpjCli;
     }
-    private String ufCli;
-    private String cepCli;
-    private String foneCli;
-    private String cpfCli;
-    private String dataNasc;
-    private String cnpjCli;
-    
+
 }
