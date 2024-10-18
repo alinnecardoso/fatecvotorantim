@@ -30,7 +30,7 @@ public class CONTACORRENTE {
                 + this.getNumAge() + "','"
                 + this.getNumCC() + "','"
                 + this.getIdCli() + "','"
-                + this.getSaldo() + "','";
+                + this.getSaldo() + "'";
         return dados_CC;
     }
     

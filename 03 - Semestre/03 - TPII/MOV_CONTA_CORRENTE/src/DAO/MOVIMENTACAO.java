@@ -18,4 +18,109 @@ public class MOVIMENTACAO {
     private String complHis;
     private int valor;
     private float saldo;
+
+    public MOVIMENTACAO(int numAge, int numCC, String dataMov, String numDocto, String debitoCredito, int idHis, String complHis, int valor, float saldo) {
+        this.numAge = numAge;
+        this.numCC = numCC;
+        this.dataMov = dataMov;
+        this.numDocto = numDocto;
+        this.debitoCredito = debitoCredito;
+        this.idHis = idHis;
+        this.complHis = complHis;
+        this.valor = valor;
+        this.saldo = saldo;
+    }
+    
+    public String dadosSQLInsert(){
+        String dadosMovimentacao;
+        dadosMovimentacao= "'"
+                + this.getNumAge() + "','"
+                + this.getNumCC() + "','"
+                + this.getDataMov() + "','"
+                + this.getNumDocto() + "','"
+                + this.getDebitoCredito() + "','"
+                + this.getIdHis() + "','"
+                + this.getComplHis() + "','"
+                + this.getValor() + "','"
+                + this.getSaldo() + "'";
+        
+        return dadosMovimentacao;
+    }
+
+    public MOVIMENTACAO() {
+    }
+
+    public int getNumAge() {
+        return numAge;
+    }
+
+    public int getNumCC() {
+        return numCC;
+    }
+
+    public String getDataMov() {
+        return dataMov;
+    }
+
+    public String getNumDocto() {
+        return numDocto;
+    }
+
+    public String getDebitoCredito() {
+        return debitoCredito;
+    }
+
+    public int getIdHis() {
+        return idHis;
+    }
+
+    public String getComplHis() {
+        return complHis;
+    }
+
+    public int getValor() {
+        return valor;
+    }
+
+    public float getSaldo() {
+        return saldo;
+    }
+
+    public void setNumAge(int numAge) {
+        this.numAge = numAge;
+    }
+
+    public void setNumCC(int numCC) {
+        this.numCC = numCC;
+    }
+
+    public void setDataMov(String dataMov) {
+        this.dataMov = dataMov;
+    }
+
+    public void setNumDocto(String numDocto) {
+        this.numDocto = numDocto;
+    }
+
+    public void setDebitoCredito(String debitoCredito) {
+        this.debitoCredito = debitoCredito;
+    }
+
+    public void setIdHis(int idHis) {
+        this.idHis = idHis;
+    }
+
+    public void setComplHis(String complHis) {
+        this.complHis = complHis;
+    }
+
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
+
+    public void setSaldo(float saldo) {
+        this.saldo = saldo;
+    }
+    
+    
 }
