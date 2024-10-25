@@ -19,6 +19,26 @@ public class Cad_Usuarios extends javax.swing.JFrame {
     public Cad_Usuarios() {
         initComponents();
     }
+    
+    String operacaoAtivaGlobal = "Nenhum";
+    
+    public Cad_Usuarios(String operacaoAtiva){
+        initComponents();
+        operacaoAtivaGlobal = operacaoAtiva;
+        String operacao = "Incluir";
+        
+        if(operacaoAtiva.equals(operacao)){
+            jLabel1.setVisible(true);
+            jLabel2.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel4.setVisible(true);
+            jTextField1.setVisible(true);
+            jTextField2.setVisible(true);
+            jTextField3.setVisible(true);
+            jTextField4.setVisible(true);
+            jButton1.setText("Incluir");
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -110,13 +130,22 @@ public class Cad_Usuarios extends javax.swing.JFrame {
         // TODO add your handling code here:
         USUARIOS dados_usuario = new USUARIOS();
         
-        dados_usuario.setId(jTextField1.getText());
-        dados_usuario.setSenha(jTextField2.getText());
-        dados_usuario.setNumAge(Integer.parseInt(jTextField3.getText()));
-        dados_usuario.setNumCC(Integer.parseInt(jTextField4.getText()));
+        String operacao = "Incluir";
+
+        if(operacaoAtivaGlobal.equals(operacao)){
+            dados_usuario.setId(jTextField1.getText());
+            dados_usuario.setSenha(jTextField2.getText());
+            dados_usuario.setNumAge(Integer.parseInt(jTextField3.getText()));
+            dados_usuario.setNumCC(Integer.parseInt(jTextField4.getText()));
+        }
         
         connectDAO objcon = new connectDAO();
         objcon.insereRegistroJFBD("USUARIOS", dados_usuario.dadosSQLInsert());
+        
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

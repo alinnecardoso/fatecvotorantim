@@ -19,6 +19,35 @@ public class Cad_Movimentacao extends javax.swing.JFrame {
     public Cad_Movimentacao() {
         initComponents();
     }
+    String operacaoAtivaGlobal = "Nenhum";
+    
+    public Cad_Movimentacao(String operacaoAtiva){
+        initComponents();
+        operacaoAtivaGlobal = operacaoAtiva;
+        String operacao = "Incluir";
+        
+        if(operacaoAtiva.equals(operacao)){
+            jLabel1.setVisible(true);
+            jLabel2.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel4.setVisible(true);
+            jLabel5.setVisible(true);
+            jLabel6.setVisible(true);
+            jLabel7.setVisible(true);
+            jLabel8.setVisible(true);
+            jLabel9.setVisible(true);
+            jTextField1.setVisible(true);
+            jTextField2.setVisible(true);
+            jTextField3.setVisible(true);
+            jTextField4.setVisible(true);
+            jTextField5.setVisible(true);
+            jTextField6.setVisible(true);
+            jTextField7.setVisible(true);
+            jTextField8.setVisible(true);
+            jTextField9.setVisible(true);
+            
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -168,19 +197,32 @@ public class Cad_Movimentacao extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         MOVIMENTACAO dados_movimentacao = new MOVIMENTACAO();
+        String operacao = "Incluir";
         
-        dados_movimentacao.setNumAge(Integer.parseInt(jTextField1.getText()));
-        dados_movimentacao.setNumCC(Integer.parseInt(jTextField2.getText()));
-        dados_movimentacao.setDataMov(jTextField3.getText());
-        dados_movimentacao.setNumDocto(jTextField4.getText());
-        dados_movimentacao.setDebitoCredito(jTextField5.getText());
-        dados_movimentacao.setIdHis(Integer.parseInt(jTextField6.getText()));
-        dados_movimentacao.setComplHis(jTextField7.getText());
-        dados_movimentacao.setValor(Integer.parseInt(jTextField8.getText()));
-        dados_movimentacao.setSaldo(Integer.parseInt(jTextField9.getText()));
+        if(operacaoAtivaGlobal.equals(operacao)){
+            dados_movimentacao.setNumAge(Integer.parseInt(jTextField1.getText()));
+            dados_movimentacao.setNumCC(Integer.parseInt(jTextField2.getText()));
+            dados_movimentacao.setDataMov(jTextField3.getText());
+            dados_movimentacao.setNumDocto(jTextField4.getText());
+            dados_movimentacao.setDebitoCredito(jTextField5.getText());
+            dados_movimentacao.setIdHis(Integer.parseInt(jTextField6.getText()));
+            dados_movimentacao.setComplHis(jTextField7.getText());
+            dados_movimentacao.setValor(Integer.parseInt(jTextField8.getText()));
+            dados_movimentacao.setSaldo(Integer.parseInt(jTextField9.getText()));
+        }
         
         connectDAO objcon = new connectDAO();
-        objcon.insereRegistroJFBD("MOVIMENTACAO", dados_movimentacao.dadosSQLInsert());
+        objcon.insereRegistroJFBD("MOVIMENTACAO", dados_movimentacao.dadosSQLValues());
+        
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jTextField6.setText("");
+        jTextField7.setText("");
+        jTextField8.setText("");
+        jTextField9.setText("");
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

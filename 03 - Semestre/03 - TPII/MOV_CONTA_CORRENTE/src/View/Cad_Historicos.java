@@ -23,6 +23,14 @@ public class Cad_Historicos extends javax.swing.JFrame {
         initComponents();
         operacaoAtivaGlobal = operacaoAtiva;
         String operacao = "Incluir";
+        
+        if(operacaoAtiva.equals(operacao)){
+            jLabel1.setVisible(true);
+            jLabel2.setVisible(true);
+            jTextField1.setVisible(true);
+            jTextField2.setVisible(true);
+            jButton1.setText("Incluir");
+        }
     }
     
 
@@ -100,13 +108,20 @@ public class Cad_Historicos extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         HISTORICOS dados_historico = new HISTORICOS();
-
-        dados_historico.setIdHis(Integer.parseInt(jTextField1.getText()));
-        dados_historico.setDesHis(jTextField2.getText());
+        String operacao = "Incluir";
         
+        if(operacaoAtivaGlobal.equals(operacao)){
+            dados_historico.setIdHis(Integer.parseInt(jTextField1.getText()));
+            dados_historico.setDesHis(jTextField2.getText());
+        }
+
         connectDAO objcon = new connectDAO();
 
         objcon.insereRegistroJFBD("HISTORICOS", dados_historico.dadosSQLValues());
+        
+        jTextField1.setText("");
+        jTextField2.setText("");
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

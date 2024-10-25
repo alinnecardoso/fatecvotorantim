@@ -263,7 +263,7 @@ public class Menu extends javax.swing.JFrame {
         String operacao = "Incluir";
         Cad_Historicos acesso_historico = new Cad_Historicos(operacao);
         // Código para criar o acesso_cliente (objeto JFrame) com a opção Incluir
-        acesso_contacorrente.setVisible(true);
+        acesso_historico.setVisible(true);
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
@@ -272,6 +272,10 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
         // TODO add your handling code here:
+        String operacao = "Incluir";
+        Cad_Movimentacao acesso_movimentacao = new Cad_Movimentacao(operacao);
+        // Código para criar o acesso_cliente (objeto JFrame) com a opção Incluir
+        acesso_movimentacao.setVisible(true);
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
@@ -280,6 +284,10 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
         // TODO add your handling code here:
+        String operacao = "Incluir";
+        Cad_Usuarios acesso_usuarios = new Cad_Usuarios(operacao);
+        // Código para criar o acesso_cliente (objeto JFrame) com a opção Incluir
+        acesso_usuarios.setVisible(true);
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
     private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
