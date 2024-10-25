@@ -25,6 +25,31 @@ public class Cad_Agencias extends javax.swing.JFrame {
         initComponents();
         operacaoAtivaGlobal = operacaoAtiva;
         String operacao = "Incluir";
+        
+        if(operacaoAtiva.equals(operacao)){
+            jLabel1.setVisible(true);
+            jLabel2.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel4.setVisible(true);
+            jLabel5.setVisible(true);
+            jLabel6.setVisible(true);
+            jLabel7.setVisible(true);
+            jLabel8.setVisible(true);
+            jLabel9.setVisible(true);
+            jLabel10.setVisible(true);
+            jTextField1.setVisible(true);
+            jTextField2.setVisible(true);
+            jTextField3.setVisible(true);
+            jTextField4.setVisible(true);
+            jTextField5.setVisible(true);
+            jTextField6.setVisible(true);
+            jTextField7.setVisible(true);
+            jTextField8.setVisible(true);
+            jTextField9.setVisible(true);
+            jTextField10.setVisible(true);
+            jButton1.setText("Incluir");
+            
+        }
     }
 
     /**
@@ -209,21 +234,24 @@ public class Cad_Agencias extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         AGENCIAS dados_agencia = new AGENCIAS();
+        String operacao = "Incluir";
 
-        dados_agencia.setNumAge(Integer.parseInt(jTextField1.getText()));
-        dados_agencia.setNomeAge(jTextField2.getText());
-        dados_agencia.setEndeAge(jTextField3.getText());
-        dados_agencia.setNumeAge(jTextField4.getText());
-        dados_agencia.setComplAge(jTextField5.getText());
-        dados_agencia.setBairAge(jTextField6.getText());
-        dados_agencia.setCidaAge(jTextField7.getText());
-        dados_agencia.setUfAge(jTextField8.getText());
-        dados_agencia.setCepAge(jTextField9.getText());
-        dados_agencia.setFoneAge(jTextField10.getText());
+        if(operacaoAtivaGlobal.equals(operacao)){
+            dados_agencia.setNumAge(Integer.parseInt(jTextField1.getText()));
+            dados_agencia.setNomeAge(jTextField2.getText());
+            dados_agencia.setEndeAge(jTextField3.getText());
+            dados_agencia.setNumeAge(jTextField4.getText());
+            dados_agencia.setComplAge(jTextField5.getText());
+            dados_agencia.setBairAge(jTextField6.getText());
+            dados_agencia.setCidaAge(jTextField7.getText());
+            dados_agencia.setUfAge(jTextField8.getText());
+            dados_agencia.setCepAge(jTextField9.getText());
+            dados_agencia.setFoneAge(jTextField10.getText());
+        }
 
         connectDAO objcon = new connectDAO();
 
-        objcon.insereRegistroJFBD("AGENCIAS", dados_agencia.dadosSQLInsert());
+        objcon.insereRegistroJFBD("AGENCIAS", dados_agencia.dadosSQLValues());
         
         jTextField1.setText("");
         jTextField2.setText("");

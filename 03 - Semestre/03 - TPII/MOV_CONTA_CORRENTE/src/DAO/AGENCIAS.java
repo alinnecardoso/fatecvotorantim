@@ -36,7 +36,7 @@ public class AGENCIAS {
     public AGENCIAS() {
     }
     
-    public String dadosSQLInsert(){
+    public String dadosSQLValues(){
         String dadosAgencias;
         dadosAgencias = "'"
                 + this.getNumAge() + "','"

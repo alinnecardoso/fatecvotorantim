@@ -24,7 +24,7 @@ public class connectDAO {
     //obs: DAO -> Data access object
     Connection con;
     public Connection connectDB(){
-        JOptionPane.showMessageDialog(null, "Inicia a classe para conexão com SQL SERVER!");
+        //JOptionPane.showMessageDialog(null, "Inicia a classe para conexão com SQL SERVER!");
  
         String caminho = "jdbc:sqlserver://localhost:1433;databaseName=MOV_CONTA_CORRENTE;encrypt=true;trustServerCertificate=true;"; 
         String usuario = "sa";
@@ -42,24 +42,12 @@ public class connectDAO {
     }
     
     public void insereRegistroJFBD(String tabela, String strDados){
-        String caminho = "jdbc:sqlserver://localhost:1433;databaseName=MOV_CONTA_CORRENTE;encrypt=true;trustServerCertificate=true;"; 
-        String usuario = "sa";
-        String senha = ".";
-        try {
-            con = DriverManager.getConnection(caminho, usuario, senha);
-            JOptionPane.showMessageDialog(null, "Conectado com sucesso!");
-        } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "Erro de conexão, connectDAO - Mensagem => "+erro.getMessage());
-            JOptionPane.showMessageDialog(null, "\n Erro de conexão, connectDAO - Estado => "+erro.getSQLState());
-            JOptionPane.showMessageDialog(null, "\n Erro de conexão, connectDAO - Código => "+erro.getErrorCode());
-        }
+        con = connectDB();
         Statement stmt;
         try{
-            
             stmt = con.createStatement();
-
             String sql = "INSERT INTO dbo." +tabela+ " "+ "VALUES (" + strDados+")";
-            JOptionPane.showMessageDialog(null, "String de Insert"+ sql);
+            JOptionPane.showMessageDialog(null, "String de Insert: "+ sql);
             try{
                 stmt.executeUpdate(sql);
                 JOptionPane.showMessageDialog(null, "Insert executado com sucesso!");

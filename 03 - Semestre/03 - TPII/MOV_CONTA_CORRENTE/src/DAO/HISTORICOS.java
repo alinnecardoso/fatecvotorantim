@@ -20,7 +20,7 @@ public class HISTORICOS {
         this.desHis = desHis;
     }
     
-    public String dadosSQLInsert(){
+    public String dadosSQLValues(){
         /* 
             private int idHis;
             private String desHis;

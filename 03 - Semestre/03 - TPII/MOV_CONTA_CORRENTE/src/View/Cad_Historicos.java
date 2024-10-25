@@ -18,7 +18,12 @@ public class Cad_Historicos extends javax.swing.JFrame {
     public Cad_Historicos() {
         initComponents();
     }
-    
+    String operacaoAtivaGlobal = "Nenhum";
+    public Cad_Historicos(String operacaoAtiva){
+        initComponents();
+        operacaoAtivaGlobal = operacaoAtiva;
+        String operacao = "Incluir";
+    }
     
 
     /**
@@ -101,7 +106,7 @@ public class Cad_Historicos extends javax.swing.JFrame {
         
         connectDAO objcon = new connectDAO();
 
-        objcon.insereRegistroJFBD("HISTORICOS", dados_historico.dadosSQLInsert());
+        objcon.insereRegistroJFBD("HISTORICOS", dados_historico.dadosSQLValues());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

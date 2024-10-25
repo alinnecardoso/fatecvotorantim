@@ -13,9 +13,6 @@ import DAO.connectDAO;
  */
 public class Cad_Clientes extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Cad_Clientes
-     */
     public Cad_Clientes() {
         initComponents();
     }
@@ -318,24 +315,28 @@ public class Cad_Clientes extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         CLIENTES dados_cliente = new CLIENTES();
+        String operacao = "Incluir";
+        
+        if(operacaoAtivaGlobal.equals(operacao)){
+            dados_cliente.setIdCli(Integer.parseInt(jTextField1.getText()));
+            dados_cliente.setNomeCli(jTextField2.getText());
+            dados_cliente.setEndeCli(jTextField3.getText());
+            dados_cliente.setNumeCli(jTextField4.getText());
+            dados_cliente.setComplCli(jTextField5.getText());
+            dados_cliente.setBairCli(jTextField6.getText());
+            dados_cliente.setCidaCli(jTextField7.getText());
+            dados_cliente.setUfCli(jTextField8.getText());
+            dados_cliente.setCepCli(jTextField9.getText());
+            dados_cliente.setFoneCli(jTextField10.getText());
+            dados_cliente.setCpfCli(jTextField11.getText());
+            dados_cliente.setDataNasc(jTextField12.getText());
+            dados_cliente.setCnpjCli(jTextField13.getText());
+        }
 
-        dados_cliente.setIdCli(Integer.parseInt(jTextField1.getText()));
-        dados_cliente.setNomeCli(jTextField2.getText());
-        dados_cliente.setEndeCli(jTextField3.getText());
-        dados_cliente.setNumeCli(jTextField4.getText());
-        dados_cliente.setComplCli(jTextField5.getText());
-        dados_cliente.setBairCli(jTextField6.getText());
-        dados_cliente.setCidaCli(jTextField7.getText());
-        dados_cliente.setUfCli(jTextField8.getText());
-        dados_cliente.setCepCli(jTextField9.getText());
-        dados_cliente.setFoneCli(jTextField10.getText());
-        dados_cliente.setCpfCli(jTextField11.getText());
-        dados_cliente.setDataNasc(jTextField12.getText());
-        dados_cliente.setCnpjCli(jTextField13.getText());
 
         connectDAO objcon = new connectDAO();
 
-        objcon.insereRegistroJFBD("CLIENTES", dados_cliente.dadosSQLInsert());
+        objcon.insereRegistroJFBD("CLIENTES", dados_cliente.dadosSQLValues());
         
         jTextField1.setText("");
         jTextField2.setText("");

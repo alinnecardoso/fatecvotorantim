@@ -24,7 +24,7 @@ public class CONTACORRENTE {
     public CONTACORRENTE() {
     }
 
-    public String dadosSQLInsert(){
+    public String dadosSQLValues(){
         String dados_CC;
         dados_CC = "'"
                 + this.getNumAge() + "','"

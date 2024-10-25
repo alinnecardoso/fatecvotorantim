@@ -1,0 +1,20 @@
+//Teste da API de Contas
+@baseURL = http://localhost:3001
+
+
+###
+//GET - Lista todas as contas
+GET {{baseURL}}/contas
+Content-Type: application/json
+
+
+###
+//POST -  Efetua uma tranferência entre contas
+POST {{baseURL}}/contas/transferir
+Content-Type: application/json
+
+{
+    "deContaId": "6716e3cd92fb6b09a82a437b",
+    "paraContaId":"6716e3cd92fb6b09a82a437c",
+    "valor": 1.99
+}

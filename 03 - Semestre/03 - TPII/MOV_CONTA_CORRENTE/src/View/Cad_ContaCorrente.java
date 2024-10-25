@@ -18,6 +18,24 @@ public class Cad_ContaCorrente extends javax.swing.JFrame {
     public Cad_ContaCorrente() {
         initComponents();
     }
+    String operacaoAtivaGlobal = "Nenhum";
+    
+    public Cad_ContaCorrente(String operacaoAtiva){
+        initComponents();
+        operacaoAtivaGlobal = operacaoAtiva;
+        String operacao = "Incluir";
+        
+        if(operacaoAtiva.equals(operacao)){
+            jLabel1.setVisible(true);
+            jLabel2.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel4.setVisible(true);
+            jTextField1.setVisible(true);
+            jTextField2.setVisible(true);
+            jTextField3.setVisible(true);
+            jTextField4.setVisible(true);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -148,13 +166,22 @@ public class Cad_ContaCorrente extends javax.swing.JFrame {
         // TODO add your handling code here:
         CONTACORRENTE dados_contacorrente = new CONTACORRENTE();
         
-        dados_contacorrente.setNumAge(Integer.parseInt(jTextField1.getText()));
-        dados_contacorrente.setNumCC(Integer.parseInt(jTextField2.getText()));
-        dados_contacorrente.setIdCli(Integer.parseInt(jTextField3.getText()));
-        dados_contacorrente.setSaldo(Float.parseFloat(jTextField4.getText()));
+        String operacao = "Incluir";
+        
+        if(operacaoAtivaGlobal.equals(operacao)){
+            dados_contacorrente.setNumAge(Integer.parseInt(jTextField1.getText()));
+            dados_contacorrente.setNumCC(Integer.parseInt(jTextField2.getText()));
+            dados_contacorrente.setIdCli(Integer.parseInt(jTextField3.getText()));
+            dados_contacorrente.setSaldo(Float.parseFloat(jTextField4.getText()));
+        }
         
         connectDAO objcon = new connectDAO();
-        objcon.insereRegistroJFBD("CONTACORRENTE", dados_contacorrente.dadosSQLInsert());
+        objcon.insereRegistroJFBD("CONTACORRENTE", dados_contacorrente.dadosSQLValues());
+        
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
