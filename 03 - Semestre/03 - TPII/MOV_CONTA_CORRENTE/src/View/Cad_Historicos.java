@@ -31,6 +31,24 @@ public class Cad_Historicos extends javax.swing.JFrame {
             jTextField2.setVisible(true);
             jButton1.setText("Incluir");
         }
+        
+        operacao = "Alterar";                               // defini a operação como Alterar os dados de um registro
+        if (operacaoAtiva.equals(operacao)){       // para alteração deverá ser setado todos os componentes como false para não visualizar
+            jLabel1.setVisible(true);                       // deixando somente o label e o TextField do Id para pesquisar como true (visível).
+            jLabel2.setVisible(false);
+            jTextField1.setVisible(true);
+            jTextField2.setVisible(false);
+            jButton1.setText("Pesquisar");
+        }
+        
+        operacao = "Excluir";                                // defini a operação como Excluir um registro
+        if (operacaoAtiva.equals(operacao)){       // para exclusão deverá ser setado todos os componentes como false para não visualizar
+            jLabel1.setVisible(true);                       // deixando somente o label e o TextField do Id para pesquisar como true (visível).
+            jLabel2.setVisible(false);
+            jTextField1.setVisible(true);
+            jTextField2.setVisible(false);
+            jButton1.setText("Pesquisar");
+        }
     }
     
 

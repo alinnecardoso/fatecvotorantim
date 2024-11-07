@@ -82,7 +82,7 @@ public class Cad_Clientes extends javax.swing.JFrame {
             jTextField11.setVisible(false);
             jTextField12.setVisible(false);
             jTextField13.setVisible(false);
-            jButton1.setText("Alterar");
+            jButton1.setText("Pesquisar");
         }
         
         operacao = "Excluir";                                // defini a operação como Excluir um registro
@@ -113,7 +113,7 @@ public class Cad_Clientes extends javax.swing.JFrame {
             jTextField11.setVisible(false);
             jTextField12.setVisible(false);
             jTextField13.setVisible(false);
-            jButton1.setText("Excluir");
+            jButton1.setText("Pesquisar");
         }
     }
 

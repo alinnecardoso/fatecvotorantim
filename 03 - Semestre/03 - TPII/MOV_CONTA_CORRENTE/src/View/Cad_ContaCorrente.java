@@ -35,6 +35,32 @@ public class Cad_ContaCorrente extends javax.swing.JFrame {
             jTextField3.setVisible(true);
             jTextField4.setVisible(true);
         }
+        
+        operacao = "Alterar";                               // defini a operação como Alterar os dados de um registro
+        if (operacaoAtiva.equals(operacao)){       // para alteração deverá ser setado todos os componentes como false para não visualizar
+            jLabel1.setVisible(true);                       // deixando somente o label e o TextField do Id para pesquisar como true (visível).
+            jLabel2.setVisible(false);
+            jLabel3.setVisible(false);
+            jLabel4.setVisible(false);
+            jTextField1.setVisible(true);
+            jTextField2.setVisible(false);
+            jTextField3.setVisible(false);
+            jTextField4.setVisible(false);
+            jButton1.setText("Pesquisar");
+        }
+        
+        operacao = "Excluir";                                // defini a operação como Excluir um registro
+        if (operacaoAtiva.equals(operacao)){       // para exclusão deverá ser setado todos os componentes como false para não visualizar
+            jLabel1.setVisible(true);                       // deixando somente o label e o TextField do Id para pesquisar como true (visível).
+            jLabel2.setVisible(false);
+            jLabel3.setVisible(false);
+            jLabel4.setVisible(false);
+            jTextField1.setVisible(true);
+            jTextField2.setVisible(false);
+            jTextField3.setVisible(false);
+            jTextField4.setVisible(false);
+            jButton1.setText("Pesquisar");
+        }
     }
 
     /**
