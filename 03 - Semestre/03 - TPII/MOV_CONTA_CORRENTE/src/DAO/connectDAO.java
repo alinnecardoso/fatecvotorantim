@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-//import java.sql.ResultSet;
+import java.sql.ResultSet;
 //import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -62,5 +62,62 @@ public class connectDAO {
         }
         
         
+    }
+    
+    public CLIENTES pesquisaClienteJFBD(String tabela, String pesquisaId){
+        String tabelaSGBD = "CLIENTES";
+        if(tabela.equals(tabelaSGBD)){
+            CLIENTES clientesReturn = new CLIENTES();
+            //FAZER A PESQUISA E RETORNAR A TABELA COMO RESULTADO
+            con = connectDB(); //Executa o método que conecta no DB e retorna a conexão
+            
+            Statement stmt;
+            
+            try{
+                stmt = con.createStatement();
+                //Cria a string com a sentença SQL para inserir registro
+                
+                String sql = "SELECT * FROM "+tabela
+                        + " WHERE "+pesquisaId;
+                //JOptionPane.showMessageDialog(null, "String de Select: "+ sql);
+                
+                try{
+                    //Executar a sentença de insert
+                    // stmt = con.prepareStatement(sql);
+                    //JOptionPane.showMessageDialog(null, "Vai executar a query com: "+sql);
+                    ResultSet dados;
+                    dados = stmt.executeQuery(sql);
+                    if(dados.next() == false){
+                        JOptionPane.showMessageDialog(null, "Nenhum registro foi encontrado para"+ sql);
+                    }else{
+                        //Pega os dados que vieram do SELECT e repasse o objeto que será
+                        clientesReturn.setIdCli(dados.getInt(1));
+                        clientesReturn.setNomeCli(dados.getString(2));
+                        clientesReturn.setEndeCli(dados.getString(3));
+                        clientesReturn.setNumeCli(dados.getString(4));
+                        clientesReturn.setComplCli(dados.getString(5));
+                        clientesReturn.setBairCli(dados.getString(6));
+                        clientesReturn.setCidaCli(dados.getString(7));
+                        clientesReturn.setUfCli(dados.getString(8));
+                        clientesReturn.setCepCli(dados.getString(9));
+                        clientesReturn.setFoneCli(dados.getString(10));
+                        clientesReturn.setCpfCli(dados.getString(11));
+                        clientesReturn.setDataNasc(dados.getString(12));
+                        clientesReturn.setCnpjCli(dados.getString(13));
+                    }
+                    con.close();
+                    return clientesReturn;
+                } catch(SQLException erro){
+                    JOptionPane.showMessageDialog(null, "Erro de conexão, connectDAO Consulta - Mensagem => "+ erro);
+                    JOptionPane.showMessageDialog(null,"\n Erro de conexão, connectDAo - Estado"+ erro);
+                    JOptionPane.showMessageDialog(null,"\n Erro de conexão, connectDAO - Código"+ erro);
+                }
+                con.close();
+            }catch (SQLException ex){
+                Logger.getLogger(connectDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } //Final do processo para tabela CLIENTES
+        
+    return clientesReturn;
     }
 }
