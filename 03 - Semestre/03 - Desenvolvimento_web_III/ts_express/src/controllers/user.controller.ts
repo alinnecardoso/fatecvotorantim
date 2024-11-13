@@ -1,9 +1,10 @@
 import { Request, Response } from "express";
 import { IUser } from "./user.interface";
 
-export const getUser = (_request: Request, response: Response) => {
+export const getUser = (request: Request, response: Response) => {
+    const { id } = request.params;
     const user: IUser = {
-        id: 1,
+        id: Number(id),
         name: "João",
         age: 18
     }
