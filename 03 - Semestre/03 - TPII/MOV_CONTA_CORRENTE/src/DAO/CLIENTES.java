@@ -167,4 +167,23 @@ public class CLIENTES {
         return cnpjCli;
     }
 
+    public String alteraDadosSQlValues(){
+        String dadosClientes;
+        dadosClientes = "ID_CLI='"
+                + this.getIdCli() + "',NOME_CLI='"
+                + this.getNomeCli() + "',ENDE_CLI='"
+                + this.getEndeCli() + "',NUME_CLI='"
+                + this.getNumeCli() + "',COMPL_CLI='"
+                + this.getComplCli() + "',BAIR_CLI='"
+                + this.getBairCli() + "',CIDA_CLI='"
+                + this.getCidaCli() + "',UF_CLI='"
+                + this.getUfCli() + "',CEP_CLI='"
+                + this.getCepCli() + "',FONE_CLI='"
+                + this.getFoneCli() + "',CPF_CLI='"
+                + this.getCpfCli() + "',DATA_NASC='"
+                + this.getDataNasc() + "',CNPJ_CLI='"
+                + this.getCnpjCli();
+        
+        return dadosClientes;
+    }
 }

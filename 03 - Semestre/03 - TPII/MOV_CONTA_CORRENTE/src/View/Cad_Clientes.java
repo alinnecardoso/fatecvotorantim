@@ -83,6 +83,7 @@ public class Cad_Clientes extends javax.swing.JFrame {
             jTextField12.setVisible(false);
             jTextField13.setVisible(false);
             jButton1.setText("Pesquisar");
+            // operacaoAtivaGlobal= "Alteração";
         }
         
         operacao = "Excluir";                                // defini a operação como Excluir um registro
@@ -113,9 +114,11 @@ public class Cad_Clientes extends javax.swing.JFrame {
             jTextField11.setVisible(false);
             jTextField12.setVisible(false);
             jTextField13.setVisible(false);
-            jButton1.setText("Pesquisar");
+            jButton1.setText("Excluir");
         }
     }
+    
+    CLIENTES cliente_tela = new CLIENTES();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -314,10 +317,13 @@ public class Cad_Clientes extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        CLIENTES dados_cliente = new CLIENTES();
+        
         String operacao = "Incluir";
         
         if(operacaoAtivaGlobal.equals(operacao)){
+            CLIENTES dados_cliente = new CLIENTES();
+            connectDAO objcon = new connectDAO();
+            
             dados_cliente.setIdCli(Integer.parseInt(jTextField1.getText()));
             dados_cliente.setNomeCli(jTextField2.getText());
             dados_cliente.setEndeCli(jTextField3.getText());
@@ -331,12 +337,47 @@ public class Cad_Clientes extends javax.swing.JFrame {
             dados_cliente.setCpfCli(jTextField11.getText());
             dados_cliente.setDataNasc(jTextField12.getText());
             dados_cliente.setCnpjCli(jTextField13.getText());
+            
+            objcon.insereRegistroJFBD("CLIENTES", dados_cliente.dadosSQLValues());
         }
 
-
-        connectDAO objcon = new connectDAO();
-
-        objcon.insereRegistroJFBD("CLIENTES", dados_cliente.dadosSQLValues());
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jTextField6.setText("");
+        jTextField7.setText("");
+        jTextField8.setText("");
+        jTextField9.setText("");
+        jTextField10.setText("");
+        jTextField11.setText("");
+        jTextField12.setText("");
+        jTextField13.setText("");
+        
+      
+        operacao = "Alteração";
+        if(operacaoAtivaGlobal.equals(operacao)){
+            connectDAO objcon = new connectDAO();
+            CLIENTES dados_cliente = new CLIENTES();
+            
+            dados_cliente.setIdCli(Integer.parseInt(jTextField1.getText()));
+            dados_cliente.setNomeCli(jTextField2.getText());
+            dados_cliente.setEndeCli(jTextField3.getText());
+            dados_cliente.setNumeCli(jTextField4.getText());
+            dados_cliente.setComplCli(jTextField5.getText());
+            dados_cliente.setBairCli(jTextField6.getText());
+            dados_cliente.setCidaCli(jTextField7.getText());
+            dados_cliente.setUfCli(jTextField8.getText());
+            dados_cliente.setCepCli(jTextField9.getText());
+            dados_cliente.setFoneCli(jTextField10.getText());
+            dados_cliente.setCpfCli(jTextField11.getText());
+            dados_cliente.setDataNasc(jTextField12.getText());
+            dados_cliente.setCnpjCli(jTextField13.getText());
+            
+            objcon.alteraRegistroJFBD("CLIENTES", dados_cliente.alteraDadosSQlValues(),
+                    "ID_CLI" + jTextField1.getText());
+        }
         
         jTextField1.setText("");
         jTextField2.setText("");
@@ -351,6 +392,29 @@ public class Cad_Clientes extends javax.swing.JFrame {
         jTextField11.setText("");
         jTextField12.setText("");
         jTextField13.setText("");
+        
+        
+        operacao = "Alterar";
+        if(operacaoAtivaGlobal.equals(operacao)){
+            connectDAO objcon = new connectDAO();
+            cliente_tela = objcon.pesquisaClienteJFBD("CLIENTES", "ID_CLI = '"+ jTextField1.getText()+"'");
+            
+            // jTextField1.setText(Integer.toString(cliente_tela.getIdCli()));
+            // jTextField1.setText(Integer.toString(cliente_tela.getIdCli()));
+            jTextField2.setText(cliente_tela.getNomeCli());
+            jTextField3.setText(cliente_tela.getEndeCli());
+            jTextField4.setText(cliente_tela.getNumeCli());
+            jTextField5.setText(cliente_tela.getComplCli());
+            jTextField6.setText(cliente_tela.getBairCli());
+            jTextField7.setText(cliente_tela.getCidaCli());
+            jTextField8.setText(cliente_tela.getUfCli());
+            jTextField9.setText(cliente_tela.getCepCli());
+            jTextField10.setText(cliente_tela.getFoneCli());
+            jTextField11.setText(cliente_tela.getCpfCli());
+            jTextField12.setText(cliente_tela.getDataNasc());
+            jTextField13.setText(cliente_tela.getCnpjCli());
+        }
+   
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

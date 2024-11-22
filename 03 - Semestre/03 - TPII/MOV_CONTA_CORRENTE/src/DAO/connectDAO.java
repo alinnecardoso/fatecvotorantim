@@ -65,9 +65,9 @@ public class connectDAO {
     }
     
     public CLIENTES pesquisaClienteJFBD(String tabela, String pesquisaId){
+        CLIENTES clientesReturn = null;
         String tabelaSGBD = "CLIENTES";
         if(tabela.equals(tabelaSGBD)){
-            CLIENTES clientesReturn = new CLIENTES();
             //FAZER A PESQUISA E RETORNAR A TABELA COMO RESULTADO
             con = connectDB(); //Executa o método que conecta no DB e retorna a conexão
             
@@ -91,6 +91,7 @@ public class connectDAO {
                         JOptionPane.showMessageDialog(null, "Nenhum registro foi encontrado para"+ sql);
                     }else{
                         //Pega os dados que vieram do SELECT e repasse o objeto que será
+                        clientesReturn = new CLIENTES();
                         clientesReturn.setIdCli(dados.getInt(1));
                         clientesReturn.setNomeCli(dados.getString(2));
                         clientesReturn.setEndeCli(dados.getString(3));
@@ -105,8 +106,6 @@ public class connectDAO {
                         clientesReturn.setDataNasc(dados.getString(12));
                         clientesReturn.setCnpjCli(dados.getString(13));
                     }
-                    con.close();
-                    return clientesReturn;
                 } catch(SQLException erro){
                     JOptionPane.showMessageDialog(null, "Erro de conexão, connectDAO Consulta - Mensagem => "+ erro);
                     JOptionPane.showMessageDialog(null,"\n Erro de conexão, connectDAo - Estado"+ erro);
@@ -118,6 +117,30 @@ public class connectDAO {
             }
         } //Final do processo para tabela CLIENTES
         
-    return clientesReturn;
+        return clientesReturn;
     }
+    
+    public void alteraRegistroJFBD(String tabela, String strDados, String pesquisaID){
+        con = connectDB();
+        
+        Statement stmt;
+        try{
+            stmt = con.createStatement();
+            String sql = "UPDATE dbo."+tabela
+                    + " SET "+ strDados
+                    + " WHERE ("+pesquisaID+");";
+            
+            try{
+                stmt.executeUpdate(sql);
+                JOptionPane.showMessageDialog(null, "Alteração executada com sucesso!");
+            }catch (SQLException erro){
+                JOptionPane.showMessageDialog(null, "Erro de conexão, connectDAO Consulta - Mensagem => "+ erro);
+                    JOptionPane.showMessageDialog(null,"\n Erro de conexão, connectDAo - Estado"+ erro);
+                    JOptionPane.showMessageDialog(null,"\n Erro de conexão, connectDAO - Código"+ erro);
+            }
+        }catch (SQLException ex){
+            Logger.getLogger(connectDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
 }
