@@ -83,7 +83,7 @@ public class Cad_Clientes extends javax.swing.JFrame {
             jTextField12.setVisible(false);
             jTextField13.setVisible(false);
             jButton1.setText("Pesquisar");
-            // operacaoAtivaGlobal= "Alteração";
+            operacaoAtivaGlobal= "Alteração";
         }
         
         operacao = "Excluir";                                // defini a operação como Excluir um registro
@@ -115,6 +115,37 @@ public class Cad_Clientes extends javax.swing.JFrame {
             jTextField12.setVisible(false);
             jTextField13.setVisible(false);
             jButton1.setText("Excluir");
+        }
+        
+        operacao = "Alteração";                               // defini a operação como Alterar os dados de um registro
+        if (operacaoAtiva.equals(operacao)){       // para alteração deverá ser setado todos os componentes como false para não visualizar
+            jLabel1.setVisible(true);                       // deixando somente o label e o TextField do Id para pesquisar como true (visível).
+            jLabel2.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel4.setVisible(true);
+            jLabel5.setVisible(true);
+            jLabel6.setVisible(true);
+            jLabel7.setVisible(true);
+            jLabel8.setVisible(true);
+            jLabel9.setVisible(true);
+            jLabel10.setVisible(true);
+            jLabel11.setVisible(true);
+            jLabel12.setVisible(true);
+            jLabel13.setVisible(true);
+            jTextField1.setVisible(true);
+            jTextField2.setVisible(true);
+            jTextField3.setVisible(true);
+            jTextField4.setVisible(true);
+            jTextField5.setVisible(true);
+            jTextField6.setVisible(true);
+            jTextField7.setVisible(true);
+            jTextField8.setVisible(true);
+            jTextField9.setVisible(true);
+            jTextField10.setVisible(true);
+            jTextField11.setVisible(true);
+            jTextField12.setVisible(true);
+            jTextField13.setVisible(true);
+            jButton1.setText("Alterar");
         }
     }
     
@@ -339,27 +370,28 @@ public class Cad_Clientes extends javax.swing.JFrame {
             dados_cliente.setCnpjCli(jTextField13.getText());
             
             objcon.insereRegistroJFBD("CLIENTES", dados_cliente.dadosSQLValues());
+            
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField3.setText("");
+            jTextField4.setText("");
+            jTextField5.setText("");
+            jTextField6.setText("");
+            jTextField7.setText("");
+            jTextField8.setText("");
+            jTextField9.setText("");
+            jTextField10.setText("");
+            jTextField11.setText("");
+            jTextField12.setText("");
+            jTextField13.setText("");
         }
-
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextField3.setText("");
-        jTextField4.setText("");
-        jTextField5.setText("");
-        jTextField6.setText("");
-        jTextField7.setText("");
-        jTextField8.setText("");
-        jTextField9.setText("");
-        jTextField10.setText("");
-        jTextField11.setText("");
-        jTextField12.setText("");
-        jTextField13.setText("");
         
-      
         operacao = "Alteração";
         if(operacaoAtivaGlobal.equals(operacao)){
             connectDAO objcon = new connectDAO();
             CLIENTES dados_cliente = new CLIENTES();
+            
+            objcon.pesquisaClienteJFBD("CLIENTES", "ID_CLI = '" + jTextField1.getText()+ "'");
             
             dados_cliente.setIdCli(Integer.parseInt(jTextField1.getText()));
             dados_cliente.setNomeCli(jTextField2.getText());
@@ -375,32 +407,30 @@ public class Cad_Clientes extends javax.swing.JFrame {
             dados_cliente.setDataNasc(jTextField12.getText());
             dados_cliente.setCnpjCli(jTextField13.getText());
             
-            objcon.alteraRegistroJFBD("CLIENTES", dados_cliente.alteraDadosSQlValues(),
-                    "ID_CLI" + jTextField1.getText());
+            //jTextField1.setText(Integer.toString(dados_cliente.getIdCli()));
+            jTextField2.setText(dados_cliente.getNomeCli());
+            jTextField3.setText("");
+            jTextField4.setText("");
+            jTextField5.setText("");
+            jTextField6.setText("");
+            jTextField7.setText("");
+            jTextField8.setText("");
+            jTextField9.setText("");
+            jTextField10.setText("");
+            jTextField11.setText("");
+            jTextField12.setText("");
+            jTextField13.setText("");
+            
         }
-        
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextField3.setText("");
-        jTextField4.setText("");
-        jTextField5.setText("");
-        jTextField6.setText("");
-        jTextField7.setText("");
-        jTextField8.setText("");
-        jTextField9.setText("");
-        jTextField10.setText("");
-        jTextField11.setText("");
-        jTextField12.setText("");
-        jTextField13.setText("");
-        
         
         operacao = "Alterar";
         if(operacaoAtivaGlobal.equals(operacao)){
             connectDAO objcon = new connectDAO();
-            cliente_tela = objcon.pesquisaClienteJFBD("CLIENTES", "ID_CLI = '"+ jTextField1.getText()+"'");
+            cliente_tela = objcon.pesquisaClienteJFBD("CLIENTES", "ID_CLI = "+ jTextField1.getText());
             
+            System.out.println("jTextField1.getText() - " + (cliente_tela.getIdCli()));
             // jTextField1.setText(Integer.toString(cliente_tela.getIdCli()));
-            // jTextField1.setText(Integer.toString(cliente_tela.getIdCli()));
+            jTextField1.setText(Integer.toString(cliente_tela.getIdCli()));
             jTextField2.setText(cliente_tela.getNomeCli());
             jTextField3.setText(cliente_tela.getEndeCli());
             jTextField4.setText(cliente_tela.getNumeCli());
@@ -413,6 +443,9 @@ public class Cad_Clientes extends javax.swing.JFrame {
             jTextField11.setText(cliente_tela.getCpfCli());
             jTextField12.setText(cliente_tela.getDataNasc());
             jTextField13.setText(cliente_tela.getCnpjCli());
+            
+            objcon.alteraRegistroJFBD("CLIENTES", cliente_tela.alteraDadosSQlValues(),
+                    "ID_CLI = '" + jTextField1.getText()+ "'");
         }
    
     }//GEN-LAST:event_jButton1ActionPerformed

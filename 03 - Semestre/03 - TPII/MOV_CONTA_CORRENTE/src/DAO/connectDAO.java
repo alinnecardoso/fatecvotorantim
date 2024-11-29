@@ -65,7 +65,7 @@ public class connectDAO {
     }
     
     public CLIENTES pesquisaClienteJFBD(String tabela, String pesquisaId){
-        CLIENTES clientesReturn = null;
+        CLIENTES clientesReturn = new CLIENTES();
         String tabelaSGBD = "CLIENTES";
         if(tabela.equals(tabelaSGBD)){
             //FAZER A PESQUISA E RETORNAR A TABELA COMO RESULTADO
@@ -79,7 +79,8 @@ public class connectDAO {
                 
                 String sql = "SELECT * FROM "+tabela
                         + " WHERE "+pesquisaId;
-                //JOptionPane.showMessageDialog(null, "String de Select: "+ sql);
+                
+                JOptionPane.showMessageDialog(null, "String de Select: "+ sql);
                 
                 try{
                     //Executar a sentença de insert
@@ -87,11 +88,13 @@ public class connectDAO {
                     //JOptionPane.showMessageDialog(null, "Vai executar a query com: "+sql);
                     ResultSet dados;
                     dados = stmt.executeQuery(sql);
+                    JOptionPane.showMessageDialog(null, "Pesquisa Cliente - Executada com Sucesso");
                     if(dados.next() == false){
                         JOptionPane.showMessageDialog(null, "Nenhum registro foi encontrado para"+ sql);
                     }else{
                         //Pega os dados que vieram do SELECT e repasse o objeto que será
-                        clientesReturn = new CLIENTES();
+                        // clientesReturn = new CLIENTES(new CLIENTES());
+                        System.out.println("clientesReturn.getIdCli() - "+clientesReturn.getNomeCli());
                         clientesReturn.setIdCli(dados.getInt(1));
                         clientesReturn.setNomeCli(dados.getString(2));
                         clientesReturn.setEndeCli(dados.getString(3));
@@ -105,11 +108,17 @@ public class connectDAO {
                         clientesReturn.setCpfCli(dados.getString(11));
                         clientesReturn.setDataNasc(dados.getString(12));
                         clientesReturn.setCnpjCli(dados.getString(13));
+                        
+                        System.out.println("Cliente encontrado: " + clientesReturn.getIdCli() + ", " + clientesReturn.getNomeCli());
+                        
                     }
                 } catch(SQLException erro){
                     JOptionPane.showMessageDialog(null, "Erro de conexão, connectDAO Consulta - Mensagem => "+ erro);
+                    System.out.println("Erro de conexão, connectDAO Consulta - Mensagem => "+ erro);
                     JOptionPane.showMessageDialog(null,"\n Erro de conexão, connectDAo - Estado"+ erro);
+                    System.out.println("\n Erro de conexão, connectDAo - Estado"+ erro);
                     JOptionPane.showMessageDialog(null,"\n Erro de conexão, connectDAO - Código"+ erro);
+                    System.out.println("\n Erro de conexão, connectDAO - Código"+ erro);
                 }
                 con.close();
             }catch (SQLException ex){
@@ -118,6 +127,7 @@ public class connectDAO {
         } //Final do processo para tabela CLIENTES
         
         return clientesReturn;
+        
     }
     
     public void alteraRegistroJFBD(String tabela, String strDados, String pesquisaID){
@@ -129,14 +139,18 @@ public class connectDAO {
             String sql = "UPDATE dbo."+tabela
                     + " SET "+ strDados
                     + " WHERE ("+pesquisaID+");";
+            System.out.println("String de Select: "+sql);
+            stmt.executeUpdate(sql);
+            JOptionPane.showMessageDialog(null, "Alteração executada com Sucesso");
             
             try{
                 stmt.executeUpdate(sql);
                 JOptionPane.showMessageDialog(null, "Alteração executada com sucesso!");
             }catch (SQLException erro){
                 JOptionPane.showMessageDialog(null, "Erro de conexão, connectDAO Consulta - Mensagem => "+ erro);
-                    JOptionPane.showMessageDialog(null,"\n Erro de conexão, connectDAo - Estado"+ erro);
-                    JOptionPane.showMessageDialog(null,"\n Erro de conexão, connectDAO - Código"+ erro);
+                System.out.println("ALTERA REGISTRO - Erro de conexão, connectDAO Consulta - Mensagem => "+erro);
+                JOptionPane.showMessageDialog(null,"\n Erro de conexão, connectDAo - Estado"+ erro);
+                JOptionPane.showMessageDialog(null,"\n Erro de conexão, connectDAO - Código"+ erro);
             }
         }catch (SQLException ex){
             Logger.getLogger(connectDAO.class.getName()).log(Level.SEVERE, null, ex);

@@ -168,6 +168,9 @@ public class CLIENTES {
     }
 
     public String alteraDadosSQlValues(){
+        // ID_CLI='ID',NOME_CLI='Nome',ENDE_CLI='Endereco',NUME_CLI='Numero',
+        // COMPL_CLI='Complemento',BAIR_CLI='Bairro',CIDA_CLI='Cidade',UF_CLI='UF',CEP_CLI='Cep
+        // ',FONE_CLI='Fone',CPF_CLI='cpf',DATA_NASC='data',CNPJ_CLI='cnpj'
         String dadosClientes;
         dadosClientes = "ID_CLI='"
                 + this.getIdCli() + "',NOME_CLI='"
@@ -182,8 +185,9 @@ public class CLIENTES {
                 + this.getFoneCli() + "',CPF_CLI='"
                 + this.getCpfCli() + "',DATA_NASC='"
                 + this.getDataNasc() + "',CNPJ_CLI='"
-                + this.getCnpjCli();
+                + this.getCnpjCli() + "'";
         
+        System.out.println("alteraDadosSQlValues - "+dadosClientes);
         return dadosClientes;
     }
 }
