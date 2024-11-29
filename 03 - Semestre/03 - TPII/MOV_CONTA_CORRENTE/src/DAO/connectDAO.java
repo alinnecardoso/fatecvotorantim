@@ -94,7 +94,7 @@ public class connectDAO {
                     }else{
                         //Pega os dados que vieram do SELECT e repasse o objeto que será
                         // clientesReturn = new CLIENTES(new CLIENTES());
-                        System.out.println("clientesReturn.getIdCli() - "+clientesReturn.getNomeCli());
+                        
                         clientesReturn.setIdCli(dados.getInt(1));
                         clientesReturn.setNomeCli(dados.getString(2));
                         clientesReturn.setEndeCli(dados.getString(3));
@@ -109,7 +109,7 @@ public class connectDAO {
                         clientesReturn.setDataNasc(dados.getString(12));
                         clientesReturn.setCnpjCli(dados.getString(13));
                         
-                        System.out.println("Cliente encontrado: " + clientesReturn.getIdCli() + ", " + clientesReturn.getNomeCli());
+                        System.out.println("Cliente encontrado connectdao: " + clientesReturn.getIdCli() + ", " + clientesReturn.getNomeCli());
                         
                     }
                 } catch(SQLException erro){
@@ -125,7 +125,8 @@ public class connectDAO {
                 Logger.getLogger(connectDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
         } //Final do processo para tabela CLIENTES
-        
+        // System.out.println("chegou no return clientesReturn ");
+    
         return clientesReturn;
         
     }
