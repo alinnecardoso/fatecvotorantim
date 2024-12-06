@@ -187,7 +187,7 @@ public class CLIENTES {
                 + this.getDataNasc() + "',CNPJ_CLI='"
                 + this.getCnpjCli() + "'";
         
-        System.out.println("alteraDadosSQlValues - "+dadosClientes);
+        //System.out.println("alteraDadosSQlValues - "+dadosClientes);
         return dadosClientes;
     }
 }

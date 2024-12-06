@@ -125,7 +125,7 @@ public class connectDAO {
                 Logger.getLogger(connectDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
         } //Final do processo para tabela CLIENTES
-        // System.out.println("chegou no return clientesReturn ");
+        System.out.println("chegou no return clientesReturn ");
     
         return clientesReturn;
         
@@ -149,7 +149,7 @@ public class connectDAO {
                 JOptionPane.showMessageDialog(null, "Alteração executada com sucesso!");
             }catch (SQLException erro){
                 JOptionPane.showMessageDialog(null, "Erro de conexão, connectDAO Consulta - Mensagem => "+ erro);
-                System.out.println("ALTERA REGISTRO - Erro de conexão, connectDAO Consulta - Mensagem => "+erro);
+                //System.out.println("ALTERA REGISTRO - Erro de conexão, connectDAO Consulta - Mensagem => "+erro);
                 JOptionPane.showMessageDialog(null,"\n Erro de conexão, connectDAo - Estado"+ erro);
                 JOptionPane.showMessageDialog(null,"\n Erro de conexão, connectDAO - Código"+ erro);
             }

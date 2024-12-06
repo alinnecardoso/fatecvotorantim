@@ -83,7 +83,7 @@ public class Cad_Clientes extends javax.swing.JFrame {
             jTextField12.setVisible(false);
             jTextField13.setVisible(false);
             jButton1.setText("Pesquisar");
-            operacaoAtivaGlobal= "Alteração";
+            
         }
         
         operacao = "Excluir";                                // defini a operação como Excluir um registro
@@ -389,12 +389,12 @@ public class Cad_Clientes extends javax.swing.JFrame {
         operacao = "Alteração";
         if(operacaoAtivaGlobal.equals(operacao)){
             connectDAO objcon = new connectDAO();
+            //cliente_tela = objcon.pesquisaClienteJFBD("CLIENTES", "ID_CLI = '" + jTextField1.getText()+ "'");
+            System.out.println("Alteração - pesquisaClienteJFBD");
+            
             CLIENTES dados_cliente = new CLIENTES();
-            
-            dados_cliente = objcon.pesquisaClienteJFBD("CLIENTES", "ID_CLI = '" + jTextField1.getText()+ "'");
-            
-            jTextField1.setText(Integer.toString(dados_cliente.getIdCli()));
-            jTextField2.setText(dados_cliente.getNomeCli());
+            dados_cliente.setIdCli(Integer.parseInt(jTextField1.getText()));
+            dados_cliente.setNomeCli(jTextField2.getText());
             dados_cliente.setEndeCli(jTextField3.getText());
             dados_cliente.setNumeCli(jTextField4.getText());
             dados_cliente.setComplCli(jTextField5.getText());
@@ -406,6 +406,50 @@ public class Cad_Clientes extends javax.swing.JFrame {
             dados_cliente.setCpfCli(jTextField11.getText());
             dados_cliente.setDataNasc(jTextField12.getText());
             dados_cliente.setCnpjCli(jTextField13.getText());
+            
+            /*System.out.println("jTextField1.getText() - " + (cliente_tela.getIdCli()));
+            jTextField1.setText(Integer.toString(cliente_tela.getIdCli()));
+            jTextField2.setText(cliente_tela.getNomeCli());
+            jTextField3.setText(cliente_tela.getEndeCli());
+            jTextField4.setText(cliente_tela.getNumeCli());
+            jTextField5.setText(cliente_tela.getComplCli());
+            jTextField6.setText(cliente_tela.getBairCli());
+            jTextField7.setText(cliente_tela.getCidaCli());
+            jTextField8.setText(cliente_tela.getUfCli());
+            jTextField9.setText(cliente_tela.getCepCli());
+            jTextField10.setText(cliente_tela.getFoneCli());
+            jTextField11.setText(cliente_tela.getCpfCli());
+            jTextField12.setText(cliente_tela.getDataNasc());
+            jTextField13.setText(cliente_tela.getCnpjCli());
+            
+            */
+            
+            objcon.alteraRegistroJFBD("CLIENTES", dados_cliente.alteraDadosSQlValues(),
+                    "ID_CLI = '" + jTextField1.getText()+ "'");
+             // System.out.println("fez a pesquisa no dao - ");
+        }   
+      
+        operacao = "Alterar";
+        if(operacaoAtivaGlobal.equals(operacao)){
+            connectDAO objcon = new connectDAO();
+            CLIENTES dados_cliente = new CLIENTES();
+            dados_cliente = objcon.pesquisaClienteJFBD("CLIENTES", "ID_CLI = "+ jTextField1.getText());
+            System.out.println("Alterar - pesquisaClienteJFBD");
+            
+            jTextField1.setText(Integer.toString(dados_cliente.getIdCli()));
+            jTextField2.setText(dados_cliente.getNomeCli());
+            jTextField3.setText(dados_cliente.getEndeCli());
+            jTextField4.setText(dados_cliente.getNumeCli());
+            jTextField5.setText(dados_cliente.getComplCli());
+            jTextField6.setText(dados_cliente.getBairCli());
+            jTextField7.setText(dados_cliente.getCidaCli());
+            jTextField8.setText(dados_cliente.getUfCli());
+            jTextField9.setText(dados_cliente.getCepCli());
+            jTextField10.setText(dados_cliente.getFoneCli());
+            jTextField11.setText(dados_cliente.getCpfCli());
+            jTextField12.setText(dados_cliente.getDataNasc());
+            jTextField13.setText(dados_cliente.getCnpjCli());
+            jButton1.setText("Alterar");
     
             jLabel1.setVisible(true);                       // deixando somente o label e o TextField do Id para pesquisar como true (visível).
             jLabel2.setVisible(true);
@@ -433,32 +477,7 @@ public class Cad_Clientes extends javax.swing.JFrame {
             jTextField11.setVisible(true);
             jTextField12.setVisible(true);
             jTextField13.setVisible(true);
-        }   
-      
-        operacao = "Alterar";
-        if(operacaoAtivaGlobal.equals(operacao)){
-            connectDAO objcon = new connectDAO();
-            cliente_tela = objcon.pesquisaClienteJFBD("CLIENTES", "ID_CLI = "+ jTextField1.getText());
-            
-            System.out.println("jTextField1.getText() - " + (cliente_tela.getIdCli()));
-            // jTextField1.setText(Integer.toString(cliente_tela.getIdCli()));
-            jTextField1.setText(Integer.toString(cliente_tela.getIdCli()));
-            jTextField2.setText(cliente_tela.getNomeCli());
-            jTextField3.setText(cliente_tela.getEndeCli());
-            jTextField4.setText(cliente_tela.getNumeCli());
-            jTextField5.setText(cliente_tela.getComplCli());
-            jTextField6.setText(cliente_tela.getBairCli());
-            jTextField7.setText(cliente_tela.getCidaCli());
-            jTextField8.setText(cliente_tela.getUfCli());
-            jTextField9.setText(cliente_tela.getCepCli());
-            jTextField10.setText(cliente_tela.getFoneCli());
-            jTextField11.setText(cliente_tela.getCpfCli());
-            jTextField12.setText(cliente_tela.getDataNasc());
-            jTextField13.setText(cliente_tela.getCnpjCli());
-            
-            objcon.alteraRegistroJFBD("CLIENTES", cliente_tela.alteraDadosSQlValues(),
-                    "ID_CLI = '" + jTextField1.getText()+ "'");
-             // System.out.println("fez a pesquisa no dao - ");
+            operacaoAtivaGlobal= "Alteração";
        }
    
     }//GEN-LAST:event_jButton1ActionPerformed
