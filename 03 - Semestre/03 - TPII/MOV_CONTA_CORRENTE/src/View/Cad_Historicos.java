@@ -47,9 +47,11 @@ public class Cad_Historicos extends javax.swing.JFrame {
             jLabel2.setVisible(false);
             jTextField1.setVisible(true);
             jTextField2.setVisible(false);
-            jButton1.setText("Pesquisar");
+            jButton1.setText("Excluir");
         }
     }
+    
+    HISTORICOS historico_tela = new HISTORICOS();
     
 
     /**
@@ -125,21 +127,43 @@ public class Cad_Historicos extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        HISTORICOS dados_historico = new HISTORICOS();
         String operacao = "Incluir";
         
         if(operacaoAtivaGlobal.equals(operacao)){
+            HISTORICOS dados_historico = new HISTORICOS();
+            connectDAO objcon = new connectDAO();
             dados_historico.setIdHis(Integer.parseInt(jTextField1.getText()));
             dados_historico.setDesHis(jTextField2.getText());
+            
+            objcon.insereRegistroJFBD("HISTORICOS", dados_historico.dadosSQLValues());
+        
+            jTextField1.setText("");
+            jTextField2.setText("");
         }
-
-        connectDAO objcon = new connectDAO();
-
-        objcon.insereRegistroJFBD("HISTORICOS", dados_historico.dadosSQLValues());
         
-        jTextField1.setText("");
-        jTextField2.setText("");
+        operacao = "Alteração";
+        if(operacaoAtivaGlobal.equals(operacao)){
+            connectDAO objcon = new connectDAO();
+            //cliente_tela = objcon.pesquisaClienteJFBD("CLIENTES", "ID_CLI = '" + jTextField1.getText()+ "'");
+            System.out.println("Alteração - pesquisaClienteJFBD");
+            
+            HISTORICOS dados_historico = new HISTORICOS();
+            dados_historico.setIdHis(Integer.parseInt(jTextField1.getText()));
+            dados_historico.setDesHis(jTextField2.getText());
+            
+            objcon.alteraRegistroJFBD("HISTORICOS", dados_historico.alteraDadosSQlValues(),
+                    "ID_HIS = '" + jTextField1.getText()+ "'");
+             // System.out.println("fez a pesquisa no dao - ");
+        }
         
+        operacao = "Excluir";
+        
+        if(operacaoAtivaGlobal.equals(operacao)){
+            HISTORICOS dados_cliente = new HISTORICOS();
+            connectDAO objcon = new connectDAO();
+            
+            objcon.excluiRegistroJFBD("HISTORICOS", dados_cliente.dadosSQLValues());
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

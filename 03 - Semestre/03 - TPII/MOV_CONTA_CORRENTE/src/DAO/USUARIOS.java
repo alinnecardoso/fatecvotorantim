@@ -21,6 +21,7 @@ public class USUARIOS {
         this.numCC = numCC;
     }
     
+    
     public String dadosSQLInsert(){
         String dadosUsuarios;
         dadosUsuarios = "'"
@@ -29,6 +30,18 @@ public class USUARIOS {
                 + this.getNumAge() + "','"
                 + this.getNumCC() + "'";
         return dadosUsuarios;
+    }
+    
+    public String alteraDadosSQlValues(){
+        String dadosClientes;
+        dadosClientes = "ID='"
+                + this.getId() + "',SENHA='"
+                + this.getSenha()+ "',NUM_AGE='"
+                + this.getNumAge()+ "',NUM_CC='"
+                + this.getNumCC()+ "'";
+        
+        //System.out.println("alteraDadosSQlValues - "+dadosClientes);
+        return dadosClientes;
     }
 
     public USUARIOS() {

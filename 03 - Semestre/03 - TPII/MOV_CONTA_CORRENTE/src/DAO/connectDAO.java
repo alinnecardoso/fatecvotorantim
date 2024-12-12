@@ -15,6 +15,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 // import javax.swing.table.AbstractTableModel;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
  
 /**
 *
@@ -64,71 +67,48 @@ public class connectDAO {
         
     }
     
-    public CLIENTES pesquisaClienteJFBD(String tabela, String pesquisaId){
-        CLIENTES clientesReturn = new CLIENTES();
-        String tabelaSGBD = "CLIENTES";
-        if(tabela.equals(tabelaSGBD)){
-            //FAZER A PESQUISA E RETORNAR A TABELA COMO RESULTADO
-            con = connectDB(); //Executa o método que conecta no DB e retorna a conexão
-            
-            Statement stmt;
-            
-            try{
-                stmt = con.createStatement();
-                //Cria a string com a sentença SQL para inserir registro
-                
-                String sql = "SELECT * FROM "+tabela
-                        + " WHERE "+pesquisaId;
-                
-                JOptionPane.showMessageDialog(null, "String de Select: "+ sql);
-                
-                try{
-                    //Executar a sentença de insert
-                    // stmt = con.prepareStatement(sql);
-                    //JOptionPane.showMessageDialog(null, "Vai executar a query com: "+sql);
-                    ResultSet dados;
-                    dados = stmt.executeQuery(sql);
-                    JOptionPane.showMessageDialog(null, "Pesquisa Cliente - Executada com Sucesso");
-                    if(dados.next() == false){
-                        JOptionPane.showMessageDialog(null, "Nenhum registro foi encontrado para"+ sql);
-                    }else{
-                        //Pega os dados que vieram do SELECT e repasse o objeto que será
-                        // clientesReturn = new CLIENTES(new CLIENTES());
-                        
-                        clientesReturn.setIdCli(dados.getInt(1));
-                        clientesReturn.setNomeCli(dados.getString(2));
-                        clientesReturn.setEndeCli(dados.getString(3));
-                        clientesReturn.setNumeCli(dados.getString(4));
-                        clientesReturn.setComplCli(dados.getString(5));
-                        clientesReturn.setBairCli(dados.getString(6));
-                        clientesReturn.setCidaCli(dados.getString(7));
-                        clientesReturn.setUfCli(dados.getString(8));
-                        clientesReturn.setCepCli(dados.getString(9));
-                        clientesReturn.setFoneCli(dados.getString(10));
-                        clientesReturn.setCpfCli(dados.getString(11));
-                        clientesReturn.setDataNasc(dados.getString(12));
-                        clientesReturn.setCnpjCli(dados.getString(13));
-                        
-                        System.out.println("Cliente encontrado connectdao: " + clientesReturn.getIdCli() + ", " + clientesReturn.getNomeCli());
-                        
+    public <T> T pesquisaRegistroJFBD(String tabela, String pesquisaId, Class<T> clazz) {
+        T result = null;
+        con = connectDB();
+
+        if (con != null) {
+            String sql = "SELECT * FROM " + tabela + " WHERE " + pesquisaId;
+            JOptionPane.showMessageDialog(null, "String de Select: " + sql);
+
+            try (Statement stmt = con.createStatement(); ResultSet dados = stmt.executeQuery(sql)) {
+                if (!dados.next()) {
+                    JOptionPane.showMessageDialog(null, "Nenhum registro foi encontrado para: " + sql);
+                } else {
+                    result = clazz.getDeclaredConstructor().newInstance();
+
+                    for (Field field : clazz.getDeclaredFields()) {
+                        field.setAccessible(true);
+                        try {
+                            Object value = dados.getObject(field.getName());
+                            field.set(result, value);
+                        } catch (IllegalArgumentException | IllegalAccessException e) {
+                            Logger.getLogger(connectDAO.class.getName()).log(Level.WARNING, "Erro ao definir campo: " + field.getName(), e);
+                        }
                     }
-                } catch(SQLException erro){
-                    JOptionPane.showMessageDialog(null, "Erro de conexão, connectDAO Consulta - Mensagem => "+ erro);
-                    System.out.println("Erro de conexão, connectDAO Consulta - Mensagem => "+ erro);
-                    JOptionPane.showMessageDialog(null,"\n Erro de conexão, connectDAo - Estado"+ erro);
-                    System.out.println("\n Erro de conexão, connectDAo - Estado"+ erro);
-                    JOptionPane.showMessageDialog(null,"\n Erro de conexão, connectDAO - Código"+ erro);
-                    System.out.println("\n Erro de conexão, connectDAO - Código"+ erro);
+
+                    System.out.println("Registro encontrado: " + result);
                 }
-                con.close();
-            }catch (SQLException ex){
-                Logger.getLogger(connectDAO.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(connectDAO.class.getName()).log(Level.SEVERE, "Erro ao executar a consulta", ex);
+            } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+                Logger.getLogger(connectDAO.class.getName()).log(Level.SEVERE, "Erro ao instanciar a classe", e);
+            } finally {
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    Logger.getLogger(connectDAO.class.getName()).log(Level.WARNING, "Erro ao fechar a conexão", e);
+                }
             }
-        } //Final do processo para tabela CLIENTES
-        System.out.println("chegou no return clientesReturn ");
-    
-        return clientesReturn;
-        
+        } else {
+            JOptionPane.showMessageDialog(null, "Erro ao conectar com o banco de dados.");
+        }
+
+        return result;
     }
     
     public void alteraRegistroJFBD(String tabela, String strDados, String pesquisaID){
@@ -157,5 +137,35 @@ public class connectDAO {
             Logger.getLogger(connectDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public void excluiRegistroJFBD(String tabela, String pesquisaID) {
+        con = connectDB();
+
+        if (con != null) {
+            String sql = "DELETE FROM dbo." + tabela + " WHERE " + pesquisaID;
+
+            try (Statement stmt = con.createStatement()) {
+                System.out.println("String de Delete: " + sql);
+                int rowsAffected = stmt.executeUpdate(sql);
+                if (rowsAffected > 0) {
+                    JOptionPane.showMessageDialog(null, "Exclusão executada com sucesso!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Nenhum registro encontrado para excluir.");
+                }
+            } catch (SQLException erro) {
+                JOptionPane.showMessageDialog(null, "Erro de conexão, connectDAO Exclusão - Mensagem => " + erro);
+                Logger.getLogger(connectDAO.class.getName()).log(Level.SEVERE, null, erro);
+            } finally {
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    Logger.getLogger(connectDAO.class.getName()).log(Level.WARNING, "Erro ao fechar a conexão", e);
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Erro ao conectar com o banco de dados.");
+        }
+    }
+
     
 }

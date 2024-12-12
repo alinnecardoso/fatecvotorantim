@@ -46,6 +46,23 @@ public class MOVIMENTACAO {
         
         return dadosMovimentacao;
     }
+    
+    public String alteraDadosSQlValues(){
+        String dadosClientes;
+        dadosClientes = "NUM_AGE='"
+                + this.getNumAge()+ "',NUM_CC='"
+                + this.getNumCC()+ "',DATA_MOV='"
+                + this.getDataMov()+ "',NUM_DOCTO='"
+                + this.getNumDocto()+ "',DEBITO_CREDITO='"
+                + this.getDebitoCredito()+ "',ID_HIS='"
+                + this.getIdHis()+ "',COMPL_HIS='"
+                + this.getComplHis()+ "',VALOR='"
+                + this.getValor()+ "',SALDO='"
+                + this.getSaldo()+ "'";
+        
+        //System.out.println("alteraDadosSQlValues - "+dadosClientes);
+        return dadosClientes;
+    }
 
     public MOVIMENTACAO() {
     }

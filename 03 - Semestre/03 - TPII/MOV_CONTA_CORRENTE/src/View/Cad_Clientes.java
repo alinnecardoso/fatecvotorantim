@@ -432,8 +432,10 @@ public class Cad_Clientes extends javax.swing.JFrame {
         operacao = "Alterar";
         if(operacaoAtivaGlobal.equals(operacao)){
             connectDAO objcon = new connectDAO();
-            CLIENTES dados_cliente = new CLIENTES();
-            dados_cliente = objcon.pesquisaClienteJFBD("CLIENTES", "ID_CLI = "+ jTextField1.getText());
+            //CLIENTES dados_cliente = new CLIENTES();
+            int id = Integer.parseInt(jTextField1.getText());
+            CLIENTES dados_cliente = objcon.pesquisaRegistroJFBD("CLIENTES", String.valueOf(id), CLIENTES.class);
+            //dados_cliente = objcon.pesquisaRegistroJFBD("CLIENTES", "ID_CLI = "+ jTextField1.getText());
             System.out.println("Alterar - pesquisaClienteJFBD");
             
             jTextField1.setText(Integer.toString(dados_cliente.getIdCli()));
@@ -479,6 +481,15 @@ public class Cad_Clientes extends javax.swing.JFrame {
             jTextField13.setVisible(true);
             operacaoAtivaGlobal= "Alteração";
        }
+        
+        operacao = "Excluir";
+        
+        if(operacaoAtivaGlobal.equals(operacao)){
+            CLIENTES dados_cliente = new CLIENTES();
+            connectDAO objcon = new connectDAO();
+            
+            objcon.excluiRegistroJFBD("CLIENTES", dados_cliente.dadosSQLValues());
+        }
    
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -52,6 +52,27 @@ public class AGENCIAS {
         
         return dadosAgencias;
     }
+    
+    public String alteraDadosSQlValues(){
+        // ID_CLI='ID',NOME_CLI='Nome',ENDE_CLI='Endereco',NUME_CLI='Numero',
+        // COMPL_CLI='Complemento',BAIR_CLI='Bairro',CIDA_CLI='Cidade',UF_CLI='UF',CEP_CLI='Cep
+        // ',FONE_CLI='Fone',CPF_CLI='cpf',DATA_NASC='data',CNPJ_CLI='cnpj'
+        String dadosClientes;
+        dadosClientes = "NUM_AGE='"
+                + this.getNumAge()+ "',NOME_AGE='"
+                + this.getNomeAge()+ "',ENDE_AGE='"
+                + this.getEndeAge()+ "',NUME_AGE='"
+                + this.getNumeAge()+ "',COMPL_AGE='"
+                + this.getComplAge()+ "',BAIR_AGE='"
+                + this.getBairAge()+ "',CIDA_AGE='"
+                + this.getCidaAge()+ "',UF_AGE='"
+                + this.getUfAge()+ "',CEP_AGE='"
+                + this.getCepAge()+ "',FONE_AGE='"
+                + this.getFoneAge()+ "'";
+        
+        //System.out.println("alteraDadosSQlValues - "+dadosClientes);
+        return dadosClientes;
+    }
 
     public int getNumAge() {
         return numAge;

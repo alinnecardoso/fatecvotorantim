@@ -20,6 +20,15 @@ public class HISTORICOS {
         this.desHis = desHis;
     }
     
+    public String alteraDadosSQlValues(){
+        String dadosClientes;
+        dadosClientes = "ID_HIS='"
+                + this.getIdHis()+ "',DES_HIS='"
+                + this.getDesHis()+ "'";
+        
+        return dadosClientes;
+    }
+    
     public String dadosSQLValues(){
         /* 
             private int idHis;

@@ -156,11 +156,12 @@ public class Cad_Usuarios extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        USUARIOS dados_usuario = new USUARIOS();
+        
         
         String operacao = "Incluir";
 
         if(operacaoAtivaGlobal.equals(operacao)){
+            USUARIOS dados_usuario = new USUARIOS();
             connectDAO objcon = new connectDAO();
             dados_usuario.setId(jTextField1.getText());
             dados_usuario.setSenha(jTextField2.getText());
@@ -181,43 +182,53 @@ public class Cad_Usuarios extends javax.swing.JFrame {
         if(operacaoAtivaGlobal.equals(operacao)){
             connectDAO objcon = new connectDAO();
             //cliente_tela = objcon.pesquisaClienteJFBD("CLIENTES", "ID_CLI = '" + jTextField1.getText()+ "'");
-            System.out.println("Alteração - pesquisaClienteJFBD");
+            System.out.println("Alteração - pesquisaRegistroJFBD");
             
-            USUARIOS dados_cliente = new USUARIOS();
-            dados_cliente.setIdCli(Integer.parseInt(jTextField1.getText()));
-            dados_cliente.setNomeCli(jTextField2.getText());
-            dados_cliente.setEndeCli(jTextField3.getText());
-            dados_cliente.setNumeCli(jTextField4.getText());
-            dados_cliente.setComplCli(jTextField5.getText());
-            dados_cliente.setBairCli(jTextField6.getText());
-            dados_cliente.setCidaCli(jTextField7.getText());
-            dados_cliente.setUfCli(jTextField8.getText());
-            dados_cliente.setCepCli(jTextField9.getText());
-            dados_cliente.setFoneCli(jTextField10.getText());
-            dados_cliente.setCpfCli(jTextField11.getText());
-            dados_cliente.setDataNasc(jTextField12.getText());
-            dados_cliente.setCnpjCli(jTextField13.getText());
+            USUARIOS dados_usuarios = new USUARIOS();
+            dados_usuarios.setId(jTextField1.getText());
+            dados_usuarios.setSenha(jTextField2.getText());
+            dados_usuarios.setNumAge(Integer.parseInt(jTextField3.getText()));
+            dados_usuarios.setNumCC(Integer.parseInt(jTextField4.getText()));
             
-            /*System.out.println("jTextField1.getText() - " + (cliente_tela.getIdCli()));
-            jTextField1.setText(Integer.toString(cliente_tela.getIdCli()));
-            jTextField2.setText(cliente_tela.getNomeCli());
-            jTextField3.setText(cliente_tela.getEndeCli());
-            jTextField4.setText(cliente_tela.getNumeCli());
-            jTextField5.setText(cliente_tela.getComplCli());
-            jTextField6.setText(cliente_tela.getBairCli());
-            jTextField7.setText(cliente_tela.getCidaCli());
-            jTextField8.setText(cliente_tela.getUfCli());
-            jTextField9.setText(cliente_tela.getCepCli());
-            jTextField10.setText(cliente_tela.getFoneCli());
-            jTextField11.setText(cliente_tela.getCpfCli());
-            jTextField12.setText(cliente_tela.getDataNasc());
-            jTextField13.setText(cliente_tela.getCnpjCli());
-            
-            */
-            
-            objcon.alteraRegistroJFBD("CLIENTES", dados_cliente.alteraDadosSQlValues(),
-                    "ID_CLI = '" + jTextField1.getText()+ "'");
+            objcon.alteraRegistroJFBD("USUARIOS", dados_usuarios.alteraDadosSQlValues(),
+                    "ID = '" + jTextField1.getText()+ "'");
              // System.out.println("fez a pesquisa no dao - ");
+        }
+        
+        
+        operacao = "Alterar";
+        if(operacaoAtivaGlobal.equals(operacao)){
+            connectDAO objcon = new connectDAO();
+            //USUARIOS dados_usuarios = new USUARIOS();
+            int id = Integer.parseInt(jTextField1.getText());
+            USUARIOS dados_usuarios = objcon.pesquisaRegistroJFBD("USUARIOS", String.valueOf(id), USUARIOS.class);
+            //dados_usuarios = objcon.pesquisaRegistroJFBD("USUARIOS", "ID = "+ jTextField1.getText());
+            System.out.println("Alterar - pesquisaRegistroJFBD");
+            
+            jTextField1.setText(dados_usuarios.getId());
+            jTextField2.setText(dados_usuarios.getSenha());
+            jTextField3.setText(Integer.toString(dados_usuarios.getNumAge()));
+            jTextField4.setText(Integer.toString(dados_usuarios.getNumCC()));
+            jButton1.setText("Alterar");
+    
+            jLabel1.setVisible(true);                       // deixando somente o label e o TextField do Id para pesquisar como true (visível).
+            jLabel2.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel4.setVisible(true);
+            jTextField1.setVisible(true);
+            jTextField2.setVisible(true);
+            jTextField3.setVisible(true);
+            jTextField4.setVisible(true);
+            operacaoAtivaGlobal= "Alteração";
+       }
+        
+        operacao = "Excluir";
+        
+        if(operacaoAtivaGlobal.equals(operacao)){
+            USUARIOS dados_usuario = new USUARIOS();
+            connectDAO objcon = new connectDAO();
+            
+            objcon.excluiRegistroJFBD("USUARIOS", dados_usuario.dadosSQLInsert());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

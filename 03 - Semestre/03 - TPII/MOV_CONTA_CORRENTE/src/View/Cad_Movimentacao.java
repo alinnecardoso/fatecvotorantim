@@ -90,9 +90,11 @@ public class Cad_Movimentacao extends javax.swing.JFrame {
             jTextField7.setVisible(false);
             jTextField8.setVisible(false);
             jTextField9.setVisible(false);
-            jButton1.setText("Pesquisar");
+            jButton1.setText("Excluir");
         }
     }
+    
+    MOVIMENTACAO movimentacao_tela = new MOVIMENTACAO();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -241,10 +243,11 @@ public class Cad_Movimentacao extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        MOVIMENTACAO dados_movimentacao = new MOVIMENTACAO();
         String operacao = "Incluir";
         
         if(operacaoAtivaGlobal.equals(operacao)){
+            MOVIMENTACAO dados_movimentacao = new MOVIMENTACAO();
+            connectDAO objcon = new connectDAO();
             dados_movimentacao.setNumAge(Integer.parseInt(jTextField1.getText()));
             dados_movimentacao.setNumCC(Integer.parseInt(jTextField2.getText()));
             dados_movimentacao.setDataMov(jTextField3.getText());
@@ -254,21 +257,51 @@ public class Cad_Movimentacao extends javax.swing.JFrame {
             dados_movimentacao.setComplHis(jTextField7.getText());
             dados_movimentacao.setValor(Integer.parseInt(jTextField8.getText()));
             dados_movimentacao.setSaldo(Integer.parseInt(jTextField9.getText()));
+            
+            objcon.insereRegistroJFBD("MOVIMENTACAO", dados_movimentacao.dadosSQLValues());
+        
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField3.setText("");
+            jTextField4.setText("");
+            jTextField5.setText("");
+            jTextField6.setText("");
+            jTextField7.setText("");
+            jTextField8.setText("");
+            jTextField9.setText("");
         }
         
-        connectDAO objcon = new connectDAO();
-        objcon.insereRegistroJFBD("MOVIMENTACAO", dados_movimentacao.dadosSQLValues());
+        operacao = "Alteração";
         
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextField3.setText("");
-        jTextField4.setText("");
-        jTextField5.setText("");
-        jTextField6.setText("");
-        jTextField7.setText("");
-        jTextField8.setText("");
-        jTextField9.setText("");
+        if(operacaoAtivaGlobal.equals(operacao)){
+            connectDAO objcon = new connectDAO();
+            //cliente_tela = objcon.pesquisaClienteJFBD("CLIENTES", "ID_CLI = '" + jTextField1.getText()+ "'");
+            System.out.println("Alteração - pesquisaClienteJFBD");
+            
+            MOVIMENTACAO dados_movimentacao = new MOVIMENTACAO();
+            dados_movimentacao.setNumAge(Integer.parseInt(jTextField1.getText()));
+            dados_movimentacao.setNumCC(Integer.parseInt(jTextField2.getText()));
+            dados_movimentacao.setDataMov(jTextField3.getText());
+            dados_movimentacao.setNumDocto(jTextField4.getText());
+            dados_movimentacao.setDebitoCredito(jTextField5.getText());
+            dados_movimentacao.setIdHis(Integer.parseInt(jTextField6.getText()));
+            dados_movimentacao.setComplHis(jTextField7.getText());
+            dados_movimentacao.setValor(Integer.parseInt(jTextField8.getText()));
+            dados_movimentacao.setSaldo(Integer.parseInt(jTextField9.getText()));
+            
+            objcon.alteraRegistroJFBD("MOVIMENTACAO", dados_movimentacao.alteraDadosSQlValues(),
+                    "ID_CLI = '" + jTextField1.getText()+ "'");
+             // System.out.println("fez a pesquisa no dao - ");
+        }
         
+        operacao = "Excluir";
+        
+        if(operacaoAtivaGlobal.equals(operacao)){
+            MOVIMENTACAO dados_cliente = new MOVIMENTACAO();
+            connectDAO objcon = new connectDAO();
+            
+            objcon.excluiRegistroJFBD("MOVIMENTACAO", dados_cliente.dadosSQLValues());
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

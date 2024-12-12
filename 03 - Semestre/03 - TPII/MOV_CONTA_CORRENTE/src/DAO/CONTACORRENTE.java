@@ -34,6 +34,18 @@ public class CONTACORRENTE {
         return dados_CC;
     }
     
+    public String alteraDadosSQlValues(){
+        String dadosClientes;
+        dadosClientes = "NUM_AGE='"
+                + this.getNumAge()+ "',NUM_CC='"
+                + this.getNumCC()+ "',ID_CLI='"
+                + this.getIdCli()+ "',SALDO='"
+                + this.getSaldo()+ "'";
+        
+        //System.out.println("alteraDadosSQlValues - "+dadosClientes);
+        return dadosClientes;
+    }
+    
     public int getNumAge() {
         return numAge;
     }

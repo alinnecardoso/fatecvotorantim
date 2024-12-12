@@ -34,6 +34,7 @@ public class Cad_ContaCorrente extends javax.swing.JFrame {
             jTextField2.setVisible(true);
             jTextField3.setVisible(true);
             jTextField4.setVisible(true);
+            jButton1.setText("Incluir");
         }
         
         operacao = "Alterar";                               // defini a operação como Alterar os dados de um registro
@@ -59,9 +60,11 @@ public class Cad_ContaCorrente extends javax.swing.JFrame {
             jTextField2.setVisible(false);
             jTextField3.setVisible(false);
             jTextField4.setVisible(false);
-            jButton1.setText("Pesquisar");
+            jButton1.setText("Excluir");
         }
     }
+    
+    CONTACORRENTE contacorrente_tela = new CONTACORRENTE();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -190,24 +193,50 @@ public class Cad_ContaCorrente extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        CONTACORRENTE dados_contacorrente = new CONTACORRENTE();
-        
         String operacao = "Incluir";
         
         if(operacaoAtivaGlobal.equals(operacao)){
+            CONTACORRENTE dados_contacorrente = new CONTACORRENTE();
+            connectDAO objcon = new connectDAO();
+            
             dados_contacorrente.setNumAge(Integer.parseInt(jTextField1.getText()));
             dados_contacorrente.setNumCC(Integer.parseInt(jTextField2.getText()));
             dados_contacorrente.setIdCli(Integer.parseInt(jTextField3.getText()));
             dados_contacorrente.setSaldo(Float.parseFloat(jTextField4.getText()));
+            
+            objcon.insereRegistroJFBD("CONTACORRENTE", dados_contacorrente.dadosSQLValues());
+
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField3.setText("");
+            jTextField4.setText("");
         }
         
-        connectDAO objcon = new connectDAO();
-        objcon.insereRegistroJFBD("CONTACORRENTE", dados_contacorrente.dadosSQLValues());
+        operacao = "Alteração";
+        if(operacaoAtivaGlobal.equals(operacao)){
+            connectDAO objcon = new connectDAO();
+            //cliente_tela = objcon.pesquisaClienteJFBD("CLIENTES", "ID_CLI = '" + jTextField1.getText()+ "'");
+            System.out.println("Alteração - pesquisaClienteJFBD");
+            
+            CONTACORRENTE dados_contacorrente = new CONTACORRENTE();
+            dados_contacorrente.setNumAge(Integer.parseInt(jTextField1.getText()));
+            dados_contacorrente.setNumCC(Integer.parseInt(jTextField2.getText()));
+            dados_contacorrente.setIdCli(Integer.parseInt(jTextField3.getText()));
+            dados_contacorrente.setSaldo(Float.parseFloat(jTextField4.getText()));
+            
+            objcon.alteraRegistroJFBD("CONTACORRENTE", dados_contacorrente.alteraDadosSQlValues(),
+                    "NUM_AGE = '" + jTextField1.getText()+ "'");
+             // System.out.println("fez a pesquisa no dao - ");
+        }
         
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextField3.setText("");
-        jTextField4.setText("");
+        operacao = "Excluir";
+        
+        if(operacaoAtivaGlobal.equals(operacao)){
+            CONTACORRENTE dados_contacorrente = new CONTACORRENTE();
+            connectDAO objcon = new connectDAO();
+            
+            objcon.excluiRegistroJFBD("CONTACORRENTE", dados_contacorrente.dadosSQLValues());
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
